@@ -1,0 +1,130 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "landscape.hardscape.single",
+  "family_id": "landscape.hardscape",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Hardscape plug-in object on a closed 5000 x 3000 path",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.hardscape",
+      "kind": "plugin_object",
+      "acquisition_state": "pending",
+      "reason": "The plug-in probe did not try `Hardscape`, because no installed .vso file has that name."
+    }
+  ],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.ClosePoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          5000,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          5000,
+          3000
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          0,
+          3000
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndPoly",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "pa",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectPath",
+      "args": [
+        "Hardscape",
+        "$pa",
+        null
+      ],
+      "bind": "hs",
+      "name": "hardscape-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "hardscape-a",
+      "bind": "hs",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "hardscape-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Stage 2.5 source for the row landscape.hardscape.single of driver/export-inventory-input/gaps.tsv."
+  ]
+}

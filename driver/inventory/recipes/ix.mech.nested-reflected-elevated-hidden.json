@@ -1,0 +1,239 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "ix.mech.nested-reflected-elevated-hidden",
+  "family_id": "container.symbol",
+  "recipe_revision": "2",
+  "universe": "interaction",
+  "title": "Nested symbol instance with a reflected transform on an elevated layer under a hidden ancestor class",
+  "mechanism": "mech.nested-reflected-elevated-hidden",
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "recipe_checkpoint",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Elev-L",
+        1
+      ],
+      "bind": "ly",
+      "name": "Rosetta-Elev-L",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLayerElevation",
+      "args": [
+        "$ly",
+        975.25,
+        120
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Elev-L"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Ancestor"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Rosetta-Inner"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          6.5
+        ],
+        [
+          11.25,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Rosetta-Outer"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Symbol",
+      "args": [
+        "Rosetta-Inner",
+        [
+          4.5,
+          2.75
+        ],
+        31.5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Locus",
+      "args": [
+        [
+          1.25,
+          9.75
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.Symbol",
+      "args": [
+        "Rosetta-Outer",
+        [
+          83.5,
+          41.25
+        ],
+        14
+      ],
+      "bind": "so",
+      "name": "outer-inst"
+    },
+    {
+      "op": "call",
+      "api": "vs.Mirror",
+      "args": [
+        "$so",
+        false,
+        [
+          83.5,
+          0
+        ],
+        [
+          83.5,
+          10
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$so",
+        "Rosetta-Ancestor"
+      ]
+    },
+    {
+      "op": "checkpoint",
+      "id": "before-hide"
+    },
+    {
+      "op": "call",
+      "api": "vs.HideClass",
+      "args": [
+        "Rosetta-Ancestor"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "outer-inst",
+      "bind": "so",
+      "role": "primary"
+    },
+    {
+      "object_id": "Rosetta-Elev-L",
+      "bind": "ly",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "outer-inst",
+      "quantity": "transform4x4",
+      "api": "vs.GetEntityMatrix",
+      "frame": "object_local"
+    },
+    {
+      "object_id": "outer-inst",
+      "quantity": "point3",
+      "api": "vs.GetSymLoc3D",
+      "frame": "layer"
+    },
+    {
+      "object_id": "outer-inst",
+      "quantity": "visibility",
+      "api": "vs.GetCVis",
+      "frame": "document_world",
+      "args": [
+        "Rosetta-Ancestor"
+      ]
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "instance_of",
+      "object_id": "outer-inst",
+      "definition": "Rosetta-Outer"
+    },
+    {
+      "kind": "nested_definition",
+      "parent": "Rosetta-Outer",
+      "child": "Rosetta-Inner"
+    },
+    {
+      "kind": "reflected",
+      "object_id": "outer-inst",
+      "axis": [
+        [
+          83.5,
+          0
+        ],
+        [
+          83.5,
+          10
+        ]
+      ]
+    },
+    {
+      "kind": "hidden_by_class",
+      "object_id": "outer-inst",
+      "class_name": "Rosetta-Ancestor"
+    }
+  ],
+  "exclude_profiles": []
+}

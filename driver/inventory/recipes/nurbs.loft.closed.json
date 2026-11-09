@@ -1,0 +1,231 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "nurbs.loft.closed",
+  "family_id": "nurbs.loft",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Closed loft solid between two cubic NURBS profiles",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginGroup",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateNurbsCurve",
+      "args": [
+        [
+          0,
+          0,
+          0
+        ],
+        false,
+        3
+      ],
+      "bind": "pa",
+      "name": "profile-bottom",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$pa",
+        [
+          1000,
+          -200,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$pa",
+        [
+          1600,
+          400,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$pa",
+        [
+          900,
+          1100,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$pa",
+        [
+          100,
+          800,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$pa",
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateNurbsCurve",
+      "args": [
+        [
+          200,
+          100,
+          1500
+        ],
+        false,
+        3
+      ],
+      "bind": "pb",
+      "name": "profile-top",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$pb",
+        [
+          900,
+          0,
+          1500
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$pb",
+        [
+          1300,
+          500,
+          1500
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$pb",
+        [
+          800,
+          900,
+          1500
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$pb",
+        [
+          300,
+          700,
+          1500
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$pb",
+        [
+          200,
+          100,
+          1500
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndGroup",
+      "args": [],
+      "bind": "g",
+      "name": null
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateLoftSurfaces",
+      "args": [
+        "$g",
+        false,
+        false,
+        true
+      ],
+      "bind": "lf",
+      "name": "loft-a",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.DelObject",
+      "args": [
+        "$g"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "loft-a",
+      "bind": "lf",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "loft-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Each profile is a closed cubic NURBS curve that interpolates five points in a plane, with the first point repeated at the end. The bottom profile lies at z 0 and the top profile at z 1500 mm. vs.CreateLoftSurfaces with bSolid True returns one solid, type 84, with the two planar caps. vs.DelObject removes the group of profiles, so the drawing holds the solid only."
+  ]
+}

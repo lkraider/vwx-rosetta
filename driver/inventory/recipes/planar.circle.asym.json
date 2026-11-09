@@ -1,0 +1,72 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "planar.circle.asym",
+  "family_id": "planar.circle",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Circle by centre (27.5, 14.25), radius 9.75",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.ArcByCenter",
+      "args": [
+        27.5,
+        14.25,
+        9.75,
+        0,
+        360
+      ],
+      "bind": "ci",
+      "name": "circle-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "circle-a",
+      "bind": "ci",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "circle-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "circle-a",
+      "quantity": "length",
+      "api": "vs.HLength",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "circle-a",
+      "quantity": "topology_counts",
+      "api": "vs.GetTypeN",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "A full 360 degree sweep makes a circle. After rosetta_save_reopen vs.GetTypeN of circle-a must be 6."
+  ]
+}

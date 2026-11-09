@@ -1,0 +1,129 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "planar.polygon.asym",
+  "family_id": "planar.polygon",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Closed pentagon with no symmetry",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          3.5,
+          -2.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          41,
+          5.75
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          29.5,
+          27
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          8.25,
+          19.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          -6,
+          11.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ClosePoly",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.EndPoly",
+      "args": [],
+      "bind": "poly",
+      "name": "poly-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "poly-a",
+      "bind": "poly",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "poly-a",
+      "quantity": "count",
+      "api": "vs.GetVertNum",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "poly-a",
+      "quantity": "point3",
+      "api": "vs.GetPolyPt",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "poly-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "poly-a",
+      "quantity": "area",
+      "api": "vs.ObjArea",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

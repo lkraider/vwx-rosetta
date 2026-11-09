@@ -1,0 +1,1633 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "plugin.combined.06",
+  "family_id": "plugin.combined",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "30 plug-in objects, each on its own layer and class",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "cell_mm": 3000.0,
+    "plugins": [
+      {
+        "plugin": "Screw and Nut (DIN)",
+        "call": "CreateCustomObjectN",
+        "width": 57.0,
+        "height": 18.0
+      },
+      {
+        "plugin": "Screw and Nut (Metric)",
+        "call": "CreateCustomObjectN",
+        "width": 57.0,
+        "height": 18.0
+      },
+      {
+        "plugin": "T-Bolt",
+        "call": "CreateCustomObjectN",
+        "width": 17.5,
+        "height": 57.1
+      },
+      {
+        "plugin": "T-Bolt - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 17.5,
+        "height": 57.1
+      },
+      {
+        "plugin": "Carriage Bolt",
+        "call": "CreateCustomObjectN",
+        "width": 28.9,
+        "height": 57.4
+      },
+      {
+        "plugin": "Carriage Bolt - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 27.5,
+        "height": 57.4
+      },
+      {
+        "plugin": "Hex Bolt (DIN)",
+        "call": "CreateCustomObjectN",
+        "width": 21.9,
+        "height": 57.5
+      },
+      {
+        "plugin": "Hex Bolt (DIN)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 21.9,
+        "height": 57.5
+      },
+      {
+        "plugin": "Hex Bolt (ISO)",
+        "call": "CreateCustomObjectN",
+        "width": 20.8,
+        "height": 57.5
+      },
+      {
+        "plugin": "Hex Bolt (ISO)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 20.8,
+        "height": 57.5
+      },
+      {
+        "plugin": "Hex Bolt Fine (DIN)",
+        "call": "CreateCustomObjectN",
+        "width": 21.9,
+        "height": 57.5
+      },
+      {
+        "plugin": "Hex Bolt Fine (DIN)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 21.9,
+        "height": 57.5
+      },
+      {
+        "plugin": "Tapered Roller Bearing",
+        "call": "CreateCustomObjectN",
+        "width": 25.4,
+        "height": 60.3
+      },
+      {
+        "plugin": "Tapered Roller Bearing - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 25.4,
+        "height": 60.3
+      },
+      {
+        "plugin": "Screw and Nut (Inch)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 14.3,
+        "height": 60.5
+      },
+      {
+        "plugin": "Ball Bearing",
+        "call": "CreateCustomObjectN",
+        "width": 19.1,
+        "height": 63.5
+      },
+      {
+        "plugin": "Ball Bearing - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 19.0,
+        "height": 63.5
+      },
+      {
+        "plugin": "Needle Bearing",
+        "call": "CreateCustomObjectN",
+        "width": 25.4,
+        "height": 63.5
+      },
+      {
+        "plugin": "Needle Bearing - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 25.4,
+        "height": 63.5
+      },
+      {
+        "plugin": "Round Tubing",
+        "call": "CreateCustomObjectN",
+        "width": 63.5,
+        "height": 63.5
+      },
+      {
+        "plugin": "Round Tubing (Inch)",
+        "call": "CreateCustomObjectN",
+        "width": 63.5,
+        "height": 63.5
+      },
+      {
+        "plugin": "Round Tubing (Metric)",
+        "call": "CreateCustomObjectN",
+        "width": 63.5,
+        "height": 63.5
+      },
+      {
+        "plugin": "Round Tubing - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 63.5,
+        "height": 63.5
+      },
+      {
+        "plugin": "Torsion Spring - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 63.5,
+        "height": 63.5
+      },
+      {
+        "plugin": "Torsion Spring - End",
+        "call": "CreateCustomObjectN",
+        "width": 63.5,
+        "height": 63.5
+      },
+      {
+        "plugin": "Torsion Spring - Front",
+        "call": "CreateCustomObjectN",
+        "width": 16.4,
+        "height": 63.5
+      },
+      {
+        "plugin": "Shoulder Screw (ISO)",
+        "call": "CreateCustomObjectN",
+        "width": 24.0,
+        "height": 69.4
+      },
+      {
+        "plugin": "Shoulder Screw (ISO)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 24.0,
+        "height": 69.4
+      },
+      {
+        "plugin": "Swing Bolt",
+        "call": "CreateCustomObjectN",
+        "width": 19.0,
+        "height": 73.0
+      },
+      {
+        "plugin": "Swing Bolt - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 19.1,
+        "height": 73.0
+      }
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.Screw and Nut (DIN)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Screw and Nut (Metric)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.T-Bolt",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.T-Bolt - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Carriage Bolt",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Carriage Bolt - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Hex Bolt (DIN)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Hex Bolt (DIN)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Hex Bolt (ISO)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Hex Bolt (ISO)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Hex Bolt Fine (DIN)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Hex Bolt Fine (DIN)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Tapered Roller Bearing",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Tapered Roller Bearing - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Screw and Nut (Inch)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Ball Bearing",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Ball Bearing - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Needle Bearing",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Needle Bearing - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Round Tubing",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Round Tubing (Inch)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Round Tubing (Metric)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Round Tubing - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Torsion Spring - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Torsion Spring - End",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Torsion Spring - Front",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Shoulder Screw (ISO)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Shoulder Screw (ISO)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Swing Bolt",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Swing Bolt - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    }
+  ],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Screw and Nut (DIN)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Screw and Nut (DIN)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Screw and Nut (DIN)",
+        [
+          1500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o00",
+      "name": "obj-00",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Screw and Nut (Metric)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Screw and Nut (Metric)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Screw and Nut (Metric)",
+        [
+          4500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o01",
+      "name": "obj-01",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-T-Bolt"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-T-Bolt"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "T-Bolt",
+        [
+          7500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o02",
+      "name": "obj-02",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-T-Bolt - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-T-Bolt - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "T-Bolt - 3D",
+        [
+          10500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o03",
+      "name": "obj-03",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Carriage Bolt"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Carriage Bolt"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Carriage Bolt",
+        [
+          13500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o04",
+      "name": "obj-04",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Carriage Bolt - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Carriage Bolt - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Carriage Bolt - 3D",
+        [
+          16500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o05",
+      "name": "obj-05",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Hex Bolt (DIN)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Hex Bolt (DIN)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Hex Bolt (DIN)",
+        [
+          1500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o06",
+      "name": "obj-06",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Hex Bolt (DIN)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Hex Bolt (DIN)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Hex Bolt (DIN)-3D",
+        [
+          4500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o07",
+      "name": "obj-07",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Hex Bolt (ISO)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Hex Bolt (ISO)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Hex Bolt (ISO)",
+        [
+          7500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o08",
+      "name": "obj-08",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Hex Bolt (ISO)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Hex Bolt (ISO)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Hex Bolt (ISO)-3D",
+        [
+          10500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o09",
+      "name": "obj-09",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Hex Bolt Fine (DIN)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Hex Bolt Fine (DIN)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Hex Bolt Fine (DIN)",
+        [
+          13500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o10",
+      "name": "obj-10",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Hex Bolt Fine (DIN)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Hex Bolt Fine (DIN)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Hex Bolt Fine (DIN)-3D",
+        [
+          16500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o11",
+      "name": "obj-11",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Tapered Roller Bearing"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Tapered Roller Bearing"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Tapered Roller Bearing",
+        [
+          1500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o12",
+      "name": "obj-12",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Tapered Roller Bearing - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Tapered Roller Bearing - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Tapered Roller Bearing - 3D",
+        [
+          4500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o13",
+      "name": "obj-13",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Screw and Nut (Inch)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Screw and Nut (Inch)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Screw and Nut (Inch)-3D",
+        [
+          7500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o14",
+      "name": "obj-14",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Ball Bearing"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Ball Bearing"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Ball Bearing",
+        [
+          10500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o15",
+      "name": "obj-15",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Ball Bearing - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Ball Bearing - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Ball Bearing - 3D",
+        [
+          13500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o16",
+      "name": "obj-16",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Needle Bearing"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Needle Bearing"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Needle Bearing",
+        [
+          16500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o17",
+      "name": "obj-17",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Needle Bearing - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Needle Bearing - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Needle Bearing - 3D",
+        [
+          1500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o18",
+      "name": "obj-18",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Round Tubing"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Round Tubing"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Round Tubing",
+        [
+          4500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o19",
+      "name": "obj-19",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Round Tubing (Inch)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Round Tubing (Inch)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Round Tubing (Inch)",
+        [
+          7500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o20",
+      "name": "obj-20",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Round Tubing (Metric)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Round Tubing (Metric)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Round Tubing (Metric)",
+        [
+          10500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o21",
+      "name": "obj-21",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Round Tubing - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Round Tubing - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Round Tubing - 3D",
+        [
+          13500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o22",
+      "name": "obj-22",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Torsion Spring - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Torsion Spring - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Torsion Spring - 3D",
+        [
+          16500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o23",
+      "name": "obj-23",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Torsion Spring - End"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Torsion Spring - End"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Torsion Spring - End",
+        [
+          1500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o24",
+      "name": "obj-24",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Torsion Spring - Front"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Torsion Spring - Front"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Torsion Spring - Front",
+        [
+          4500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o25",
+      "name": "obj-25",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Shoulder Screw (ISO)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Shoulder Screw (ISO)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Shoulder Screw (ISO)",
+        [
+          7500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o26",
+      "name": "obj-26",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Shoulder Screw (ISO)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Shoulder Screw (ISO)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Shoulder Screw (ISO)-3D",
+        [
+          10500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o27",
+      "name": "obj-27",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Swing Bolt"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Swing Bolt"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Swing Bolt",
+        [
+          13500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o28",
+      "name": "obj-28",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Swing Bolt - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Swing Bolt - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Swing Bolt - 3D",
+        [
+          16500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o29",
+      "name": "obj-29",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "obj-00",
+      "bind": "o00",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-01",
+      "bind": "o01",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-02",
+      "bind": "o02",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-03",
+      "bind": "o03",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-04",
+      "bind": "o04",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-05",
+      "bind": "o05",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-06",
+      "bind": "o06",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-07",
+      "bind": "o07",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-08",
+      "bind": "o08",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-09",
+      "bind": "o09",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-10",
+      "bind": "o10",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-11",
+      "bind": "o11",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-12",
+      "bind": "o12",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-13",
+      "bind": "o13",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-14",
+      "bind": "o14",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-15",
+      "bind": "o15",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-16",
+      "bind": "o16",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-17",
+      "bind": "o17",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-18",
+      "bind": "o18",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-19",
+      "bind": "o19",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-20",
+      "bind": "o20",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-21",
+      "bind": "o21",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-22",
+      "bind": "o22",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-23",
+      "bind": "o23",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-24",
+      "bind": "o24",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-25",
+      "bind": "o25",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-26",
+      "bind": "o26",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-27",
+      "bind": "o27",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-28",
+      "bind": "o28",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-29",
+      "bind": "o29",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "obj-00",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-01",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-02",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-03",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-04",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-05",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-06",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-07",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-08",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-09",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-10",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-11",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-12",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-13",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-14",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-15",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-16",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-17",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-18",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-19",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-20",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-21",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-22",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-23",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-24",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-25",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-26",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-27",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-28",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-29",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Object obj-NN is plugins[NN] of parameters. Its layer and its class are named pio- and the plug-in name, so an export entity on that layer or class comes from that object.",
+    "Each object sits at the centre of a grid cell of cell_mm. A path object follows the path kind of its probe row: an open path of three points or a closed square, inside its cell.",
+    "Plug-ins: Screw and Nut (DIN), Screw and Nut (Metric), T-Bolt, T-Bolt - 3D, Carriage Bolt, Carriage Bolt - 3D, Hex Bolt (DIN), Hex Bolt (DIN)-3D, Hex Bolt (ISO), Hex Bolt (ISO)-3D, Hex Bolt Fine (DIN), Hex Bolt Fine (DIN)-3D, Tapered Roller Bearing, Tapered Roller Bearing - 3D, Screw and Nut (Inch)-3D, Ball Bearing, Ball Bearing - 3D, Needle Bearing, Needle Bearing - 3D, Round Tubing, Round Tubing (Inch), Round Tubing (Metric), Round Tubing - 3D, Torsion Spring - 3D, Torsion Spring - End, Torsion Spring - Front, Shoulder Screw (ISO), Shoulder Screw (ISO)-3D, Swing Bolt, Swing Bolt - 3D."
+  ]
+}

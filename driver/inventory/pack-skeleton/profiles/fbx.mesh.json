@@ -1,0 +1,19 @@
+{
+  "profile_id": "fbx.mesh",
+  "profile_revision": "1",
+  "format": "fbx",
+  "format_revision": "unverified",
+  "scope": "mesh",
+  "options": {
+    "fbx_version": null
+  },
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "3d"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "FBX tessellation."
+}

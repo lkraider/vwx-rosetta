@@ -1,0 +1,113 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "document.units.inch",
+  "family_id": "document.units",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "A rectangle and its dimension in decimal inch units",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          25.4,
+          203.2
+        ],
+        [
+          406.4,
+          50.8
+        ]
+      ],
+      "bind": "rc",
+      "name": "rect-a"
+    },
+    {
+      "op": "create",
+      "api": "vs.LinearDim",
+      "args": [
+        [
+          25.4,
+          50.8
+        ],
+        [
+          406.4,
+          50.8
+        ],
+        -25.4,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bind": "dm",
+      "name": "dim-a"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetUnits",
+      "args": [
+        64,
+        2,
+        0,
+        1.0,
+        "\"",
+        " sq in"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-a",
+      "bind": "rc",
+      "role": "primary"
+    },
+    {
+      "object_id": "dim-a",
+      "bind": "dm",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-a",
+      "quantity": "name",
+      "api": "vs.GetDimText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "The script draws in millimetres on the millimetre blank, then calls vs.SetUnits. A probe in Vectorworks 2027 read the same rectangle box after vs.SetUnits in the new unit, so the drawing keeps its size. Script coordinates after the call are in the new unit. Format 3 gives feet and inches, and the DXF $LUNITS reads 3. The rectangle runs from (1, 2) in to (16, 8) in, which is (25.4, 50.8) mm to (406.4, 203.2) mm. The dimension measures its bottom edge, 381 mm or 1 ft 3 in."
+  ]
+}

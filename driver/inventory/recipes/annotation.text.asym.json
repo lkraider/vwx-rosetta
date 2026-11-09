@@ -1,0 +1,84 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.text.asym",
+  "family_id": "annotation.text",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Two-line text with Unicode at (17.25, 41.5) rotated 12.5 degrees",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          17.25,
+          41.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextRotate",
+      "args": [
+        12.5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextSize",
+      "args": [
+        14
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "Rosetta Ä1 — 測試\nline two"
+      ],
+      "bind": "tx",
+      "name": "text-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "text-a",
+      "bind": "tx",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "text-a",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "text-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "Text has one origin point. The point is off both axes."
+}

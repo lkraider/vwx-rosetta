@@ -1,0 +1,2 @@
+step	driver	format	profile	cases	options	expect	ext
+stl	scripted	stl	stl.binary.high-all	spatial.extrude.asym		pass	stl

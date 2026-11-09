@@ -1,0 +1,85 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "planar.rect.asym",
+  "family_id": "planar.rectangle",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Rectangle 48.5 by 26.25 off the origin",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "nominal_bounds": [
+      [
+        12.5,
+        7.25
+      ],
+      [
+        61,
+        33.5
+      ]
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        12.5,
+        33.5,
+        61,
+        7.25
+      ],
+      "bind": "r",
+      "name": "rect-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-a",
+      "bind": "r",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "rect-a",
+      "quantity": "length",
+      "api": "vs.HWidth",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "rect-a",
+      "quantity": "length",
+      "api": "vs.HHeight",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "rect-a",
+      "quantity": "area",
+      "api": "vs.ObjArea",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

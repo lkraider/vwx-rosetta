@@ -1,0 +1,1634 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "plugin.combined.09",
+  "family_id": "plugin.combined",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "30 plug-in objects, each on its own layer and class",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "cell_mm": 3000.0,
+    "plugins": [
+      {
+        "plugin": "Hub - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 127.0,
+        "height": 44.4
+      },
+      {
+        "plugin": "Torus Object",
+        "call": "CreateCustomObjectN",
+        "width": 127.0,
+        "height": 127.0
+      },
+      {
+        "plugin": "Tee (Metric)",
+        "call": "CreateCustomObjectN",
+        "width": 127.8,
+        "height": 65.4
+      },
+      {
+        "plugin": "Wide Flange (Inch)",
+        "call": "CreateCustomObjectN",
+        "width": 127.8,
+        "height": 130.8
+      },
+      {
+        "plugin": "Wide Flange (Metric)",
+        "call": "CreateCustomObjectN",
+        "width": 127.8,
+        "height": 130.8
+      },
+      {
+        "plugin": "Flanged Bearing - 4 Hole-3D",
+        "call": "CreateCustomObjectN",
+        "width": 136.5,
+        "height": 136.5
+      },
+      {
+        "plugin": "Roller Chain - Linear-3D",
+        "call": "CreateCustomObjectN",
+        "width": 137.3,
+        "height": 11.1
+      },
+      {
+        "plugin": "Extension Spring - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 144.4,
+        "height": 19.0
+      },
+      {
+        "plugin": "Extension Spring - Front",
+        "call": "CreateCustomObjectN",
+        "width": 144.5,
+        "height": 19.7
+      },
+      {
+        "plugin": "Bevel Gears",
+        "call": "CreateCustomObjectN",
+        "width": 147.8,
+        "height": 94.1
+      },
+      {
+        "plugin": "Bevel Gears - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 147.8,
+        "height": 94.1
+      },
+      {
+        "plugin": "Column2",
+        "call": "CreateCustomObjectN",
+        "width": 150.0,
+        "height": 150.0
+      },
+      {
+        "plugin": "Pilaster2",
+        "call": "CreateCustomObjectN",
+        "width": 150.0,
+        "height": 150.0
+      },
+      {
+        "plugin": "Pulley",
+        "call": "CreateCustomObjectN",
+        "width": 152.4,
+        "height": 152.4
+      },
+      {
+        "plugin": "Pulley - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 152.4,
+        "height": 31.8
+      },
+      {
+        "plugin": "Tee",
+        "call": "CreateCustomObjectN",
+        "width": 154.4,
+        "height": 81.0
+      },
+      {
+        "plugin": "Tee - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 154.4,
+        "height": 81.0
+      },
+      {
+        "plugin": "Spur Gear",
+        "call": "CreateCustomObjectN",
+        "width": 158.8,
+        "height": 158.8
+      },
+      {
+        "plugin": "Spur Gear-3D",
+        "call": "CreateCustomObjectN",
+        "width": 158.8,
+        "height": 31.8
+      },
+      {
+        "plugin": "Sprocket",
+        "call": "CreateCustomObjectN",
+        "width": 169.5,
+        "height": 169.5
+      },
+      {
+        "plugin": "Sprocket - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 169.5,
+        "height": 7.9
+      },
+      {
+        "plugin": "Hole Pattern",
+        "call": "CreateCustomObjectN",
+        "width": 171.4,
+        "height": 133.4
+      },
+      {
+        "plugin": "Flanged Bearing - 4 Hole",
+        "call": "CreateCustomObjectN",
+        "width": 136.5,
+        "height": 182.8
+      },
+      {
+        "plugin": "Worm Gear",
+        "call": "CreateCustomObjectN",
+        "width": 184.0,
+        "height": 184.0
+      },
+      {
+        "plugin": "Worm Gear - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 184.3,
+        "height": 31.8
+      },
+      {
+        "plugin": "Pipe Fitting",
+        "call": "CreateCustomObjectN",
+        "width": 190.8,
+        "height": 190.8
+      },
+      {
+        "plugin": "Bulb Flat",
+        "call": "CreateCustomObjectN",
+        "width": 38.0,
+        "height": 200.0
+      },
+      {
+        "plugin": "Bulb Flat - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 38.0,
+        "height": 200.0
+      },
+      {
+        "plugin": "Datum Feature Symbol",
+        "call": "CreateCustomObjectN",
+        "width": 203.6,
+        "height": 203.2
+      },
+      {
+        "plugin": "Wide Flange",
+        "call": "CreateCustomObjectN",
+        "width": 133.9,
+        "height": 210.3
+      }
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.Hub - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Torus Object",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Tee (Metric)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Wide Flange (Inch)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Wide Flange (Metric)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Flanged Bearing - 4 Hole-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Roller Chain - Linear-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Extension Spring - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Extension Spring - Front",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Bevel Gears",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Bevel Gears - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Column2",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Pilaster2",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Pulley",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Pulley - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Tee",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Tee - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Spur Gear",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Spur Gear-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Sprocket",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Sprocket - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Hole Pattern",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Flanged Bearing - 4 Hole",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Worm Gear",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Worm Gear - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Pipe Fitting",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Bulb Flat",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Bulb Flat - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Datum Feature Symbol",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Wide Flange",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    }
+  ],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Hub - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Hub - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Hub - 3D",
+        [
+          1500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o00",
+      "name": "obj-00",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Torus Object"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Torus Object"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Torus Object",
+        [
+          4500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o01",
+      "name": "obj-01",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Tee (Metric)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Tee (Metric)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Tee (Metric)",
+        [
+          7500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o02",
+      "name": "obj-02",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Wide Flange (Inch)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Wide Flange (Inch)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Wide Flange (Inch)",
+        [
+          10500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o03",
+      "name": "obj-03",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Wide Flange (Metric)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Wide Flange (Metric)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Wide Flange (Metric)",
+        [
+          13500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o04",
+      "name": "obj-04",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Flanged Bearing - 4 Hole-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Flanged Bearing - 4 Hole-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Flanged Bearing - 4 Hole-3D",
+        [
+          16500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o05",
+      "name": "obj-05",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Roller Chain - Linear-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Roller Chain - Linear-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Roller Chain - Linear-3D",
+        [
+          1500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o06",
+      "name": "obj-06",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Extension Spring - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Extension Spring - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Extension Spring - 3D",
+        [
+          4500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o07",
+      "name": "obj-07",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Extension Spring - Front"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Extension Spring - Front"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Extension Spring - Front",
+        [
+          7500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o08",
+      "name": "obj-08",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Bevel Gears"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Bevel Gears"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Bevel Gears",
+        [
+          10500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o09",
+      "name": "obj-09",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Bevel Gears - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Bevel Gears - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Bevel Gears - 3D",
+        [
+          13500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o10",
+      "name": "obj-10",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Column2"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Column2"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Column2",
+        [
+          16500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o11",
+      "name": "obj-11",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Pilaster2"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Pilaster2"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Pilaster2",
+        [
+          1500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o12",
+      "name": "obj-12",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Pulley"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Pulley"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Pulley",
+        [
+          4500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o13",
+      "name": "obj-13",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Pulley - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Pulley - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Pulley - 3D",
+        [
+          7500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o14",
+      "name": "obj-14",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Tee"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Tee"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Tee",
+        [
+          10500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o15",
+      "name": "obj-15",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Tee - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Tee - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Tee - 3D",
+        [
+          13500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o16",
+      "name": "obj-16",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Spur Gear"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Spur Gear"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Spur Gear",
+        [
+          16500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o17",
+      "name": "obj-17",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Spur Gear-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Spur Gear-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Spur Gear-3D",
+        [
+          1500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o18",
+      "name": "obj-18",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Sprocket"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Sprocket"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Sprocket",
+        [
+          4500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o19",
+      "name": "obj-19",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Sprocket - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Sprocket - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Sprocket - 3D",
+        [
+          7500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o20",
+      "name": "obj-20",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Hole Pattern"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Hole Pattern"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Hole Pattern",
+        [
+          10500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o21",
+      "name": "obj-21",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Flanged Bearing - 4 Hole"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Flanged Bearing - 4 Hole"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Flanged Bearing - 4 Hole",
+        [
+          13500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o22",
+      "name": "obj-22",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Worm Gear"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Worm Gear"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Worm Gear",
+        [
+          16500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o23",
+      "name": "obj-23",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Worm Gear - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Worm Gear - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Worm Gear - 3D",
+        [
+          1500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o24",
+      "name": "obj-24",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Pipe Fitting"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Pipe Fitting"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Pipe Fitting",
+        [
+          4500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o25",
+      "name": "obj-25",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Bulb Flat"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Bulb Flat"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Bulb Flat",
+        [
+          7500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o26",
+      "name": "obj-26",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Bulb Flat - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Bulb Flat - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Bulb Flat - 3D",
+        [
+          10500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o27",
+      "name": "obj-27",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Datum Feature Symbol"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Datum Feature Symbol"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Datum Feature Symbol",
+        [
+          13500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o28",
+      "name": "obj-28",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Wide Flange"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Wide Flange"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Wide Flange",
+        [
+          16500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o29",
+      "name": "obj-29",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "obj-00",
+      "bind": "o00",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-01",
+      "bind": "o01",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-02",
+      "bind": "o02",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-03",
+      "bind": "o03",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-04",
+      "bind": "o04",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-05",
+      "bind": "o05",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-06",
+      "bind": "o06",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-07",
+      "bind": "o07",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-08",
+      "bind": "o08",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-09",
+      "bind": "o09",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-10",
+      "bind": "o10",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-11",
+      "bind": "o11",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-12",
+      "bind": "o12",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-13",
+      "bind": "o13",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-14",
+      "bind": "o14",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-15",
+      "bind": "o15",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-16",
+      "bind": "o16",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-17",
+      "bind": "o17",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-18",
+      "bind": "o18",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-19",
+      "bind": "o19",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-20",
+      "bind": "o20",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-21",
+      "bind": "o21",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-22",
+      "bind": "o22",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-23",
+      "bind": "o23",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-24",
+      "bind": "o24",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-25",
+      "bind": "o25",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-26",
+      "bind": "o26",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-27",
+      "bind": "o27",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-28",
+      "bind": "o28",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-29",
+      "bind": "o29",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "obj-00",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-01",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-02",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-03",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-04",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-05",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-06",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-07",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-08",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-09",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-10",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-11",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-12",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-13",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-14",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-15",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-16",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-17",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-18",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-19",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-20",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-21",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-22",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-23",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-24",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-25",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-26",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-27",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-28",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-29",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Object obj-NN is plugins[NN] of parameters. Its layer and its class are named pio- and the plug-in name, so an export entity on that layer or class comes from that object.",
+    "Each object sits at the centre of a grid cell of cell_mm. A path object follows the path kind of its probe row: an open path of three points or a closed square, inside its cell.",
+    "Plug-ins: Hub - 3D, Torus Object, Tee (Metric), Wide Flange (Inch), Wide Flange (Metric), Flanged Bearing - 4 Hole-3D, Roller Chain - Linear-3D, Extension Spring - 3D, Extension Spring - Front, Bevel Gears, Bevel Gears - 3D, Column2, Pilaster2, Pulley, Pulley - 3D, Tee, Tee - 3D, Spur Gear, Spur Gear-3D, Sprocket, Sprocket - 3D, Hole Pattern, Flanged Bearing - 4 Hole, Worm Gear, Worm Gear - 3D, Pipe Fitting, Bulb Flat, Bulb Flat - 3D, Datum Feature Symbol, Wide Flange.",
+    "obj-28 (Datum Feature Symbol) is in class Dimension. Its layer is pio- and the plug-in name."
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "ix.spatial.ac39b9ac7ebb",
+  "family_id": "solid.primitive",
+  "recipe_revision": "1+spatial",
+  "universe": "interaction",
+  "title": "spatial pairwise row working_plane=ground;elevation=raised;transform=rot3d;class=hidden;checkpoint=mid;",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "native_verification": "unexecuted",
+  "derived_from": {
+    "suite_id": "spatial",
+    "base_case": "solid.cone.asym",
+    "base_recipe_sha256": "94c798cb05a2d2029f87c9db18a12ece3c9b7907df4a2937ce3ee55034c0675b",
+    "levels": {
+      "working_plane": "ground",
+      "elevation": "raised",
+      "transform": "rot3d",
+      "class": "hidden",
+      "checkpoint": "mid"
+    }
+  },
+  "parameters": {},
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.ActLayer",
+      "args": [],
+      "bind": "flay",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLayerElevation",
+      "args": [
+        "$flay",
+        640.75,
+        95.5
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCone",
+      "args": [
+        [
+          8.5,
+          -3.25,
+          1.75
+        ],
+        [
+          15,
+          6.5,
+          38.25
+        ],
+        9.75
+      ],
+      "bind": "cone",
+      "name": "cone-a",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Set3DRot",
+      "args": [
+        "$cone",
+        15,
+        0,
+        32.5,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-F3-Hidden"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$cone",
+        "Rosetta-F3-Hidden"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.HideClass",
+      "args": [
+        "Rosetta-F3-Hidden"
+      ]
+    },
+    {
+      "op": "checkpoint",
+      "id": "factor-mid"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "extra_tags": [],
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames",
+    "recipe_checkpoint"
+  ],
+  "objects": [
+    {
+      "object_id": "cone-a",
+      "bind": "cone",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "cone-a",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "cone-a",
+      "quantity": "volume",
+      "api": "vs.ObjVolume",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "cone-a",
+      "quantity": "area",
+      "api": "vs.ObjSurfaceArea",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "cone-a",
+      "quantity": "transform4x4",
+      "api": "vs.GetEntityMatrix",
+      "frame": "object_local"
+    }
+  ],
+  "expected_relationships": [],
+  "dependencies": [],
+  "exclude_profiles": []
+}

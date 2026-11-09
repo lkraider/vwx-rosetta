@@ -1,0 +1,4 @@
+step	driver	format	profile	cases	options	expect	ext
+defaults-pdf	ui	pdf	pdf.vector	plugin.combined.09	--defaults	record	pdf
+defaults-3ds	ui	3ds	3ds.mesh.all-layers	plugin.combined.09	--defaults	record	3ds
+defaults-sat	ui	sat	sat.solids	plugin.combined.07	--defaults	record	sat

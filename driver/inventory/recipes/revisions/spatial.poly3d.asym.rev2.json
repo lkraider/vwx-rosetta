@@ -1,0 +1,112 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "spatial.poly3d.asym",
+  "family_id": "spatial.poly3d",
+  "recipe_revision": "2",
+  "supersedes": {
+    "recipe_revision": "1",
+    "recipe_sha256": "c4cdcb018746a807d4d49f15399d1135c3325c2cb5228842f9c2d9afaad6145a"
+  },
+  "universe": "controlled",
+  "title": "Non-planar 3D polygon",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginPoly3D",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          4.5,
+          -3.25,
+          1.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          36.75,
+          2,
+          9.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          29,
+          24.5,
+          17
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          -7.25,
+          15.75,
+          5.5
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndPoly3D",
+      "args": [],
+      "bind": "p3",
+      "name": "poly3d-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "poly3d-a",
+      "bind": "p3",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "poly3d-a",
+      "quantity": "count",
+      "api": "vs.GetVertNum",
+      "frame": "document_world",
+      "component": "vertices"
+    },
+    {
+      "object_id": "poly3d-a",
+      "quantity": "point3",
+      "api": "vs.GetPolyPt3D",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

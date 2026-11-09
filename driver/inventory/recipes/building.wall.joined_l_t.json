@@ -1,0 +1,156 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "building.wall.joined_l_t",
+  "family_id": "building.wall",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Three walls joined as an L and a T",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Wall",
+      "args": [
+        [
+          0,
+          0
+        ],
+        [
+          4000,
+          0
+        ]
+      ],
+      "bind": "wa",
+      "name": "wall-a"
+    },
+    {
+      "op": "create",
+      "api": "vs.Wall",
+      "args": [
+        [
+          4000,
+          0
+        ],
+        [
+          4000,
+          3000
+        ]
+      ],
+      "bind": "wb",
+      "name": "wall-b"
+    },
+    {
+      "op": "create",
+      "api": "vs.Wall",
+      "args": [
+        [
+          1750,
+          3000
+        ],
+        [
+          1750,
+          0
+        ]
+      ],
+      "bind": "wc",
+      "name": "wall-c"
+    },
+    {
+      "op": "call",
+      "api": "vs.JoinWalls",
+      "args": [
+        "$wa",
+        "$wb",
+        [
+          3900,
+          0
+        ],
+        [
+          4000,
+          100
+        ],
+        2,
+        false,
+        false
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.JoinWalls",
+      "args": [
+        "$wc",
+        "$wa",
+        [
+          1750,
+          100
+        ],
+        [
+          1500,
+          0
+        ],
+        1,
+        false,
+        false
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "wall-a",
+      "bind": "wa",
+      "role": "primary"
+    },
+    {
+      "object_id": "wall-b",
+      "bind": "wb",
+      "role": "primary"
+    },
+    {
+      "object_id": "wall-c",
+      "bind": "wc",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "wall-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "wall-b",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "wall-c",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.JoinWalls modifier 2 makes the L join of wall-a and wall-b. Modifier 1 extends wall-c to meet wall-a in a T. Each call returns True on success. The two cleaned outlines differ from building.wall.straight, which holds one wall."
+  ],
+  "symmetry_waiver": "The corner and the T sit on wall-a, which starts at the origin. The bounding boxes are asymmetric."
+}

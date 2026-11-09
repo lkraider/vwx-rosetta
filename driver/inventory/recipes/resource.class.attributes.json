@@ -1,0 +1,249 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "resource.class.attributes",
+  "family_id": "resource.class",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Two rectangles that take pen colour, line weight and line type from their classes",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.SetDashStyleN",
+      "args": [
+        "Rosetta-Dash",
+        false,
+        4,
+        0.1,
+        0.05,
+        0.02,
+        0.05
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Name2Index",
+      "args": [
+        "Rosetta-Dash"
+      ],
+      "bind": "lt",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Red"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClPenFore",
+      "args": [
+        "Rosetta-Red",
+        [
+          65535,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClLW",
+      "args": [
+        "Rosetta-Red",
+        50
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClLSN",
+      "args": [
+        "Rosetta-Red",
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Blue"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClPenFore",
+      "args": [
+        "Rosetta-Blue",
+        [
+          0,
+          0,
+          65535
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClLW",
+      "args": [
+        "Rosetta-Blue",
+        10
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClLSN",
+      "args": [
+        "Rosetta-Blue",
+        "-$lt"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "None"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          20
+        ],
+        [
+          30,
+          0
+        ]
+      ],
+      "bind": "rr",
+      "name": "rect-red"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$rr",
+        "Rosetta-Red"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetPenColorByClass",
+      "args": [
+        "$rr"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLWByClass",
+      "args": [
+        "$rr"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLSByClass",
+      "args": [
+        "$rr"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          40,
+          20
+        ],
+        [
+          70,
+          0
+        ]
+      ],
+      "bind": "rb",
+      "name": "rect-blue"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$rb",
+        "Rosetta-Blue"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetPenColorByClass",
+      "args": [
+        "$rb"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLWByClass",
+      "args": [
+        "$rb"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLSByClass",
+      "args": [
+        "$rb"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-red",
+      "bind": "rr",
+      "role": "primary"
+    },
+    {
+      "object_id": "rect-blue",
+      "bind": "rb",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-red",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "rect-blue",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "The third argument of vs.SetDashStyleN counts the dash and gap values, so 4 gives two pairs. vs.Name2Index returns the index of Rosetta-Dash, and a negative index names a line type.",
+    "Rosetta-Red is red with line weight 50 mils and line style 2, a solid line. A class made after vs.SetDashStyleN takes Rosetta-Dash, so the script sets line style 2. Rosetta-Blue is blue with line weight 10 mils and the Rosetta-Dash line type. None is the active class at the end."
+  ]
+}

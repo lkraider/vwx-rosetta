@@ -1,0 +1,115 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "nurbs.from_conversion.extrude",
+  "family_id": "nurbs.from_conversion",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Extrude converted by vs.ConvertToNURBS with keepOrig True",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "nominal_bounds": [
+      [
+        4,
+        2.25,
+        1.5
+      ],
+      [
+        29.75,
+        15.5,
+        19.25
+      ]
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "recipe_checkpoint",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        1.5,
+        19.25
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          4,
+          15.5
+        ],
+        [
+          29.75,
+          2.25
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndXtrd",
+      "args": [],
+      "bind": "ex",
+      "name": "extrude-src"
+    },
+    {
+      "op": "checkpoint",
+      "id": "before-convert"
+    },
+    {
+      "op": "create",
+      "api": "vs.ConvertToNURBS",
+      "args": [
+        "$ex",
+        true
+      ],
+      "bind": "nb",
+      "name": "nurbs-converted",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "nurbs-converted",
+      "bind": "nb",
+      "role": "primary"
+    },
+    {
+      "object_id": "extrude-src",
+      "bind": "ex",
+      "role": "dependency"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "nurbs-converted",
+      "quantity": "topology_counts",
+      "api": "vs.GetTypeN",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "converted_from",
+      "object_id": "nurbs-converted",
+      "source": "extrude-src",
+      "api": "vs.ConvertToNURBS"
+    }
+  ],
+  "exclude_profiles": []
+}

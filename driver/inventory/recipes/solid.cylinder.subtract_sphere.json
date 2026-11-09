@@ -1,0 +1,115 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "solid.cylinder.subtract_sphere",
+  "family_id": "solid.csg",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Circle extrude 18.5 high minus a sphere at its top face",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "recipe_checkpoint",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        18.5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Oval",
+      "args": [
+        [
+          3.5,
+          21.25
+        ],
+        [
+          17.75,
+          7
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndXtrd",
+      "args": [],
+      "bind": "cy",
+      "name": "cylinder-a"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateSphere",
+      "args": [
+        [
+          12.25,
+          15.5,
+          18.5
+        ],
+        5.5
+      ],
+      "bind": "sp",
+      "name": "sphere-b",
+      "result": "return"
+    },
+    {
+      "op": "checkpoint",
+      "id": "before-boolean"
+    },
+    {
+      "op": "create",
+      "api": "vs.SubtractSolid",
+      "args": [
+        "$cy",
+        "$sp"
+      ],
+      "bind": "res",
+      "name": "csg-subtract",
+      "result": "tuple",
+      "result_index": 1
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "csg-subtract",
+      "bind": "res",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "csg-subtract",
+      "quantity": "volume",
+      "api": "vs.ObjVolume",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "csg-subtract",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "The result holds a cylinder face, two plane faces and a sphere face."
+  ]
+}

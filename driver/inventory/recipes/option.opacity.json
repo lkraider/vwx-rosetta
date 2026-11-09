@@ -1,0 +1,197 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "option.opacity",
+  "family_id": "option.opacity",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Object opacity and class opacity on rectangles over a solid rectangle",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          2.5,
+          21.25
+        ],
+        [
+          70.5,
+          4.5
+        ]
+      ],
+      "bind": "rb",
+      "name": "rect-under"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetFillBack",
+      "args": [
+        "$rb",
+        [
+          8738,
+          17476,
+          52428
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          10.25,
+          27.75
+        ],
+        [
+          31.5,
+          1.25
+        ]
+      ],
+      "bind": "ro",
+      "name": "rect-object-opacity"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetFillBack",
+      "args": [
+        "$ro",
+        [
+          61166,
+          13107,
+          4369
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetOpacityN",
+      "args": [
+        "$ro",
+        80,
+        40
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Half"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetCLOpacityN",
+      "args": [
+        "Rosetta-Half",
+        30,
+        70
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "None"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          44.75,
+          27.75
+        ],
+        [
+          63.25,
+          1.25
+        ]
+      ],
+      "bind": "rc",
+      "name": "rect-class-opacity"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetFillBack",
+      "args": [
+        "$rc",
+        [
+          61166,
+          13107,
+          4369
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$rc",
+        "Rosetta-Half"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetOpacityByClassN",
+      "args": [
+        "$rc",
+        true,
+        true
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-under",
+      "bind": "rb",
+      "role": "context"
+    },
+    {
+      "object_id": "rect-object-opacity",
+      "bind": "ro",
+      "role": "primary"
+    },
+    {
+      "object_id": "rect-class-opacity",
+      "bind": "rc",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-object-opacity",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "rect-class-opacity",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.SetOpacityN takes the pen opacity first: rect-object-opacity has pen 80 and fill 40. vs.SetCLOpacityN takes the fill opacity first: Rosetta-Half has fill 30 and pen 70. Each value is a percentage. The four values differ, so the export shows which one it applied.",
+    "Both upper rectangles overlap rect-under, so PDF and image export blend the two fills."
+  ]
+}

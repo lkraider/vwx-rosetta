@@ -1,0 +1,70 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "solid.hemisphere.tilted",
+  "family_id": "solid.primitive",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Hemisphere with tilted top point",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateHemisphere",
+      "args": [
+        [
+          -12.5,
+          7.25,
+          3
+        ],
+        [
+          -9.75,
+          11.5,
+          14.25
+        ]
+      ],
+      "bind": "hs",
+      "name": "hemisphere-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "hemisphere-a",
+      "bind": "hs",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "hemisphere-a",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "hemisphere-a",
+      "quantity": "volume",
+      "api": "vs.ObjVolume",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

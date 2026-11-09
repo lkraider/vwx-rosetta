@@ -1,0 +1,2 @@
+step	driver	format	profile	cases	options	expect	ext
+pdf.vector	ui	pdf	pdf.vector	annotation.bitmap.rotated_cropped,annotation.text.multiline_styled,annotation.viewport.hidden_line,building.wall.curved,building.wall.joined_l_t,nurbs.curve.closed_rational,nurbs.surface.revolved,option.drop_shadow,option.fill.gradient_applied,option.fill.image_applied,option.fill.texture_on_extrude,option.fill.tile_applied,option.markers,option.opacity,option.pen_fill_colour,planar.arc.true,planar.circle.asym,spatial.light.spot	--unlisted	install	pdf

@@ -1,0 +1,187 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "ix.planar.08a344dc9f96",
+  "family_id": "planar.polygon",
+  "recipe_revision": "3",
+  "supersedes": {
+    "recipe_revision": "2+planar",
+    "recipe_sha256": "754703e10910ce744e33594542975baf9985f36db7553a6084d18b4608cfc778"
+  },
+  "universe": "interaction",
+  "title": "planar pairwise row layer_type=design;elevation=zero;class=hidden;transform=rotate;attributes=default;units=mm; The polygon sits in the hidden class Rosetta-F-Hidden. An oval in the visible class Rosetta-F-Visible sits beside it, with the same layer, transform and attributes.",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "native_verification": "unexecuted",
+  "derived_from": {
+    "suite_id": "planar",
+    "base_case": "planar.polygon.asym",
+    "base_recipe_sha256": "83c37615a0b7cba1da5848d003d8090ac86a0604925de3be34cabedbf31eff80",
+    "levels": {
+      "layer_type": "design",
+      "elevation": "zero",
+      "class": "hidden",
+      "transform": "rotate",
+      "attributes": "default",
+      "units": "mm"
+    }
+  },
+  "parameters": {},
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          3.5,
+          -2.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          41,
+          5.75
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          29.5,
+          27
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          8.25,
+          19.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          -6,
+          11.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ClosePoly",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.EndPoly",
+      "args": [],
+      "bind": "poly",
+      "name": "poly-a"
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-F-Hidden"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$poly",
+        "Rosetta-F-Hidden"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.HideClass",
+      "args": [
+        "Rosetta-F-Hidden"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.HRotate",
+      "args": [
+        "$poly",
+        [
+          3.5,
+          -2.25
+        ],
+        27.5
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "extra_tags": [],
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "objects": [
+    {
+      "object_id": "poly-a",
+      "bind": "poly",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "poly-a",
+      "quantity": "count",
+      "api": "vs.GetVertNum",
+      "frame": "document_world",
+      "component": "vertices"
+    },
+    {
+      "object_id": "poly-a",
+      "quantity": "point3",
+      "api": "vs.GetPolyPt",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "poly-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "poly-a",
+      "quantity": "area",
+      "api": "vs.ObjArea",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "class_membership",
+      "object_id": "oval-visible",
+      "class_name": "Rosetta-F-Visible"
+    }
+  ],
+  "dependencies": [],
+  "exclude_profiles": []
+}

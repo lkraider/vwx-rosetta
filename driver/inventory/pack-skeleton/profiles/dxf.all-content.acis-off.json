@@ -1,0 +1,24 @@
+{
+  "profile_id": "dxf.all-content.acis-off",
+  "profile_revision": "1",
+  "format": "dxf",
+  "format_revision": "unverified",
+  "scope": "drawing",
+  "options": {
+    "dxf_version": "2018",
+    "acis_solids": false,
+    "classes_as_layers": true
+  },
+  "state_overrides": {
+    "hidden_content": "show_all"
+  },
+  "applicability": {
+    "requires_any": [
+      "solid",
+      "nurbs"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "DXF with hidden content shown and ACIS solids off. Vectorworks writes solids and NURBS as 3DFACE entities, with 0 POLYLINE."
+}

@@ -1,0 +1,23 @@
+{
+  "profile_id": "stl.binary",
+  "profile_revision": "1",
+  "format": "stl",
+  "format_revision": "unverified",
+  "scope": "mesh",
+  "options": {
+    "binary": true,
+    "percent_tess": null,
+    "objects": null
+  },
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "solid",
+      "nurbs",
+      "mesh"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "vs.ExportSTL with binary output."
+}

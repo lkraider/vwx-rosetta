@@ -1,0 +1,205 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "option.hatch.class_fill",
+  "family_id": "option.hatch",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Rect whose fill is the class fill, a two-layer hatch, beside a rect with the hatch placed",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginVectorFillN",
+      "args": [
+        "Rosetta-Hatch",
+        false,
+        false,
+        256
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVectorFillLayer",
+      "args": [
+        0,
+        0,
+        1.5,
+        2.25,
+        0.25,
+        -0.75,
+        1,
+        1,
+        257
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVectorFillLayer",
+      "args": [
+        0,
+        0.5,
+        -1.25,
+        3,
+        0.5,
+        0.125,
+        0.4,
+        2,
+        257
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndVectorFill",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.Name2Index",
+      "args": [
+        "Rosetta-Hatch"
+      ],
+      "bind": "hi",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Hatched"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClFPat",
+      "args": [
+        "Rosetta-Hatched",
+        "-$hi"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "None"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          20
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "rc",
+      "name": "rect-class-hatch",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$rc",
+        "Rosetta-Hatched"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetFPatByClass",
+      "args": [
+        "$rc"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          40,
+          20
+        ],
+        [
+          70,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "rh",
+      "name": "rect-hatched",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVectorFill",
+      "args": [
+        "$rh",
+        "Rosetta-Hatch"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-class-hatch",
+      "bind": "rc",
+      "role": "primary"
+    },
+    {
+      "object_id": "rect-hatched",
+      "bind": "rh",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-class-hatch",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "rect-hatched",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Stage 2.5 source for the row option.hatch.class_fill of driver/export-inventory-input/gaps.tsv.",
+    "SetClFPat takes the negative of the vector fill index, as its SDK text says.",
+    "rect-hatched repeats resource.hatch.placed in this document, so one export holds both routes."
+  ]
+}

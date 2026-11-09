@@ -1,0 +1,108 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.text.multiline_styled",
+  "family_id": "annotation.text",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Three-line text, right aligned, with bold and larger runs",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          17.25,
+          41.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextSize",
+      "args": [
+        12
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "Rosetta one\rline two bold\rline three"
+      ],
+      "bind": "tx",
+      "name": "text-multiline"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextStyle",
+      "args": [
+        "$tx",
+        21,
+        4,
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextSize",
+      "args": [
+        "$tx",
+        12,
+        4,
+        24
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$tx",
+        3
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "text-multiline",
+      "bind": "tx",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "text-multiline",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "text-multiline",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Each line ends with a carriage return. annotation.text.asym separates its lines with a line feed, and GAPS.tsv records that its text is one line.",
+    "Characters 21 to 24 (\"bold\") take style 1, bold. Characters 12 to 15 (\"line\" of line two) take size 24. Justification 3 is right."
+  ]
+}

@@ -1,0 +1,2 @@
+step	driver	format	profile	cases	options	expect	ext
+stl.binary.high-all	scripted	stl	stl.binary.high-all	annotation.viewport.hidden_line,building.wall.curved,building.wall.joined_l_t,nurbs.curve.closed_rational,nurbs.from_conversion.extrude,nurbs.surface.revolved,option.fill.texture_on_extrude,solid.csg.add,solid.csg.intersect,solid.generic.from_csg,solid.hemisphere.tilted,spatial.light.spot,spatial.mesh.from_group,spatial.mesh.tetra,spatial.mxtrd.asym		install	stl

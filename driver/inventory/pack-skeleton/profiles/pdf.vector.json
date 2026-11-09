@@ -1,0 +1,23 @@
+{
+  "profile_id": "pdf.vector",
+  "profile_revision": "1",
+  "format": "pdf",
+  "format_revision": "unverified",
+  "scope": "drawing",
+  "options": {
+    "resolution_dpi": null,
+    "export_classes_as_layers": null
+  },
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "2d",
+      "annotation",
+      "view",
+      "text"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "PDF page export."
+}

@@ -1,0 +1,129 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.dimension.units_1_1.feet_inch",
+  "family_id": "annotation.dimension.units_1_1",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "A rectangle and its dimension in feet-and-inch units on a 1:1 design layer",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.ActLayer",
+      "args": [],
+      "bind": "ly",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLScale",
+      "args": [
+        "$ly",
+        1
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          25.4,
+          203.2
+        ],
+        [
+          406.4,
+          50.8
+        ]
+      ],
+      "bind": "rc",
+      "name": "rect-a"
+    },
+    {
+      "op": "create",
+      "api": "vs.LinearDim",
+      "args": [
+        [
+          25.4,
+          50.8
+        ],
+        [
+          406.4,
+          50.8
+        ],
+        -25.4,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bind": "dm",
+      "name": "dim-a"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetUnits",
+      "args": [
+        4096,
+        64,
+        3,
+        1.0,
+        "\"",
+        "sq ft"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-a",
+      "bind": "rc",
+      "role": "primary"
+    },
+    {
+      "object_id": "dim-a",
+      "bind": "dm",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-a",
+      "quantity": "name",
+      "api": "vs.GetDimText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "A .vwx reader asked for one dimension case at 1:1 for each unit. The drawing and the units are those of document.units.feet_inch. vs.SetLScale sets the active design layer to 1:1 before any object is drawn, so the dimension text height is its paper size."
+  ]
+}

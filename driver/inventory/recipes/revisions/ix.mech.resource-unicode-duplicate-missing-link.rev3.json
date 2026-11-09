@@ -1,0 +1,164 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "ix.mech.resource-unicode-duplicate-missing-link",
+  "family_id": "resource.class",
+  "recipe_revision": "3",
+  "supersedes": {
+    "recipe_revision": "2",
+    "recipe_sha256": "617147b48ecd241b00ba9de2a6c5ffd92acab1e525a6609d86f2d52534bb1396"
+  },
+  "universe": "interaction",
+  "title": "Classes and symbols with case and Unicode name variants and a missing linked image",
+  "mechanism": "mech.resource-unicode-duplicate-missing-link",
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_document"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "external.missing-image",
+      "kind": "external_file",
+      "acquisition_state": "unavailable",
+      "reason": "The recipe names a path that does not exist on purpose."
+    }
+  ],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Ünïcode-類"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "rosetta-ünïcode-類"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Unicode-Lei"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Ŝym-Ä"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          5.5
+        ],
+        [
+          8.25,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.Symbol",
+      "args": [
+        "Ŝym-Ä",
+        [
+          26.5,
+          11.75
+        ],
+        9
+      ],
+      "bind": "s1",
+      "name": "unicode-inst"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$s1",
+        "rosetta-ünïcode-類"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.ImportImageFile",
+      "args": [
+        "/nonexistent/rosetta-missing.png",
+        [
+          52.25,
+          4.5
+        ]
+      ],
+      "bind": "im",
+      "name": "missing-image",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "unicode-inst",
+      "bind": "s1",
+      "role": "primary"
+    },
+    {
+      "object_id": "missing-image",
+      "bind": "im",
+      "role": "dependency"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "unicode-inst",
+      "quantity": "class_name",
+      "api": "vs.GetClass",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "document",
+      "quantity": "count",
+      "api": "vs.ClassNum",
+      "frame": "document_world",
+      "component": "classes"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "class_membership",
+      "object_id": "unicode-inst",
+      "class_name": "rosetta-ünïcode-類"
+    },
+    {
+      "kind": "missing_external",
+      "path": "/nonexistent/rosetta-missing.png"
+    }
+  ],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.ImportImageFile with a missing file may return None. native_state records the return value."
+  ]
+}

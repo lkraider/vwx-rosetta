@@ -1,0 +1,19 @@
+{
+  "profile_id": "gltf.mesh",
+  "profile_revision": "1",
+  "format": "gltf",
+  "format_revision": "unverified",
+  "scope": "mesh",
+  "options": {
+    "binary": true
+  },
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "3d"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "glTF binary tessellation."
+}

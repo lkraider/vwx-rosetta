@@ -1,0 +1,71 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "document.origin.offset",
+  "family_id": "document.origin",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "User origin moved to (-137.25, 48.5)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_document"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.SetOriginAbsolute",
+      "args": [
+        -137.25,
+        48.5
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Locus",
+      "args": [
+        [
+          12.5,
+          3.75
+        ]
+      ],
+      "bind": "lc",
+      "name": "locus-origin"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "locus-origin",
+      "bind": "lc",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "document",
+      "quantity": "point3",
+      "api": "vs.GetOrigin",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "locus-origin",
+      "quantity": "point3",
+      "api": "vs.GetLocPt",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

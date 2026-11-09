@@ -1,0 +1,197 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "nurbs.curve.closed_rational",
+  "family_id": "nurbs.curve",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Closed degree 2 NURBS curves, one weighted by hand and one from a circle",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateNurbsCurve",
+      "args": [
+        [
+          3.25,
+          1.5,
+          0
+        ],
+        true,
+        2
+      ],
+      "bind": "nc",
+      "name": "nurbs-closed-weighted",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$nc",
+        [
+          27.5,
+          2.75,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$nc",
+        [
+          31.25,
+          19.5,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$nc",
+        [
+          14.75,
+          26.25,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$nc",
+        [
+          1.5,
+          17.75,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$nc",
+        [
+          3.25,
+          1.5,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetWeight",
+      "args": [
+        "$nc",
+        0,
+        1,
+        0.7071
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetWeight",
+      "args": [
+        "$nc",
+        0,
+        3,
+        1.75
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.ArcByCenter",
+      "args": [
+        52.5,
+        14.25,
+        9.75,
+        0,
+        360
+      ],
+      "bind": "ci",
+      "name": null
+    },
+    {
+      "op": "create",
+      "api": "vs.ConvertToNURBS",
+      "args": [
+        "$ci",
+        false
+      ],
+      "bind": "cn",
+      "name": "nurbs-from-circle",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "nurbs-closed-weighted",
+      "bind": "nc",
+      "role": "primary"
+    },
+    {
+      "object_id": "nurbs-from-circle",
+      "bind": "cn",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "nurbs-closed-weighted",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "nurbs-closed-weighted",
+      "quantity": "count",
+      "api": "vs.NurbsDegree",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "nurbs-closed-weighted",
+      "quantity": "weights",
+      "api": "vs.NurbsGetWeight",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "nurbs-from-circle",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "nurbs-from-circle",
+      "quantity": "count",
+      "api": "vs.NurbsDegree",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "nurbs-closed-weighted ends on its first control point, so the curve is closed. Points 1 and 3 carry weights 0.7071 and 1.75. nurbs.curve.cubic is open and degree 3.",
+    "vs.ConvertToNURBS of a circle gives the closed rational curve that Vectorworks itself writes for a circle."
+  ]
+}

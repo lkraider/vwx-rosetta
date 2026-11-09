@@ -1,0 +1,74 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "entertainment.lighting_device.single",
+  "family_id": "entertainment.lighting_device",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Lighting Device plug-in object placed at (14.25, 66.5)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.lighting-device",
+      "kind": "plugin_object",
+      "acquisition_state": "pending",
+      "reason": "The installed plug-in list and the universal name `Lighting Device` are unverified."
+    }
+  ],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObject",
+      "args": [
+        "Lighting Device",
+        [
+          14.25,
+          66.5
+        ],
+        212.5
+      ],
+      "bind": "po",
+      "name": "lighting_device-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "lighting_device-a",
+      "bind": "po",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "lighting_device-a",
+      "quantity": "point3",
+      "api": "vs.GetSymLoc3D",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "lighting_device-a",
+      "quantity": "topology_counts",
+      "api": "vs.GetTypeN",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "A plug-in object has one insertion point. The point is off both axes."
+}

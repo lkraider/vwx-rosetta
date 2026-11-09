@@ -1,0 +1,155 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.dimension.radial",
+  "family_id": "annotation.dimension",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "A radius dimension and a diameter dimension on one circle",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Oval",
+      "args": [
+        [
+          0,
+          20
+        ],
+        [
+          20,
+          0
+        ]
+      ],
+      "bind": "ci",
+      "name": "circle"
+    },
+    {
+      "op": "create",
+      "api": "vs.CircularDim",
+      "args": [
+        [
+          10,
+          10
+        ],
+        [
+          20,
+          10
+        ],
+        [
+          0,
+          20
+        ],
+        [
+          20,
+          0
+        ],
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bind": "dr",
+      "name": "dim-radius"
+    },
+    {
+      "op": "create",
+      "api": "vs.CircularDim",
+      "args": [
+        [
+          0,
+          10
+        ],
+        [
+          20,
+          10
+        ],
+        [
+          0,
+          20
+        ],
+        [
+          20,
+          0
+        ],
+        5,
+        1,
+        0,
+        0,
+        0
+      ],
+      "bind": "dd",
+      "name": "dim-diameter"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "circle",
+      "bind": "ci",
+      "role": "context"
+    },
+    {
+      "object_id": "dim-radius",
+      "bind": "dr",
+      "role": "primary"
+    },
+    {
+      "object_id": "dim-diameter",
+      "bind": "dd",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "circle",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-radius",
+      "quantity": "name",
+      "api": "vs.GetDimText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-radius",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-diameter",
+      "quantity": "name",
+      "api": "vs.GetDimText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-diameter",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "box1 and box2 are the corners of the circle. dimType 0 is a radius and dimType 1 a diameter. A probe on a 10 mm circle read vs.GetDimText as 5 for dimType 0 and 10 for dimType 1."
+  ]
+}

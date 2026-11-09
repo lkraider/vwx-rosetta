@@ -1,0 +1,156 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.viewport.sheet",
+  "family_id": "annotation.viewport",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Viewport on a sheet layer showing one design layer",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "nominal_bounds": [
+      [
+        8,
+        4.75
+      ],
+      [
+        52.25,
+        27.5
+      ]
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Model",
+        1
+      ],
+      "bind": "dl",
+      "name": "Rosetta-Model",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Model"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          8,
+          27.5
+        ],
+        [
+          52.25,
+          4.75
+        ]
+      ],
+      "bind": "r",
+      "name": "model-rect"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Sheet",
+        2
+      ],
+      "bind": "sl",
+      "name": "Rosetta-Sheet",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateVP",
+      "args": [
+        "$sl"
+      ],
+      "bind": "vp",
+      "name": "viewport-a",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPLayerVisibility",
+      "args": [
+        "$vp",
+        "$dl",
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.UpdateVP",
+      "args": [
+        "$vp"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "viewport-a",
+      "bind": "vp",
+      "role": "primary"
+    },
+    {
+      "object_id": "model-rect",
+      "bind": "r",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "viewport-a",
+      "quantity": "visibility",
+      "api": "vs.GetVPLayerVisibility",
+      "frame": "document_world",
+      "args": [
+        {
+          "handle": "object"
+        },
+        {
+          "handle": "layer",
+          "name": "Rosetta-Model"
+        }
+      ]
+    },
+    {
+      "object_id": "viewport-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "viewport_shows",
+      "object_id": "viewport-a",
+      "layer": "Rosetta-Model",
+      "sheet": "Rosetta-Sheet"
+    }
+  ],
+  "exclude_profiles": [],
+  "notes": [
+    "visibilityType 0 is visible in the CreateLayer docs example. The code table is unverified."
+  ]
+}

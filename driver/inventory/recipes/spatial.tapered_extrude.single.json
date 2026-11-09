@@ -1,0 +1,84 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "spatial.tapered_extrude.single",
+  "family_id": "spatial.tapered_extrude",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Tapered extrude of a 1000 x 600 rectangle at 5 degrees, 2000 high",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          600
+        ],
+        [
+          1000,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "pr",
+      "name": "profile-a",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateTaperedExtrude",
+      "args": [
+        "$pr",
+        5,
+        2000
+      ],
+      "bind": "tx",
+      "name": "tapered-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "tapered-a",
+      "bind": "tx",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "tapered-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Stage 2.5 source for the row spatial.tapered_extrude.single of driver/export-inventory-input/gaps.tsv.",
+    "solid.tapered_extrude.circle makes the same object type from a circle with the same call. If the census shows no plug-in object (td86), this case repeats that one.",
+    "The 600 mm sides move in by 2000 x tan(5) = 175 mm each, so the top face is 650 x 250 mm."
+  ]
+}

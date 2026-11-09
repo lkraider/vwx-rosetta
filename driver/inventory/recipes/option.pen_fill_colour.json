@@ -1,0 +1,266 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "option.pen_fill_colour",
+  "family_id": "option.pen_fill_colour",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Pen and fill colours on a rectangle, a polygon and a class-coloured rectangle",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          2.5,
+          21.25
+        ],
+        [
+          33.75,
+          4.5
+        ]
+      ],
+      "bind": "rp",
+      "name": "rect-colour"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetPenFore",
+      "args": [
+        "$rp",
+        [
+          4660,
+          22136,
+          39612
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetFillFore",
+      "args": [
+        "$rp",
+        [
+          61166,
+          52428,
+          8738
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetFillBack",
+      "args": [
+        "$rp",
+        [
+          8738,
+          48059,
+          26214
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          41.25,
+          3.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          72.75,
+          6.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          66.5,
+          27.75
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          47,
+          22.5
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndPoly",
+      "args": [],
+      "bind": "pg",
+      "name": "polygon-colour"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetPenFore",
+      "args": [
+        "$pg",
+        [
+          52428,
+          4369,
+          30583
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetFillBack",
+      "args": [
+        "$pg",
+        [
+          17476,
+          13107,
+          56797
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Teal"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClFillBack",
+      "args": [
+        "Rosetta-Teal",
+        [
+          3855,
+          38550,
+          35723
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClFillFore",
+      "args": [
+        "Rosetta-Teal",
+        [
+          3855,
+          38550,
+          35723
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "None"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          2.5,
+          47.75
+        ],
+        [
+          29.25,
+          30.5
+        ]
+      ],
+      "bind": "rc",
+      "name": "rect-class-fill"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$rc",
+        "Rosetta-Teal"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetFillColorByClass",
+      "args": [
+        "$rc"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-colour",
+      "bind": "rp",
+      "role": "primary"
+    },
+    {
+      "object_id": "polygon-colour",
+      "bind": "pg",
+      "role": "primary"
+    },
+    {
+      "object_id": "rect-class-fill",
+      "bind": "rc",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-colour",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "polygon-colour",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "rect-class-fill",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Colours are 16-bit RGB. Each colour lies outside the 255 ACI colours, so DXF must write group 420 or the nearest ACI index. rect-colour sets fill foreground and background to different colours. A solid fill draws one of them, and the export shows which. resource.class.attributes covers pen colour by class. rect-class-fill covers fill colour by class."
+  ]
+}

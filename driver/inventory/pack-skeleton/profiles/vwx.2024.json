@@ -1,0 +1,24 @@
+{
+  "profile_id": "vwx.2024",
+  "profile_revision": "1",
+  "format": "vwx",
+  "format_revision": "unverified",
+  "scope": "drawing",
+  "options": {},
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "2d",
+      "3d",
+      "annotation",
+      "container",
+      "solid",
+      "nurbs",
+      "mesh",
+      "text"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "The source document saved by File > Export > Export as Vectorworks 2024 File... in Vectorworks 2027."
+}

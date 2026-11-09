@@ -1,0 +1,94 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "document.saved_view.named",
+  "family_id": "document.saved_view",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Saved view with class and layer state",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "nominal_bounds": [
+      [
+        3,
+        5
+      ],
+      [
+        28.75,
+        16.5
+      ]
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_document"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          3,
+          16.5
+        ],
+        [
+          28.75,
+          5
+        ]
+      ],
+      "bind": "r",
+      "name": "rect-view"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetView",
+      "args": [
+        -30,
+        0,
+        -45,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SaveSheet",
+      "args": [
+        "Rosetta-View",
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-view",
+      "bind": "r",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "document",
+      "quantity": "name",
+      "api": "vs.GetView",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

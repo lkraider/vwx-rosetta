@@ -1,0 +1,141 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "solid.generic.from_csg",
+  "family_id": "solid.generic_from_csg",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Solid subtraction converted by vs.CnvrtToGenericSolid",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "nominal_bounds": [
+      [
+        2.5,
+        1.25,
+        0
+      ],
+      [
+        36.5,
+        24,
+        20.25
+      ]
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "recipe_checkpoint",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        14.25
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          2.5,
+          19.5
+        ],
+        [
+          33.75,
+          1.25
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndXtrd",
+      "args": [],
+      "bind": "bx",
+      "name": "box-a"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateSphere",
+      "args": [
+        [
+          29,
+          16.5,
+          12.75
+        ],
+        7.5
+      ],
+      "bind": "sp",
+      "name": "sphere-b",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.SubtractSolid",
+      "args": [
+        "$bx",
+        "$sp"
+      ],
+      "bind": "res",
+      "name": "csg-src",
+      "result": "tuple",
+      "result_index": 1
+    },
+    {
+      "op": "checkpoint",
+      "id": "before-convert"
+    },
+    {
+      "op": "create",
+      "api": "vs.CnvrtToGenericSolid",
+      "args": [
+        "$res"
+      ],
+      "bind": "gs",
+      "name": "generic-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "generic-a",
+      "bind": "gs",
+      "role": "primary"
+    },
+    {
+      "object_id": "csg-src",
+      "bind": "res",
+      "role": "dependency"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "generic-a",
+      "quantity": "volume",
+      "api": "vs.ObjVolume",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "converted_from",
+      "object_id": "generic-a",
+      "source": "csg-src",
+      "api": "vs.CnvrtToGenericSolid"
+    }
+  ],
+  "exclude_profiles": []
+}

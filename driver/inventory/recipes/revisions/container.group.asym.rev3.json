@@ -1,0 +1,119 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "container.group.asym",
+  "family_id": "container.group",
+  "recipe_revision": "3",
+  "supersedes": {
+    "recipe_revision": "2",
+    "recipe_sha256": "259aa30d259d298fd7affbc59acc4cefae96aa113d1581e1f02d5869d61fa3ef"
+  },
+  "universe": "controlled",
+  "title": "Group of a rectangle and an oval",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginGroup",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          4.5,
+          18.25
+        ],
+        [
+          27,
+          2
+        ]
+      ],
+      "bind": "gr",
+      "name": "grp-rect"
+    },
+    {
+      "op": "create",
+      "api": "vs.Oval",
+      "args": [
+        [
+          21.5,
+          31
+        ],
+        [
+          39.75,
+          14.5
+        ]
+      ],
+      "bind": "go",
+      "name": "grp-oval"
+    },
+    {
+      "op": "create",
+      "api": "vs.EndGroup",
+      "args": [],
+      "bind": "g",
+      "name": "group-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "group-a",
+      "bind": "g",
+      "role": "primary"
+    },
+    {
+      "object_id": "grp-rect",
+      "bind": "gr",
+      "role": "context"
+    },
+    {
+      "object_id": "grp-oval",
+      "bind": "go",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "group-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "group-a",
+      "quantity": "count",
+      "api": "vs.FInGroup",
+      "frame": "document_world",
+      "component": "members"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "contains",
+      "object_id": "group-a",
+      "members": [
+        "grp-rect",
+        "grp-oval"
+      ]
+    }
+  ],
+  "exclude_profiles": []
+}

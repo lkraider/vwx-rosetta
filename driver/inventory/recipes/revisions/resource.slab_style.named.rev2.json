@@ -1,0 +1,178 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "resource.slab_style.named",
+  "family_id": "resource.slab_style",
+  "recipe_revision": "2",
+  "supersedes": {
+    "recipe_revision": "1",
+    "recipe_sha256": "732e5b31244a5dc276b9543a395749b5a2a576eb41208e8e3a964d474f597d84"
+  },
+  "universe": "controlled",
+  "title": "A slab drawn with the 250 mm Rosetta-SlabStyle",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateSlabStyle",
+      "args": [
+        "Rosetta-SlabStyle"
+      ],
+      "bind": "sst",
+      "name": "Rosetta-SlabStyle",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetComponentWidth",
+      "args": [
+        "$sst",
+        1,
+        250
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Name2Index",
+      "args": [
+        "Rosetta-SlabStyle"
+      ],
+      "bind": "ssi",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetSlabPreferencesStyle",
+      "args": [
+        "$$ssi"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          0,
+          100
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          200,
+          100
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          200,
+          300
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          0,
+          300
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ClosePoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.EndPoly",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "pr",
+      "name": "slab-profile"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateSlab",
+      "args": [
+        "$pr"
+      ],
+      "bind": "sb",
+      "name": "slab-styled",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.ResetObject",
+      "args": [
+        "$sb"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "slab-styled",
+      "bind": "sb",
+      "role": "primary"
+    },
+    {
+      "object_id": "Rosetta-SlabStyle",
+      "bind": "sst",
+      "role": "resource"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "slab-styled",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "Rosetta-SlabStyle",
+      "quantity": "name",
+      "api": "vs.GetName",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "A new slab style holds one component. vs.SetComponentWidth sets it to 250 mm.",
+    "A slab made after vs.SetSlabPreferencesStyle takes the style and is 250 mm thick. In a probe, vs.SetSlabStyle on an existing slab recorded the style and left it 150 mm thick."
+  ]
+}

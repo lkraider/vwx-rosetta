@@ -1,0 +1,79 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.callout.single",
+  "family_id": "annotation.callout",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "A Callout plug-in object with the text Rosetta callout",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Callout",
+        [
+          20,
+          10
+        ],
+        0,
+        false
+      ],
+      "bind": "co",
+      "name": "callout-a"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetRField",
+      "args": [
+        "$co",
+        "Callout",
+        "Text",
+        "Rosetta callout"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ResetObject",
+      "args": [
+        "$co"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "callout-a",
+      "bind": "co",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "callout-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.CreateCustomObject('Callout', pt, 0) crashed Vectorworks 2027 in CCalloutObjData::HandleLegacyData. vs.CreateCustomObjectN with showPref False creates the object."
+  ]
+}

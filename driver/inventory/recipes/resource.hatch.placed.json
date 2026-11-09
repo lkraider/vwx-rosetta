@@ -1,0 +1,116 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "resource.hatch.placed",
+  "family_id": "resource.hatch",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "A rectangle filled with the two-layer Rosetta-Hatch",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginVectorFillN",
+      "args": [
+        "Rosetta-Hatch",
+        false,
+        false,
+        256
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVectorFillLayer",
+      "args": [
+        0,
+        0,
+        1.5,
+        2.25,
+        0.25,
+        -0.75,
+        1,
+        1,
+        257
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVectorFillLayer",
+      "args": [
+        0,
+        0.5,
+        -1.25,
+        3,
+        0.5,
+        0.125,
+        0.4,
+        2,
+        257
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndVectorFill",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          20
+        ],
+        [
+          30,
+          0
+        ]
+      ],
+      "bind": "rh",
+      "name": "rect-hatched"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVectorFill",
+      "args": [
+        "$rh",
+        "Rosetta-Hatch"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-hatched",
+      "bind": "rh",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-hatched",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "The hatch has the layers of resource.hatch.two_layer. That case defines the hatch and places no object."
+  ]
+}

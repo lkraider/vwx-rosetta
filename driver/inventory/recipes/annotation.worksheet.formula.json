@@ -1,0 +1,113 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.worksheet.formula",
+  "family_id": "annotation.worksheet",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Worksheet 4 by 3 with a formula and an image on the drawing",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateWS",
+      "args": [
+        "Rosetta-WS",
+        4,
+        3
+      ],
+      "bind": "ws",
+      "name": "Rosetta-WS",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetWSCellFormula",
+      "args": [
+        "$ws",
+        1,
+        1,
+        1,
+        1,
+        "17.25"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetWSCellFormula",
+      "args": [
+        "$ws",
+        2,
+        1,
+        2,
+        1,
+        "=A1*3"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateWSImage",
+      "args": [
+        "$ws",
+        [
+          24.5,
+          61.25
+        ]
+      ],
+      "bind": "wi",
+      "name": "ws-image-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "Rosetta-WS",
+      "bind": "ws",
+      "role": "primary"
+    },
+    {
+      "object_id": "ws-image-a",
+      "bind": "wi",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "Rosetta-WS",
+      "quantity": "name",
+      "api": "vs.GetWSCellString",
+      "frame": "document_world",
+      "args": [
+        {
+          "handle": "object"
+        },
+        2,
+        1
+      ]
+    },
+    {
+      "object_id": "ws-image-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "The worksheet image has one placement point."
+}

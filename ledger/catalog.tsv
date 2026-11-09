@@ -1,0 +1,12 @@
+kind	disposition	reason_class	count
+node type in real documents	covered	occurs in a rosetta source	88
+node type in real documents	not covered: mapping	no rosetta case	6
+plug-in object	covered	a source holds it	380
+plug-in object	not covered: execution	created in a probe, not yet in a stored source	3
+plug-in object	not created by the app	no call gave an object with a nonzero box	50
+plug-in object	not created by the app	the create call raised a script error	4
+export command	covered	exports stored	13
+export command	not covered: execution	planned, not run	22
+export command	not covered: execution	run for extra files only, with no manifest pairs	2
+export command	not covered: execution	needs an open worksheet window, which no case had	1
+export command	not offered by the app	this edition has no such export	1

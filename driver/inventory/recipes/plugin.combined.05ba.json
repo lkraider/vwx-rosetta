@@ -1,0 +1,732 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "plugin.combined.05ba",
+  "family_id": "plugin.combined",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "13 plug-in objects, each on its own layer and class",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "cell_mm": 3000.0,
+    "plugins": [
+      {
+        "plugin": "Screw and Nut (Inch)",
+        "call": "CreateCustomObjectN",
+        "width": 50.7,
+        "height": 19.0
+      },
+      {
+        "plugin": "Shaft Break",
+        "call": "CreateCustomObjectN",
+        "width": 50.8,
+        "height": 25.4
+      },
+      {
+        "plugin": "Shaft Break 2",
+        "call": "CreateCustomObjectN",
+        "width": 50.8,
+        "height": 25.4
+      },
+      {
+        "plugin": "Square Tubing",
+        "call": "CreateCustomObjectN",
+        "width": 50.8,
+        "height": 50.8
+      },
+      {
+        "plugin": "Square Tubing (Inch)",
+        "call": "CreateCustomObjectN",
+        "width": 50.8,
+        "height": 50.8
+      },
+      {
+        "plugin": "Square Tubing (Metric)",
+        "call": "CreateCustomObjectN",
+        "width": 50.8,
+        "height": 50.8
+      },
+      {
+        "plugin": "Square Tubing - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 50.8,
+        "height": 50.8
+      },
+      {
+        "plugin": "Wing Nut (DIN)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 51.1,
+        "height": 25.0
+      },
+      {
+        "plugin": "Wing Nut (DIN)",
+        "call": "CreateCustomObjectN",
+        "width": 52.8,
+        "height": 25.8
+      },
+      {
+        "plugin": "Taper Pin (DIN)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 53.2,
+        "height": 14.0
+      },
+      {
+        "plugin": "Hole - Drilled",
+        "call": "CreateCustomObjectN",
+        "width": 12.7,
+        "height": 54.5
+      },
+      {
+        "plugin": "Hole - Drilled - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 12.7,
+        "height": 54.5
+      },
+      {
+        "plugin": "Screw and Nut (ISO)",
+        "call": "CreateCustomObjectN",
+        "width": 55.0,
+        "height": 16.0
+      }
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.Screw and Nut (Inch)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Shaft Break",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Shaft Break 2",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Square Tubing",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Square Tubing (Inch)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Square Tubing (Metric)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Square Tubing - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Wing Nut (DIN)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Wing Nut (DIN)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Taper Pin (DIN)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Hole - Drilled",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Hole - Drilled - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Screw and Nut (ISO)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    }
+  ],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Screw and Nut (Inch)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Screw and Nut (Inch)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Screw and Nut (Inch)",
+        [
+          1500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o00",
+      "name": "obj-00",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Shaft Break"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Shaft Break"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Shaft Break",
+        [
+          4500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o01",
+      "name": "obj-01",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Shaft Break 2"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Shaft Break 2"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Shaft Break 2",
+        [
+          7500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o02",
+      "name": "obj-02",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Square Tubing"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Square Tubing"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Square Tubing",
+        [
+          10500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o03",
+      "name": "obj-03",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Square Tubing (Inch)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Square Tubing (Inch)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Square Tubing (Inch)",
+        [
+          1500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o04",
+      "name": "obj-04",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Square Tubing (Metric)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Square Tubing (Metric)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Square Tubing (Metric)",
+        [
+          4500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o05",
+      "name": "obj-05",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Square Tubing - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Square Tubing - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Square Tubing - 3D",
+        [
+          7500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o06",
+      "name": "obj-06",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Wing Nut (DIN)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Wing Nut (DIN)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Wing Nut (DIN)-3D",
+        [
+          10500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o07",
+      "name": "obj-07",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Wing Nut (DIN)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Wing Nut (DIN)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Wing Nut (DIN)",
+        [
+          1500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o08",
+      "name": "obj-08",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Taper Pin (DIN)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Taper Pin (DIN)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Taper Pin (DIN)-3D",
+        [
+          4500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o09",
+      "name": "obj-09",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Hole - Drilled"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Hole - Drilled"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Hole - Drilled",
+        [
+          7500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o10",
+      "name": "obj-10",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Hole - Drilled - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Hole - Drilled - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Hole - Drilled - 3D",
+        [
+          10500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o11",
+      "name": "obj-11",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Screw and Nut (ISO)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Screw and Nut (ISO)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Screw and Nut (ISO)",
+        [
+          1500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o12",
+      "name": "obj-12",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "obj-00",
+      "bind": "o00",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-01",
+      "bind": "o01",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-02",
+      "bind": "o02",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-03",
+      "bind": "o03",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-04",
+      "bind": "o04",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-05",
+      "bind": "o05",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-06",
+      "bind": "o06",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-07",
+      "bind": "o07",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-08",
+      "bind": "o08",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-09",
+      "bind": "o09",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-10",
+      "bind": "o10",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-11",
+      "bind": "o11",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-12",
+      "bind": "o12",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "obj-00",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-01",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-02",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-03",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-04",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-05",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-06",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-07",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-08",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-09",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-10",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-11",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-12",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Object obj-NN is plugins[NN] of parameters. Its layer and its class are named pio- and the plug-in name, so an export entity on that layer or class comes from that object.",
+    "Each object sits at the centre of a grid cell of cell_mm. A path object follows the path kind of its probe row: an open path of three points or a closed square, inside its cell.",
+    "Plug-ins: Screw and Nut (Inch), Shaft Break, Shaft Break 2, Square Tubing, Square Tubing (Inch), Square Tubing (Metric), Square Tubing - 3D, Wing Nut (DIN)-3D, Wing Nut (DIN), Taper Pin (DIN)-3D, Hole - Drilled, Hole - Drilled - 3D, Screw and Nut (ISO)."
+  ]
+}

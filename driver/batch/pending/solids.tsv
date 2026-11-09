@@ -1,0 +1,6 @@
+step	driver	format	profile	cases	options	expect	ext
+# The obj.mesh rows of driver/batch/stage2-block3.tsv and stage2-block4.tsv in one row, and the ifc, sat and parasolid rows of stage2-block4.tsv, at main 526f8a8.
+obj.mesh	ui	obj	obj.mesh	annotation.viewport.hidden_line,building.wall.curved,building.wall.joined_l_t,nurbs.curve.closed_rational,nurbs.surface.revolved,option.fill.texture_on_extrude,spatial.light.spot	--unlisted	install	obj
+ifc.semantic	ui	ifc	ifc.semantic	annotation.viewport.hidden_line,building.wall.curved,building.wall.joined_l_t,nurbs.curve.closed_rational,nurbs.surface.revolved,option.fill.texture_on_extrude,spatial.light.spot	--unlisted	install	ifc
+sat.solids	ui	sat	sat.solids	annotation.viewport.hidden_line,building.wall.curved,building.wall.joined_l_t,nurbs.curve.closed_rational,nurbs.from_conversion.extrude,nurbs.surface.revolved,option.fill.texture_on_extrude,solid.csg.add,solid.csg.intersect,solid.generic.from_csg,solid.hemisphere.tilted,spatial.light.spot,spatial.mxtrd.asym	--unlisted	install	sat
+parasolid.solids	ui	parasolid	parasolid.solids	annotation.viewport.hidden_line,building.wall.curved,building.wall.joined_l_t,nurbs.curve.closed_rational,nurbs.surface.revolved,option.fill.texture_on_extrude,spatial.light.spot	--unlisted	install	x_t

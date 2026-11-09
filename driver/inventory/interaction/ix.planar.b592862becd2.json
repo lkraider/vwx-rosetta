@@ -1,0 +1,210 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "ix.planar.b592862becd2",
+  "family_id": "planar.polygon",
+  "recipe_revision": "2+planar",
+  "universe": "interaction",
+  "title": "planar pairwise row layer_type=sheet;elevation=zero;class=hidden;transform=none;attributes=styled;units=imperial;",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "native_verification": "unexecuted",
+  "derived_from": {
+    "suite_id": "planar",
+    "base_case": "planar.polygon.asym",
+    "base_recipe_sha256": "83c37615a0b7cba1da5848d003d8090ac86a0604925de3be34cabedbf31eff80",
+    "levels": {
+      "layer_type": "sheet",
+      "elevation": "zero",
+      "class": "hidden",
+      "transform": "none",
+      "attributes": "styled",
+      "units": "imperial"
+    }
+  },
+  "parameters": {},
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Sheet-F",
+        2
+      ],
+      "bind": "fsheet",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Sheet-F"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetUnits",
+      "args": [
+        4096,
+        64,
+        3,
+        1.0,
+        "\"",
+        "sq ft"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          3.5,
+          -2.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          41,
+          5.75
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          29.5,
+          27
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          8.25,
+          19.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          -6,
+          11.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ClosePoly",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.EndPoly",
+      "args": [],
+      "bind": "poly",
+      "name": "poly-a"
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-F-Hidden"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$poly",
+        "Rosetta-F-Hidden"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.HideClass",
+      "args": [
+        "Rosetta-F-Hidden"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLW",
+      "args": [
+        "$poly",
+        14
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetFPat",
+      "args": [
+        "$poly",
+        0
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "extra_tags": [],
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "objects": [
+    {
+      "object_id": "poly-a",
+      "bind": "poly",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "poly-a",
+      "quantity": "count",
+      "api": "vs.GetVertNum",
+      "frame": "document_world",
+      "component": "vertices"
+    },
+    {
+      "object_id": "poly-a",
+      "quantity": "point3",
+      "api": "vs.GetPolyPt",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "poly-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "poly-a",
+      "quantity": "area",
+      "api": "vs.ObjArea",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "dependencies": [],
+  "exclude_profiles": []
+}

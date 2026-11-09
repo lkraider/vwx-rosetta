@@ -1,0 +1,189 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "plugin.hidden_class",
+  "family_id": "plugin.object",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Desk in a hidden class beside a Desk in a visible class, and a Door in a visible class whose 2D leaf is in the hidden class",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "question": "M6"
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Hidden-H"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Visible-V"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "None"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Desk",
+        [
+          0,
+          0
+        ],
+        0,
+        false
+      ],
+      "bind": "dh",
+      "name": "desk-hidden",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$dh",
+        "Rosetta-Hidden-H"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Desk",
+        [
+          3000,
+          0
+        ],
+        0,
+        false
+      ],
+      "bind": "dv",
+      "name": "desk-visible",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$dv",
+        "Rosetta-Visible-V"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Door",
+        [
+          6000,
+          0
+        ],
+        0,
+        false
+      ],
+      "bind": "dr",
+      "name": "door-visible-leaf-hidden",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$dr",
+        "Rosetta-Visible-V"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetRField",
+      "args": [
+        "$dr",
+        "Door",
+        "2DLeafClass",
+        "Rosetta-Hidden-H"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ResetObject",
+      "args": [
+        "$dr"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.HideClass",
+      "args": [
+        "Rosetta-Hidden-H"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "desk-hidden",
+      "bind": "dh",
+      "role": "primary"
+    },
+    {
+      "object_id": "desk-visible",
+      "bind": "dv",
+      "role": "primary"
+    },
+    {
+      "object_id": "door-visible-leaf-hidden",
+      "bind": "dr",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "desk-hidden",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "desk-visible",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "door-visible-leaf-hidden",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Part 1 of M6. The plug-in probe created Desk with vs.CreateCustomObjectN, box 1700 x 800.",
+    "Part 2 of M6 is door-visible-leaf-hidden. Read O7 (rosetta-parked/rosetta-cover-rest/block0/slot-a/o7.json) lists 2DLeafClass among the class fields of the Door record. Its value is the class of the leaf in plan."
+  ]
+}

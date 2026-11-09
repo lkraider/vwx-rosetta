@@ -1,0 +1,1633 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "plugin.combined.02",
+  "family_id": "plugin.combined",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "30 plug-in objects, each on its own layer and class",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "cell_mm": 3000.0,
+    "plugins": [
+      {
+        "plugin": "Roller Chain - Offset Link",
+        "call": "CreateCustomObjectN",
+        "width": 23.0,
+        "height": 11.1
+      },
+      {
+        "plugin": "Roller Chain-Offset Link-3D",
+        "call": "CreateCustomObjectN",
+        "width": 23.0,
+        "height": 11.1
+      },
+      {
+        "plugin": "Retaining Washer (DIN)",
+        "call": "CreateCustomObjectN",
+        "width": 23.4,
+        "height": 20.4
+      },
+      {
+        "plugin": "Retaining Washer (DIN)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 23.4,
+        "height": 20.4
+      },
+      {
+        "plugin": "Plain Washer (DIN)",
+        "call": "CreateCustomObjectN",
+        "width": 24.0,
+        "height": 2.5
+      },
+      {
+        "plugin": "Plain Washer (DIN)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 24.0,
+        "height": 2.5
+      },
+      {
+        "plugin": "Plain Washer (ISO)",
+        "call": "CreateCustomObjectN",
+        "width": 24.0,
+        "height": 2.5
+      },
+      {
+        "plugin": "Plain Washer (ISO)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 24.0,
+        "height": 2.5
+      },
+      {
+        "plugin": "Rivet (DIN)",
+        "call": "CreateCustomObjectN",
+        "width": 14.0,
+        "height": 24.8
+      },
+      {
+        "plugin": "Rivet (DIN) - 3D",
+        "call": "CreateCustomObjectN",
+        "width": 14.0,
+        "height": 24.8
+      },
+      {
+        "plugin": "Machine Screw (ISO)",
+        "call": "CreateCustomObjectN",
+        "width": 18.3,
+        "height": 25.0
+      },
+      {
+        "plugin": "Machine Screw (ISO)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 18.3,
+        "height": 25.0
+      },
+      {
+        "plugin": "Machine Screw (Inch)",
+        "call": "CreateCustomObjectN",
+        "width": 19.4,
+        "height": 25.0
+      },
+      {
+        "plugin": "Machine Screw (Inch)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 19.4,
+        "height": 25.0
+      },
+      {
+        "plugin": "Machine Screw (Metric)",
+        "call": "CreateCustomObjectN",
+        "width": 20.0,
+        "height": 25.0
+      },
+      {
+        "plugin": "Machine Screw (Metric)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 20.0,
+        "height": 25.0
+      },
+      {
+        "plugin": "Set Screw (DIN)",
+        "call": "CreateCustomObjectN",
+        "width": 8.0,
+        "height": 25.0
+      },
+      {
+        "plugin": "Set Screw (DIN)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 8.0,
+        "height": 25.0
+      },
+      {
+        "plugin": "Set Screw (ISO)",
+        "call": "CreateCustomObjectN",
+        "width": 10.0,
+        "height": 25.0
+      },
+      {
+        "plugin": "Set Screw (ISO)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 10.0,
+        "height": 25.0
+      },
+      {
+        "plugin": "Set Screw (Metric)",
+        "call": "CreateCustomObjectN",
+        "width": 12.0,
+        "height": 25.0
+      },
+      {
+        "plugin": "Set Screw (Metric)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 12.0,
+        "height": 25.0
+      },
+      {
+        "plugin": "Woodruff Key",
+        "call": "CreateCustomObjectN",
+        "width": 25.2,
+        "height": 11.1
+      },
+      {
+        "plugin": "Woodruff Key-3D",
+        "call": "CreateCustomObjectN",
+        "width": 25.2,
+        "height": 11.0
+      },
+      {
+        "plugin": "Dowel Pin (Inch)",
+        "call": "CreateCustomObjectN",
+        "width": 25.4,
+        "height": 9.5
+      },
+      {
+        "plugin": "Dowel Pin (Inch)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 25.4,
+        "height": 9.5
+      },
+      {
+        "plugin": "Piping",
+        "call": "CreateCustomObjectN",
+        "width": 25.4,
+        "height": 0.0
+      },
+      {
+        "plugin": "Plain Washer (Metric)",
+        "call": "CreateCustomObjectN",
+        "width": 25.4,
+        "height": 2.8
+      },
+      {
+        "plugin": "Plain Washer (Metric)-3D",
+        "call": "CreateCustomObjectN",
+        "width": 25.4,
+        "height": 2.8
+      },
+      {
+        "plugin": "Set Screw (Inch)",
+        "call": "CreateCustomObjectN",
+        "width": 9.5,
+        "height": 25.4
+      }
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.Roller Chain - Offset Link",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Roller Chain-Offset Link-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Retaining Washer (DIN)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Retaining Washer (DIN)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Plain Washer (DIN)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Plain Washer (DIN)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Plain Washer (ISO)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Plain Washer (ISO)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Rivet (DIN)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Rivet (DIN) - 3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Machine Screw (ISO)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Machine Screw (ISO)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Machine Screw (Inch)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Machine Screw (Inch)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Machine Screw (Metric)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Machine Screw (Metric)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Set Screw (DIN)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Set Screw (DIN)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Set Screw (ISO)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Set Screw (ISO)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Set Screw (Metric)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Set Screw (Metric)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Woodruff Key",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Woodruff Key-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Dowel Pin (Inch)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Dowel Pin (Inch)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Piping",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Plain Washer (Metric)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Plain Washer (Metric)-3D",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Set Screw (Inch)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    }
+  ],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Roller Chain - Offset Link"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Roller Chain - Offset Link"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Roller Chain - Offset Link",
+        [
+          1500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o00",
+      "name": "obj-00",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Roller Chain-Offset Link-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Roller Chain-Offset Link-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Roller Chain-Offset Link-3D",
+        [
+          4500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o01",
+      "name": "obj-01",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Retaining Washer (DIN)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Retaining Washer (DIN)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Retaining Washer (DIN)",
+        [
+          7500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o02",
+      "name": "obj-02",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Retaining Washer (DIN)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Retaining Washer (DIN)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Retaining Washer (DIN)-3D",
+        [
+          10500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o03",
+      "name": "obj-03",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Plain Washer (DIN)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Plain Washer (DIN)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Plain Washer (DIN)",
+        [
+          13500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o04",
+      "name": "obj-04",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Plain Washer (DIN)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Plain Washer (DIN)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Plain Washer (DIN)-3D",
+        [
+          16500.0,
+          -1500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o05",
+      "name": "obj-05",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Plain Washer (ISO)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Plain Washer (ISO)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Plain Washer (ISO)",
+        [
+          1500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o06",
+      "name": "obj-06",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Plain Washer (ISO)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Plain Washer (ISO)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Plain Washer (ISO)-3D",
+        [
+          4500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o07",
+      "name": "obj-07",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Rivet (DIN)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Rivet (DIN)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Rivet (DIN)",
+        [
+          7500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o08",
+      "name": "obj-08",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Rivet (DIN) - 3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Rivet (DIN) - 3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Rivet (DIN) - 3D",
+        [
+          10500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o09",
+      "name": "obj-09",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Machine Screw (ISO)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Machine Screw (ISO)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Machine Screw (ISO)",
+        [
+          13500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o10",
+      "name": "obj-10",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Machine Screw (ISO)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Machine Screw (ISO)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Machine Screw (ISO)-3D",
+        [
+          16500.0,
+          -4500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o11",
+      "name": "obj-11",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Machine Screw (Inch)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Machine Screw (Inch)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Machine Screw (Inch)",
+        [
+          1500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o12",
+      "name": "obj-12",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Machine Screw (Inch)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Machine Screw (Inch)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Machine Screw (Inch)-3D",
+        [
+          4500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o13",
+      "name": "obj-13",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Machine Screw (Metric)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Machine Screw (Metric)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Machine Screw (Metric)",
+        [
+          7500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o14",
+      "name": "obj-14",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Machine Screw (Metric)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Machine Screw (Metric)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Machine Screw (Metric)-3D",
+        [
+          10500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o15",
+      "name": "obj-15",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Set Screw (DIN)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Set Screw (DIN)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Set Screw (DIN)",
+        [
+          13500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o16",
+      "name": "obj-16",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Set Screw (DIN)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Set Screw (DIN)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Set Screw (DIN)-3D",
+        [
+          16500.0,
+          -7500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o17",
+      "name": "obj-17",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Set Screw (ISO)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Set Screw (ISO)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Set Screw (ISO)",
+        [
+          1500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o18",
+      "name": "obj-18",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Set Screw (ISO)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Set Screw (ISO)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Set Screw (ISO)-3D",
+        [
+          4500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o19",
+      "name": "obj-19",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Set Screw (Metric)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Set Screw (Metric)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Set Screw (Metric)",
+        [
+          7500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o20",
+      "name": "obj-20",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Set Screw (Metric)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Set Screw (Metric)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Set Screw (Metric)-3D",
+        [
+          10500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o21",
+      "name": "obj-21",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Woodruff Key"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Woodruff Key"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Woodruff Key",
+        [
+          13500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o22",
+      "name": "obj-22",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Woodruff Key-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Woodruff Key-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Woodruff Key-3D",
+        [
+          16500.0,
+          -10500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o23",
+      "name": "obj-23",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Dowel Pin (Inch)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Dowel Pin (Inch)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Dowel Pin (Inch)",
+        [
+          1500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o24",
+      "name": "obj-24",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Dowel Pin (Inch)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Dowel Pin (Inch)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Dowel Pin (Inch)-3D",
+        [
+          4500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o25",
+      "name": "obj-25",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Piping"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Piping"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Piping",
+        [
+          7500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o26",
+      "name": "obj-26",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Plain Washer (Metric)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Plain Washer (Metric)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Plain Washer (Metric)",
+        [
+          10500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o27",
+      "name": "obj-27",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Plain Washer (Metric)-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Plain Washer (Metric)-3D"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Plain Washer (Metric)-3D",
+        [
+          13500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o28",
+      "name": "obj-28",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Set Screw (Inch)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Set Screw (Inch)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Set Screw (Inch)",
+        [
+          16500.0,
+          -13500.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o29",
+      "name": "obj-29",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "obj-00",
+      "bind": "o00",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-01",
+      "bind": "o01",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-02",
+      "bind": "o02",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-03",
+      "bind": "o03",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-04",
+      "bind": "o04",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-05",
+      "bind": "o05",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-06",
+      "bind": "o06",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-07",
+      "bind": "o07",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-08",
+      "bind": "o08",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-09",
+      "bind": "o09",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-10",
+      "bind": "o10",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-11",
+      "bind": "o11",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-12",
+      "bind": "o12",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-13",
+      "bind": "o13",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-14",
+      "bind": "o14",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-15",
+      "bind": "o15",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-16",
+      "bind": "o16",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-17",
+      "bind": "o17",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-18",
+      "bind": "o18",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-19",
+      "bind": "o19",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-20",
+      "bind": "o20",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-21",
+      "bind": "o21",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-22",
+      "bind": "o22",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-23",
+      "bind": "o23",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-24",
+      "bind": "o24",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-25",
+      "bind": "o25",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-26",
+      "bind": "o26",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-27",
+      "bind": "o27",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-28",
+      "bind": "o28",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-29",
+      "bind": "o29",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "obj-00",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-01",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-02",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-03",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-04",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-05",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-06",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-07",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-08",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-09",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-10",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-11",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-12",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-13",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-14",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-15",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-16",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-17",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-18",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-19",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-20",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-21",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-22",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-23",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-24",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-25",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-26",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-27",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-28",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-29",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Object obj-NN is plugins[NN] of parameters. Its layer and its class are named pio- and the plug-in name, so an export entity on that layer or class comes from that object.",
+    "Each object sits at the centre of a grid cell of cell_mm. A path object follows the path kind of its probe row: an open path of three points or a closed square, inside its cell.",
+    "Plug-ins: Roller Chain - Offset Link, Roller Chain-Offset Link-3D, Retaining Washer (DIN), Retaining Washer (DIN)-3D, Plain Washer (DIN), Plain Washer (DIN)-3D, Plain Washer (ISO), Plain Washer (ISO)-3D, Rivet (DIN), Rivet (DIN) - 3D, Machine Screw (ISO), Machine Screw (ISO)-3D, Machine Screw (Inch), Machine Screw (Inch)-3D, Machine Screw (Metric), Machine Screw (Metric)-3D, Set Screw (DIN), Set Screw (DIN)-3D, Set Screw (ISO), Set Screw (ISO)-3D, Set Screw (Metric), Set Screw (Metric)-3D, Woodruff Key, Woodruff Key-3D, Dowel Pin (Inch), Dowel Pin (Inch)-3D, Piping, Plain Washer (Metric), Plain Washer (Metric)-3D, Set Screw (Inch)."
+  ]
+}

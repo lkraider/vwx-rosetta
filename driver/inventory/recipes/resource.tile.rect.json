@@ -1,0 +1,94 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "resource.tile.rect",
+  "family_id": "resource.tile",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Tile with one rectangle",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "nominal_bounds": [
+      [
+        0.5,
+        1
+      ],
+      [
+        4.75,
+        3.25
+      ]
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateTile",
+      "args": [
+        "Rosetta-Tile"
+      ],
+      "bind": "tl",
+      "name": "Rosetta-Tile",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0.5,
+          3.25
+        ],
+        [
+          4.75,
+          1
+        ]
+      ],
+      "bind": "tr",
+      "name": "tile-rect"
+    },
+    {
+      "op": "call",
+      "api": "vs.AddTileGeometryObject",
+      "args": [
+        "$tl",
+        "$tr"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "Rosetta-Tile",
+      "bind": "tl",
+      "role": "primary"
+    },
+    {
+      "object_id": "tile-rect",
+      "bind": "tr",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "Rosetta-Tile",
+      "quantity": "name",
+      "api": "vs.GetName",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

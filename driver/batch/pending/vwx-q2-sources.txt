@@ -1,0 +1,2 @@
+# A .vwx reader's question 2: which 3D detail level a design-layer DXF export uses.
+solid.extrude.detail_level

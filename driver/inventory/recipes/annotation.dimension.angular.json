@@ -1,0 +1,143 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.dimension.angular",
+  "family_id": "annotation.dimension",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "An angular dimension between two lines that meet at the origin",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.MoveTo",
+      "args": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LineTo",
+      "args": [
+        [
+          40,
+          0
+        ]
+      ],
+      "bind": "la",
+      "name": "ray-a"
+    },
+    {
+      "op": "call",
+      "api": "vs.MoveTo",
+      "args": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LineTo",
+      "args": [
+        [
+          0,
+          40
+        ]
+      ],
+      "bind": "lb",
+      "name": "ray-b"
+    },
+    {
+      "op": "create",
+      "api": "vs.AngularDim",
+      "args": [
+        [
+          40,
+          0
+        ],
+        [
+          0,
+          40
+        ],
+        [
+          0,
+          0
+        ],
+        25,
+        0,
+        0,
+        0
+      ],
+      "bind": "dm",
+      "name": "dim-angular"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "ray-a",
+      "bind": "la",
+      "role": "context"
+    },
+    {
+      "object_id": "ray-b",
+      "bind": "lb",
+      "role": "context"
+    },
+    {
+      "object_id": "dim-angular",
+      "bind": "dm",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "ray-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "ray-b",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-angular",
+      "quantity": "name",
+      "api": "vs.GetDimText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-angular",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "A probe in Vectorworks 2027 read vs.GetDimText as 270 degrees for these points. Swapping the start and end points gave the same text."
+  ]
+}

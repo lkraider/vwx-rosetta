@@ -1,0 +1,67 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "solid.sphere.offset",
+  "family_id": "solid.primitive",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Sphere radius 6.25 at (31.5, 12.75, -4)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateSphere",
+      "args": [
+        [
+          31.5,
+          12.75,
+          -4
+        ],
+        6.25
+      ],
+      "bind": "sp",
+      "name": "sphere-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "sphere-a",
+      "bind": "sp",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "sphere-a",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "sphere-a",
+      "quantity": "volume",
+      "api": "vs.ObjVolume",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "A sphere is symmetric by definition. The centre is off every axis and the radius differs from each coordinate."
+}

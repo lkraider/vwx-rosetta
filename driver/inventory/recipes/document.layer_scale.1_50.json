@@ -1,0 +1,154 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "document.layer_scale.1_50",
+  "family_id": "document.layer_scale",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "A rectangle, a text and a dimension on a design layer at 1:50",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.ActLayer",
+      "args": [],
+      "bind": "ly",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLScale",
+      "args": [
+        "$ly",
+        50
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          1000
+        ],
+        [
+          2000,
+          0
+        ]
+      ],
+      "bind": "rc",
+      "name": "rect-a"
+    },
+    {
+      "op": "create",
+      "api": "vs.LinearDim",
+      "args": [
+        [
+          0,
+          0
+        ],
+        [
+          2000,
+          0
+        ],
+        -300,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bind": "dm",
+      "name": "dim-a"
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          0,
+          1500
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextSize",
+      "args": [
+        10
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "Rosetta 1:50"
+      ],
+      "bind": "tx",
+      "name": "text-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-a",
+      "bind": "rc",
+      "role": "primary"
+    },
+    {
+      "object_id": "dim-a",
+      "bind": "dm",
+      "role": "primary"
+    },
+    {
+      "object_id": "text-a",
+      "bind": "tx",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-a",
+      "quantity": "name",
+      "api": "vs.GetDimText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "text-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.SetLScale sets the scale of the active design layer before any object is drawn. The rectangle is 2000 x 1000 mm. The dimension measures its bottom edge, 2000 mm. The text is 10 pt, a size on paper, so its height in the drawing grows with the layer scale."
+  ]
+}

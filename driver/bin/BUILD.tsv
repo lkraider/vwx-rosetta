@@ -1,0 +1,2 @@
+binary	sha256	bytes	zig	os	arch	command
+driver/bin/vwx	e930ad0e6d805f3e1f951ab72b0872ffbafe8da7e97b3ea52636318111dfdbe4	506352	0.16.0	Darwin	arm64	zig build --cache-dir $ROSETTA_TMP/zig/cache --global-cache-dir $ROSETTA_TMP/zig/global --prefix $ROSETTA_TMP/zig/out

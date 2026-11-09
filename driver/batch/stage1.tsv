@@ -1,0 +1,22 @@
+step	driver	format	profile	cases	options	expect	ext
+dxf	ui	dxf	dxf.all-content	spatial.extrude.asym		pass	dxf
+dwg	ui	dwg	dwg.all-content	spatial.extrude.asym		pass	dwg
+3ds	ui	3ds	3ds.mesh	spatial.extrude.asym		pass	3ds
+fbx	ui	fbx	fbx.mesh	spatial.extrude.asym		pass	fbx
+gltf	ui	gltf	gltf.mesh	spatial.extrude.asym		pass	gltf
+obj	ui	obj	obj.mesh	spatial.extrude.asym		pass	obj
+parasolid	ui	parasolid	parasolid.solids	spatial.extrude.asym		pass	x_t
+sat	ui	sat	sat.solids	spatial.extrude.asym		pass	sat
+pdf	ui	pdf	pdf.vector	planar.rect.asym		pass	pdf
+ifc	ui	ifc	ifc.semantic	building.wall.straight		pass	ifc
+png	ui	png	png.top-plan	spatial.extrude.asym		pass	png
+svg	ui	svg	svg.vector	building.wall.straight		pass	svg
+vwx	ui	vwx	vwx.2023	spatial.extrude.asym		pass	vwx
+item7-3ds-wide-flange	ui	3ds	3ds.mesh	plugin.combined.09	--unlisted --active-layer 'pio-Wide Flange (Inch)'	record	3ds
+item7-3ds-hub	ui	3ds	3ds.mesh	plugin.combined.09	--unlisted --active-layer 'pio-Hub - 3D'	record	3ds
+item7-3ds-all-layers	ui	3ds	3ds.mesh.all-layers	plugin.combined.09	--unlisted	record	3ds
+iges-control	ui	iges	iges.solids	spatial.extrude.asym	--unlisted	pass	igs
+iges-combined	ui	iges	iges.solids	plugin.combined.01,plugin.combined.02,plugin.combined.03,plugin.combined.04,plugin.combined.05a,plugin.combined.05ba,plugin.combined.08,plugin.combined.09,plugin.combined.10,plugin.combined.11,plugin.combined.12,plugin.combined.13	--unlisted	record	igs
+item7-iges-probe	ui	iges	iges.solids	plugin.combined.09	--unlisted --probe	record	igs
+item7-iges-wide-flange	ui	iges	iges.solids	plugin.combined.09	--unlisted --active-layer 'pio-Wide Flange (Inch)'	record	igs
+item7-iges-hub	ui	iges	iges.solids	plugin.combined.09	--unlisted --active-layer 'pio-Hub - 3D'	record	igs

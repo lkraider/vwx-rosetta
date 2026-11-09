@@ -1,0 +1,17 @@
+{
+  "profile_id": "3ds.mesh",
+  "profile_revision": "1",
+  "format": "3ds",
+  "format_revision": "unverified",
+  "scope": "mesh",
+  "options": {},
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "3d"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "3DS tessellation of the current layer. The dialog default All Visible Objects in Current Layer writes only the objects of the active layer."
+}

@@ -1,0 +1,95 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "ix.spatial.9f0fd0f5c94a",
+  "family_id": "solid.primitive",
+  "recipe_revision": "1+spatial",
+  "universe": "interaction",
+  "title": "spatial pairwise row working_plane=ground;elevation=zero;transform=none;class=none;checkpoint=none;",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "native_verification": "unexecuted",
+  "derived_from": {
+    "suite_id": "spatial",
+    "base_case": "solid.cone.asym",
+    "base_recipe_sha256": "94c798cb05a2d2029f87c9db18a12ece3c9b7907df4a2937ce3ee55034c0675b",
+    "levels": {
+      "working_plane": "ground",
+      "elevation": "zero",
+      "transform": "none",
+      "class": "none",
+      "checkpoint": "none"
+    }
+  },
+  "parameters": {},
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateCone",
+      "args": [
+        [
+          8.5,
+          -3.25,
+          1.75
+        ],
+        [
+          15,
+          6.5,
+          38.25
+        ],
+        9.75
+      ],
+      "bind": "cone",
+      "name": "cone-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "extra_tags": [],
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "objects": [
+    {
+      "object_id": "cone-a",
+      "bind": "cone",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "cone-a",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "cone-a",
+      "quantity": "volume",
+      "api": "vs.ObjVolume",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "cone-a",
+      "quantity": "area",
+      "api": "vs.ObjSurfaceArea",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "cone-a",
+      "quantity": "transform4x4",
+      "api": "vs.GetEntityMatrix",
+      "frame": "object_local"
+    }
+  ],
+  "expected_relationships": [],
+  "dependencies": [],
+  "exclude_profiles": []
+}

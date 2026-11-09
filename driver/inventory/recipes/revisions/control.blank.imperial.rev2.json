@@ -1,0 +1,66 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "control.blank.imperial",
+  "family_id": "control.blank",
+  "recipe_revision": "2",
+  "supersedes": {
+    "recipe_revision": "1",
+    "recipe_sha256": "5e38990d5162fb4242dedd79a38dd2fd6df838d5899bc083ffbcd672efb4ee5f"
+  },
+  "universe": "controlled",
+  "title": "Blank document with inch units",
+  "mechanism": null,
+  "blank_control": null,
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_document"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.SetUnits",
+      "args": [
+        4096,
+        64,
+        3,
+        1.0,
+        "\"",
+        "sq ft"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [],
+  "queries": [
+    {
+      "object_id": "document",
+      "quantity": "count",
+      "api": "vs.Count",
+      "frame": "document_world",
+      "component": "objects"
+    },
+    {
+      "object_id": "document",
+      "quantity": "name",
+      "api": "vs.GetFName",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "A blank control has no geometry.",
+  "notes": [
+    "vs.SetUnits argument values follow the SetUnits docs example. Their effect on the installed release is unverified."
+  ]
+}

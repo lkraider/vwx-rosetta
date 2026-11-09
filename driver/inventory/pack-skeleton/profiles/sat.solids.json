@@ -1,0 +1,21 @@
+{
+  "profile_id": "sat.solids",
+  "profile_revision": "1",
+  "format": "sat",
+  "format_revision": "unverified",
+  "scope": "solid",
+  "options": {
+    "solid_as_surface": false,
+    "sat_version": null
+  },
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "solid",
+      "nurbs"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "vs.ExportSAT(filePath, solidAsSurface=False)."
+}

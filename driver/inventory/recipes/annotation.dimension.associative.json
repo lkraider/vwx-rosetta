@@ -1,0 +1,109 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.dimension.associative",
+  "family_id": "annotation.dimension",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "A linear dimension associated with the bottom edge of a rectangle",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          20
+        ],
+        [
+          40,
+          0
+        ]
+      ],
+      "bind": "ra",
+      "name": "rect-a"
+    },
+    {
+      "op": "create",
+      "api": "vs.LinearDim",
+      "args": [
+        [
+          0,
+          0
+        ],
+        [
+          40,
+          0
+        ],
+        -8,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bind": "dm",
+      "name": "dim-assoc"
+    },
+    {
+      "op": "call",
+      "api": "vs.AssociateLinearDimension",
+      "args": [
+        "$dm",
+        false
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-a",
+      "bind": "ra",
+      "role": "context"
+    },
+    {
+      "object_id": "dim-assoc",
+      "bind": "dm",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-assoc",
+      "quantity": "name",
+      "api": "vs.GetDimText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-assoc",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "The dimension end points are the bottom corners of rect-a. A probe scaled the rectangle after the call, and vs.GetDimText stayed 20 within the same script. The association itself is not proven."
+  ]
+}

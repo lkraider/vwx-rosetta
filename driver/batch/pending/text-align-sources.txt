@@ -1,0 +1,2 @@
+# A .vwx reader's text alignment: the source of annotation.text.align.
+annotation.text.align

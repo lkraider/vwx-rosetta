@@ -1,0 +1,78 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "planar.arc.true",
+  "family_id": "planar.arc",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Arc by centre (31.25, 18.5), radius 12.75, from 17.5 degrees sweeping 233.25 degrees",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.ArcByCenter",
+      "args": [
+        31.25,
+        18.5,
+        12.75,
+        17.5,
+        233.25
+      ],
+      "bind": "arc",
+      "name": "arc-true"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "arc-true",
+      "bind": "arc",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "arc-true",
+      "quantity": "angle",
+      "api": "vs.GetArc",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "arc-true",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "arc-true",
+      "quantity": "length",
+      "api": "vs.HLength",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "arc-true",
+      "quantity": "topology_counts",
+      "api": "vs.GetTypeN",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "planar.arc.asym draws with vs.Arc and stores a polyline (type 21). This case checks that vs.ArcByCenter stores an arc. After rosetta_save_reopen vs.GetTypeN of arc-true must be 6. When it is 21, the case needs the Arc tool."
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "solid.tapered_extrude.circle",
+  "family_id": "solid.tapered_extrude",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Tapered extrude of a circle at 12.5 degrees, 16.25 high",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Oval",
+      "args": [
+        [
+          3.75,
+          17.25
+        ],
+        [
+          16.25,
+          4.75
+        ]
+      ],
+      "bind": "pr",
+      "name": "profile-a"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateTaperedExtrude",
+      "args": [
+        "$pr",
+        12.5,
+        16.25
+      ],
+      "bind": "tx",
+      "name": "tapered-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "tapered-a",
+      "bind": "tx",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "tapered-a",
+      "quantity": "volume",
+      "api": "vs.ObjVolume",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "tapered-a",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "A curved solid held as a profile, an angle and a height."
+  ]
+}

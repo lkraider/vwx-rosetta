@@ -1,0 +1,3 @@
+step	driver	format	profile	cases	options	expect	ext
+dxf.all-content	ui	dxf	dxf.all-content	container.layer.hidden_design,container.symbol.hidden_class_2d,container.symbol.hidden_class_3d,container.symbol.hybrid_hidden_2d,container.group.hidden_class_member_visible,plugin.hidden_class,container.layer.sheet_hidden_class	--unlisted	install	dxf
+dxf.top-plan	ui	dxf	dxf.top-plan	container.layer.hidden_design,container.symbol.hidden_class_2d,container.symbol.hidden_class_3d,container.symbol.hybrid_hidden_2d,container.group.hidden_class_member_visible,plugin.hidden_class,container.layer.sheet_hidden_class	--unlisted	install	dxf

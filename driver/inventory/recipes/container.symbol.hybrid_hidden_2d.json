@@ -1,0 +1,254 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "container.symbol.hybrid_hidden_2d",
+  "family_id": "container.symbol",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Hybrid symbol whose 2D rectangle is in a hidden class and whose 3D extrude is visible",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "question": "M4"
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Hidden-H"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Visible-V"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "None"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Rosetta-Hybrid-H2D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          600
+        ],
+        [
+          1000,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "r2",
+      "name": "hyb-2d-hidden",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$r2",
+        "Rosetta-Hidden-H"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        800
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          100,
+          500
+        ],
+        [
+          900,
+          100
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndXtrd",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "x3",
+      "name": "hyb-3d-visible",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$x3",
+        "Rosetta-Visible-V"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.Symbol",
+      "args": [
+        "Rosetta-Hybrid-H2D",
+        [
+          500,
+          1500
+        ],
+        0
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "hi",
+      "name": "hybrid-inst",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$hi",
+        "None"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.HideClass",
+      "args": [
+        "Rosetta-Hidden-H"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Oval",
+      "args": [
+        [
+          3000,
+          400
+        ],
+        [
+          3800,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "ctl",
+      "name": "control-visible",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$ctl",
+        "Rosetta-Visible-V"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "hybrid-inst",
+      "bind": "hi",
+      "role": "primary"
+    },
+    {
+      "object_id": "hyb-2d-hidden",
+      "bind": "r2",
+      "role": "dependency"
+    },
+    {
+      "object_id": "hyb-3d-visible",
+      "bind": "x3",
+      "role": "dependency"
+    },
+    {
+      "object_id": "control-visible",
+      "bind": "ctl",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "hybrid-inst",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "hyb-2d-hidden",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "hyb-3d-visible",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "control-visible",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "ix.mech.hybrid-2d-3d-class-override hides the 3D class. This case hides the 2D class.",
+    "control-visible is an oval in Rosetta-Visible-V outside the symbol. It shows that the export ran when the symbol writes nothing."
+  ]
+}

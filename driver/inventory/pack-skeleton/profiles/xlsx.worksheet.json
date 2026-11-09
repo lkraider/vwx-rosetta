@@ -1,0 +1,17 @@
+{
+  "profile_id": "xlsx.worksheet",
+  "profile_revision": "1",
+  "format": "xlsx",
+  "format_revision": "unverified",
+  "scope": "table",
+  "options": {},
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "table"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "Worksheet export as XLSX."
+}

@@ -1,0 +1,173 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.worksheet.database",
+  "family_id": "annotation.worksheet",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Worksheet with a database row for every rectangle, placed on the drawing",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          20
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "r1",
+      "name": "rect-a",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          40,
+          10
+        ],
+        [
+          50,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "r2",
+      "name": "rect-b",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateWS",
+      "args": [
+        "Rosetta-WS-DB",
+        4,
+        3
+      ],
+      "bind": "ws",
+      "name": "Rosetta-WS-DB",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetWSCellFormula",
+      "args": [
+        "$ws",
+        1,
+        1,
+        1,
+        1,
+        "Area"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetWSCellFormula",
+      "args": [
+        "$ws",
+        2,
+        0,
+        2,
+        0,
+        "=DATABASE((T=RECT))"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetWSCellFormula",
+      "args": [
+        "$ws",
+        2,
+        1,
+        2,
+        1,
+        "=AREA"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.RecalculateWS",
+      "args": [
+        "$ws"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateWSImage",
+      "args": [
+        "$ws",
+        [
+          24.5,
+          61.25
+        ]
+      ],
+      "bind": "wi",
+      "name": "ws-image-db",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-a",
+      "bind": "r1",
+      "role": "primary"
+    },
+    {
+      "object_id": "rect-b",
+      "bind": "r2",
+      "role": "primary"
+    },
+    {
+      "object_id": "ws-image-db",
+      "bind": "wi",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "ws-image-db",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Stage 2.5 source for the row annotation.worksheet.database of driver/export-inventory-input/gaps.tsv.",
+    "Column 0 of a row is its header. The formula =DATABASE(criteria) there makes the row a database row.",
+    "The recipe has no read-back call. The census of the source shows whether td60 and td61 appear."
+  ]
+}

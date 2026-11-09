@@ -1,0 +1,121 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.bitmap.rotated_cropped",
+  "family_id": "annotation.bitmap",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Image cropped by a circle and rotated 30 degrees",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "bitmap.asym-png",
+      "kind": "other",
+      "acquisition_state": "acquired",
+      "path": "fixtures/bitmap-asym.png",
+      "sha256": "05e3c1edef9f6ecb99652505e6320b2568adbccd6a5d2c5d11bb389d7a78fe00",
+      "license": "Generated in this repository by fixtures/make_bitmap.py. It holds no third-party content.",
+      "source": "fixtures/make_bitmap.py"
+    }
+  ],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.ImportImageFile",
+      "args": [
+        {
+          "dependency": "bitmap.asym-png"
+        },
+        [
+          12.5,
+          -7.25
+        ]
+      ],
+      "bind": "img",
+      "name": "bitmap-rotated-cropped",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.ArcByCenter",
+      "args": [
+        12.5,
+        -7.25,
+        2.75,
+        0,
+        360
+      ],
+      "bind": "cr",
+      "name": null
+    },
+    {
+      "op": "call",
+      "api": "vs.SetImageCropObject",
+      "args": [
+        "$img",
+        "$cr"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetImageCropVisible",
+      "args": [
+        "$img",
+        true
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.HRotate",
+      "args": [
+        "$img",
+        [
+          12.5,
+          -7.25
+        ],
+        30
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "bitmap-rotated-cropped",
+      "bind": "img",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "bitmap-rotated-cropped",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "bitmap-rotated-cropped",
+      "quantity": "count",
+      "api": "vs.IsImageCropped",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "The image is fixtures/bitmap-asym.png of annotation.bitmap.asym, 23 by 17 pixels. The crop circle has its centre on the import point. When the import point is a corner of the image, the crop keeps a quarter circle, which still differs from the full rectangle.",
+    "The crop is set before the rotation. vs.SetImageCropObject returns True when it takes the circle."
+  ]
+}

@@ -1,0 +1,6 @@
+step	driver	format	profile	cases	options	expect	ext
+# A .vwx reader's question 4: one Vectorworks hatch case and one true-colour case. The default rows give the baseline for each option row.
+opt-default	ui	dxf	dxf.opt.default	resource.hatch.placed	--unlisted	install	dxf
+opt-default	ui	dxf	dxf.opt.default	option.pen_fill_colour	--unlisted	install	dxf
+opt-hatches-off	ui	dxf	dxf.opt.hatches-off	resource.hatch.placed	--unlisted	install	dxf
+opt-indexed-colors	ui	dxf	dxf.opt.indexed-colors	option.pen_fill_colour	--unlisted	install	dxf

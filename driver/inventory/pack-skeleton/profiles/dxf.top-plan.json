@@ -1,0 +1,37 @@
+{
+  "profile_id": "dxf.top-plan",
+  "profile_revision": "1",
+  "format": "dxf",
+  "format_revision": "unverified",
+  "scope": "drawing",
+  "options": {
+    "dxf_version": "2018",
+    "layer_scope": "all_visible_design_layers",
+    "export_3d_as": "acis_solids",
+    "classes_as_layers": false,
+    "view": "top_plan"
+  },
+  "state_overrides": {
+    "hidden_content": "as_saved"
+  },
+  "applicability": {
+    "requires_any": [
+      "2d",
+      "3d",
+      "annotation",
+      "container",
+      "solid",
+      "nurbs",
+      "mesh",
+      "text"
+    ],
+    "excludes": []
+  },
+  "inferred": {
+    "dxf_version": "2018: $ACADVER AC1032 in the header of a project DWG that Vectorworks 2023 wrote",
+    "export_3d_as": "acis_solids: the model space of a project DWG that Vectorworks wrote holds 3DSOLID entities",
+    "classes_as_layers": "false: a project DWG that Vectorworks wrote names its DXF layers after design layers"
+  },
+  "verification": "unverified",
+  "purpose": "DXF in the Top/Plan view with one DXF layer per design layer and the saved visibility state. It is the route of a .vwx reader's plan-view goldens."
+}

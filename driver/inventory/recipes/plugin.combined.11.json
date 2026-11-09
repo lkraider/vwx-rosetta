@@ -1,0 +1,1634 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "plugin.combined.11",
+  "family_id": "plugin.combined",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "30 plug-in objects, each on its own layer and class",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "cell_mm": 3874.0,
+    "plugins": [
+      {
+        "plugin": "Leader Line",
+        "call": "CreateCustomObjectN",
+        "width": 635.5,
+        "height": 25.4
+      },
+      {
+        "plugin": "Rafter",
+        "call": "CreateCustomObjectN",
+        "width": 647.7,
+        "height": 38.1
+      },
+      {
+        "plugin": "Incandescent Fixture",
+        "call": "CreateCustomObjectN",
+        "width": 254.0,
+        "height": 673.1
+      },
+      {
+        "plugin": "Feature Control Frame",
+        "call": "CreateCustomObjectN",
+        "width": 702.3,
+        "height": 203.2
+      },
+      {
+        "plugin": "Reference Marker",
+        "call": "CreateCustomObjectN",
+        "width": 740.8,
+        "height": 635.0
+      },
+      {
+        "plugin": "HVAC Elbow Duct",
+        "call": "CreateCustomObjectN",
+        "width": 655.2,
+        "height": 759.3
+      },
+      {
+        "plugin": "HVAC Splitter",
+        "call": "CreateCustomObjectN",
+        "width": 685.8,
+        "height": 762.0
+      },
+      {
+        "plugin": "Scale Bar",
+        "call": "CreateCustomObjectN",
+        "width": 390.9,
+        "height": 792.0
+      },
+      {
+        "plugin": "Adjacency Score",
+        "call": "CreateCustomObjectN",
+        "width": 792.5,
+        "height": 241.3
+      },
+      {
+        "plugin": "Shelving Unit",
+        "call": "CreateCustomObjectN",
+        "width": 900.0,
+        "height": 300.0
+      },
+      {
+        "plugin": "HVAC Straight Duct",
+        "call": "CreateCustomObjectN",
+        "width": 914.4,
+        "height": 406.4
+      },
+      {
+        "plugin": "North Arrow",
+        "call": "CreateCustomObjectN",
+        "width": 635.0,
+        "height": 935.3
+      },
+      {
+        "plugin": "Surface Texture Symbol",
+        "call": "CreateCustomObjectN",
+        "width": 974.7,
+        "height": 522.1
+      },
+      {
+        "plugin": "Base Cabinet",
+        "call": "CreateCustomObjectN",
+        "width": 1000.0,
+        "height": 570.0
+      },
+      {
+        "plugin": "Fireplace",
+        "call": "CreateCustomObjectN",
+        "width": 1066.8,
+        "height": 609.6
+      },
+      {
+        "plugin": "Welding Sym-Groove (ISO)",
+        "call": "CreateCustomObjectN",
+        "width": 1070.4,
+        "height": 664.6
+      },
+      {
+        "plugin": "Grab Bars",
+        "call": "CreateCustomObjectN",
+        "width": 1000.0,
+        "height": 1150.0
+      },
+      {
+        "plugin": "Counter Top",
+        "call": "CreateCustomObjectN",
+        "width": 1200.0,
+        "height": 600.0
+      },
+      {
+        "plugin": "Workstation Counter",
+        "call": "CreateCustomObjectN",
+        "width": 1200.0,
+        "height": 600.0
+      },
+      {
+        "plugin": "Workstation Overhead",
+        "call": "CreateCustomObjectN",
+        "width": 1200.0,
+        "height": 400.8
+      },
+      {
+        "plugin": "Workstation Panel",
+        "call": "CreateCustomObjectN",
+        "width": 1200.0,
+        "height": 50.0
+      },
+      {
+        "plugin": "Camera Match Reference",
+        "call": "CreateCustomObjectN",
+        "width": 1219.2,
+        "height": 1219.2
+      },
+      {
+        "plugin": "WindowWall(Straight)",
+        "call": "CreateCustomObjectN",
+        "width": 1219.2,
+        "height": 152.4
+      },
+      {
+        "plugin": "Welding Sym-Groove (AWS)",
+        "call": "CreateCustomObjectN",
+        "width": 1227.3,
+        "height": 601.1
+      },
+      {
+        "plugin": "Welding Sym-Flange (ISO)",
+        "call": "CreateCustomObjectN",
+        "width": 1264.3,
+        "height": 630.8
+      },
+      {
+        "plugin": "Flowchart Node",
+        "call": "CreateCustomObjectN",
+        "width": 1270.0,
+        "height": 952.5
+      },
+      {
+        "plugin": "Grid Bubble",
+        "call": "CreateCustomObjectN",
+        "width": 635.0,
+        "height": 1282.0
+      },
+      {
+        "plugin": "Welding Sym-Misc (AWS)",
+        "call": "CreateCustomObjectN",
+        "width": 1304.0,
+        "height": 572.9
+      },
+      {
+        "plugin": "Room Name Simple",
+        "call": "CreateCustomObjectN",
+        "width": 1391.0,
+        "height": 999.1
+      },
+      {
+        "plugin": "Welding Sym-Fillet (AWS)",
+        "call": "CreateCustomObjectN",
+        "width": 1437.0,
+        "height": 254.0
+      }
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.Leader Line",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Rafter",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Incandescent Fixture",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Feature Control Frame",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Reference Marker",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.HVAC Elbow Duct",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.HVAC Splitter",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Scale Bar",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Adjacency Score",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Shelving Unit",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.HVAC Straight Duct",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.North Arrow",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Surface Texture Symbol",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Base Cabinet",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Fireplace",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Welding Sym-Groove (ISO)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Grab Bars",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Counter Top",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Workstation Counter",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Workstation Overhead",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Workstation Panel",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Camera Match Reference",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.WindowWall(Straight)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Welding Sym-Groove (AWS)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Welding Sym-Flange (ISO)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Flowchart Node",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Grid Bubble",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Welding Sym-Misc (AWS)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Room Name Simple",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    },
+    {
+      "dependency_id": "plugin.Welding Sym-Fillet (AWS)",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectN."
+    }
+  ],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Leader Line"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Leader Line"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Leader Line",
+        [
+          1937.0,
+          -1937.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o00",
+      "name": "obj-00",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Rafter"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Rafter"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Rafter",
+        [
+          5811.0,
+          -1937.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o01",
+      "name": "obj-01",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Incandescent Fixture"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Incandescent Fixture"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Incandescent Fixture",
+        [
+          9685.0,
+          -1937.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o02",
+      "name": "obj-02",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Feature Control Frame"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Feature Control Frame"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Feature Control Frame",
+        [
+          13559.0,
+          -1937.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o03",
+      "name": "obj-03",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Reference Marker"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Reference Marker"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Reference Marker",
+        [
+          17433.0,
+          -1937.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o04",
+      "name": "obj-04",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-HVAC Elbow Duct"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-HVAC Elbow Duct"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "HVAC Elbow Duct",
+        [
+          21307.0,
+          -1937.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o05",
+      "name": "obj-05",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-HVAC Splitter"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-HVAC Splitter"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "HVAC Splitter",
+        [
+          1937.0,
+          -5811.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o06",
+      "name": "obj-06",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Scale Bar"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Scale Bar"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Scale Bar",
+        [
+          5811.0,
+          -5811.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o07",
+      "name": "obj-07",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Adjacency Score"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Adjacency Score"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Adjacency Score",
+        [
+          9685.0,
+          -5811.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o08",
+      "name": "obj-08",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Shelving Unit"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Shelving Unit"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Shelving Unit",
+        [
+          13559.0,
+          -5811.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o09",
+      "name": "obj-09",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-HVAC Straight Duct"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-HVAC Straight Duct"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "HVAC Straight Duct",
+        [
+          17433.0,
+          -5811.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o10",
+      "name": "obj-10",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-North Arrow"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-North Arrow"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "North Arrow",
+        [
+          21307.0,
+          -5811.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o11",
+      "name": "obj-11",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Surface Texture Symbol"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Surface Texture Symbol"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Surface Texture Symbol",
+        [
+          1937.0,
+          -9685.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o12",
+      "name": "obj-12",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Base Cabinet"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Base Cabinet"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Base Cabinet",
+        [
+          5811.0,
+          -9685.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o13",
+      "name": "obj-13",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Fireplace"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Fireplace"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Fireplace",
+        [
+          9685.0,
+          -9685.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o14",
+      "name": "obj-14",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Welding Sym-Groove (ISO)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Welding Sym-Groove (ISO)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Welding Sym-Groove (ISO)",
+        [
+          13559.0,
+          -9685.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o15",
+      "name": "obj-15",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Grab Bars"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Grab Bars"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Grab Bars",
+        [
+          17433.0,
+          -9685.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o16",
+      "name": "obj-16",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Counter Top"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Counter Top"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Counter Top",
+        [
+          21307.0,
+          -9685.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o17",
+      "name": "obj-17",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Workstation Counter"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Workstation Counter"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Workstation Counter",
+        [
+          1937.0,
+          -13559.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o18",
+      "name": "obj-18",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Workstation Overhead"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Workstation Overhead"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Workstation Overhead",
+        [
+          5811.0,
+          -13559.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o19",
+      "name": "obj-19",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Workstation Panel"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Workstation Panel"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Workstation Panel",
+        [
+          9685.0,
+          -13559.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o20",
+      "name": "obj-20",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Camera Match Reference"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Camera Match Reference"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Camera Match Reference",
+        [
+          13559.0,
+          -13559.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o21",
+      "name": "obj-21",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-WindowWall(Straight)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-WindowWall(Straight)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "WindowWall(Straight)",
+        [
+          17433.0,
+          -13559.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o22",
+      "name": "obj-22",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Welding Sym-Groove (AWS)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Welding Sym-Groove (AWS)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Welding Sym-Groove (AWS)",
+        [
+          21307.0,
+          -13559.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o23",
+      "name": "obj-23",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Welding Sym-Flange (ISO)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Welding Sym-Flange (ISO)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Welding Sym-Flange (ISO)",
+        [
+          1937.0,
+          -17433.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o24",
+      "name": "obj-24",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Flowchart Node"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Flowchart Node"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Flowchart Node",
+        [
+          5811.0,
+          -17433.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o25",
+      "name": "obj-25",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Grid Bubble"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Grid Bubble"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Grid Bubble",
+        [
+          9685.0,
+          -17433.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o26",
+      "name": "obj-26",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Welding Sym-Misc (AWS)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Welding Sym-Misc (AWS)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Welding Sym-Misc (AWS)",
+        [
+          13559.0,
+          -17433.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o27",
+      "name": "obj-27",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Room Name Simple"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Room Name Simple"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Room Name Simple",
+        [
+          17433.0,
+          -17433.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o28",
+      "name": "obj-28",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "pio-Welding Sym-Fillet (AWS)"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "pio-Welding Sym-Fillet (AWS)"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Welding Sym-Fillet (AWS)",
+        [
+          21307.0,
+          -17433.0
+        ],
+        0,
+        false
+      ],
+      "bind": "o29",
+      "name": "obj-29",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "obj-00",
+      "bind": "o00",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-01",
+      "bind": "o01",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-02",
+      "bind": "o02",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-03",
+      "bind": "o03",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-04",
+      "bind": "o04",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-05",
+      "bind": "o05",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-06",
+      "bind": "o06",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-07",
+      "bind": "o07",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-08",
+      "bind": "o08",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-09",
+      "bind": "o09",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-10",
+      "bind": "o10",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-11",
+      "bind": "o11",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-12",
+      "bind": "o12",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-13",
+      "bind": "o13",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-14",
+      "bind": "o14",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-15",
+      "bind": "o15",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-16",
+      "bind": "o16",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-17",
+      "bind": "o17",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-18",
+      "bind": "o18",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-19",
+      "bind": "o19",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-20",
+      "bind": "o20",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-21",
+      "bind": "o21",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-22",
+      "bind": "o22",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-23",
+      "bind": "o23",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-24",
+      "bind": "o24",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-25",
+      "bind": "o25",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-26",
+      "bind": "o26",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-27",
+      "bind": "o27",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-28",
+      "bind": "o28",
+      "role": "primary"
+    },
+    {
+      "object_id": "obj-29",
+      "bind": "o29",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "obj-00",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-01",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-02",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-03",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-04",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-05",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-06",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-07",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-08",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-09",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-10",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-11",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-12",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-13",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-14",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-15",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-16",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-17",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-18",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-19",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-20",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-21",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-22",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-23",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-24",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-25",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-26",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-27",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-28",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "obj-29",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Object obj-NN is plugins[NN] of parameters. Its layer and its class are named pio- and the plug-in name, so an export entity on that layer or class comes from that object.",
+    "Each object sits at the centre of a grid cell of cell_mm. A path object follows the path kind of its probe row: an open path of three points or a closed square, inside its cell.",
+    "Plug-ins: Leader Line, Rafter, Incandescent Fixture, Feature Control Frame, Reference Marker, HVAC Elbow Duct, HVAC Splitter, Scale Bar, Adjacency Score, Shelving Unit, HVAC Straight Duct, North Arrow, Surface Texture Symbol, Base Cabinet, Fireplace, Welding Sym-Groove (ISO), Grab Bars, Counter Top, Workstation Counter, Workstation Overhead, Workstation Panel, Camera Match Reference, WindowWall(Straight), Welding Sym-Groove (AWS), Welding Sym-Flange (ISO), Flowchart Node, Grid Bubble, Welding Sym-Misc (AWS), Room Name Simple, Welding Sym-Fillet (AWS).",
+    "obj-03 (Feature Control Frame) is in class Dimension. Its layer is pio- and the plug-in name."
+  ]
+}

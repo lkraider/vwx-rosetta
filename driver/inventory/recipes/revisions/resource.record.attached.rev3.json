@@ -1,0 +1,132 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "resource.record.attached",
+  "family_id": "resource.record_format",
+  "recipe_revision": "3",
+  "supersedes": {
+    "recipe_revision": "2",
+    "recipe_sha256": "d36c35969b286c321c23d641d31601eab8d3ff9aa3f7debf45cce6bd3a1f129f"
+  },
+  "universe": "controlled",
+  "title": "Record format with two fields attached to a rectangle",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "nominal_bounds": [
+      [
+        2.5,
+        6
+      ],
+      [
+        19,
+        14.75
+      ]
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.NewField",
+      "args": [
+        "Rosetta-Rec",
+        "Code",
+        "R-17",
+        4,
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NewField",
+      "args": [
+        "Rosetta-Rec",
+        "Count",
+        "3",
+        1,
+        0
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          2.5,
+          14.75
+        ],
+        [
+          19,
+          6
+        ]
+      ],
+      "bind": "r",
+      "name": "rect-rec"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetRecord",
+      "args": [
+        "$r",
+        "Rosetta-Rec"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetRField",
+      "args": [
+        "$r",
+        "Rosetta-Rec",
+        "Code",
+        "Ü-42"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-rec",
+      "bind": "r",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-rec",
+      "quantity": "name",
+      "api": "vs.GetRField",
+      "frame": "document_world",
+      "args": [
+        {
+          "handle": "object"
+        },
+        "Rosetta-Rec",
+        "Code"
+      ]
+    },
+    {
+      "object_id": "rect-rec",
+      "quantity": "count",
+      "api": "vs.NumRecords",
+      "frame": "document_world",
+      "component": "records"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "fType 4 text and 1 integer are unverified field type codes."
+  ]
+}

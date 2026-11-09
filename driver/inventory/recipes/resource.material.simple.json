@@ -1,0 +1,116 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "resource.material.simple",
+  "family_id": "resource.material",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Simple material assigned to an extrude",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "nominal_bounds": [
+      [
+        4,
+        2,
+        0
+      ],
+      [
+        18.5,
+        11.25,
+        6.75
+      ]
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateMaterial",
+      "args": [
+        "Rosetta-Material",
+        true
+      ],
+      "bind": "mt",
+      "name": "Rosetta-Material",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        6.75
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          4,
+          11.25
+        ],
+        [
+          18.5,
+          2
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndXtrd",
+      "args": [],
+      "bind": "ex",
+      "name": "extrude-mat"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjMaterialHandle",
+      "args": [
+        "$ex",
+        "$mt"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "Rosetta-Material",
+      "bind": "mt",
+      "role": "primary"
+    },
+    {
+      "object_id": "extrude-mat",
+      "bind": "ex",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "extrude-mat",
+      "quantity": "name",
+      "api": "vs.GetObjMaterialName",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "material_of",
+      "object_id": "extrude-mat",
+      "material": "Rosetta-Material"
+    }
+  ],
+  "exclude_profiles": []
+}

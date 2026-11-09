@@ -1,0 +1,160 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "planar.polygon.from_polyline",
+  "family_id": "planar.polygon_from_conversion",
+  "recipe_revision": "2",
+  "supersedes": {
+    "recipe_revision": "1",
+    "recipe_sha256": "3a099bd56c073554b942fbc85fbd1a114076755c87a778edd98e98f83a2b04a0"
+  },
+  "universe": "controlled",
+  "title": "Polyline converted by vs.ConvertToPolygon",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "recipe_checkpoint"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.Add2DVertex",
+      "args": [
+        [
+          5.5,
+          3.25
+        ],
+        0,
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add2DVertex",
+      "args": [
+        [
+          44,
+          9.75
+        ],
+        3,
+        7.5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add2DVertex",
+      "args": [
+        [
+          38.25,
+          31
+        ],
+        1,
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add2DVertex",
+      "args": [
+        [
+          12.75,
+          24.5
+        ],
+        4,
+        3.25
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add2DVertex",
+      "args": [
+        [
+          -2.5,
+          14
+        ],
+        0,
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.OpenPoly",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.EndPoly",
+      "args": [],
+      "bind": "pl",
+      "name": "polyline-src"
+    },
+    {
+      "op": "checkpoint",
+      "id": "before-convert"
+    },
+    {
+      "op": "create",
+      "api": "vs.ConvertToPolygon",
+      "args": [
+        "$pl",
+        16
+      ],
+      "bind": "cv",
+      "name": "poly-converted",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "poly-converted",
+      "bind": "cv",
+      "role": "primary"
+    },
+    {
+      "object_id": "polyline-src",
+      "bind": "pl",
+      "role": "dependency"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "poly-converted",
+      "quantity": "count",
+      "api": "vs.GetVertNum",
+      "frame": "document_world",
+      "component": "vertices"
+    },
+    {
+      "object_id": "poly-converted",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "converted_from",
+      "object_id": "poly-converted",
+      "source": "polyline-src",
+      "api": "vs.ConvertToPolygon"
+    }
+  ],
+  "exclude_profiles": []
+}

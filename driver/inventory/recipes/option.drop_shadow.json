@@ -1,0 +1,177 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "option.drop_shadow",
+  "family_id": "option.drop_shadow",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Drop shadow on a rectangle and on a polygon",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          2.5,
+          21.25
+        ],
+        [
+          33.75,
+          4.5
+        ]
+      ],
+      "bind": "rr",
+      "name": "rect-shadow"
+    },
+    {
+      "op": "call",
+      "api": "vs.EnableDropShadow",
+      "args": [
+        "$rr",
+        true
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetDropShadowData",
+      "args": [
+        "$rr",
+        1,
+        2.5,
+        1.5,
+        315,
+        60,
+        [
+          8738,
+          8738,
+          26214
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          41.25,
+          3.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          72.75,
+          6.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          66.5,
+          27.75
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          47,
+          22.5
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndPoly",
+      "args": [],
+      "bind": "pg",
+      "name": "polygon-shadow"
+    },
+    {
+      "op": "call",
+      "api": "vs.EnableDropShadow",
+      "args": [
+        "$pg",
+        true
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetDropShadowData",
+      "args": [
+        "$pg",
+        0,
+        0.05,
+        0.03,
+        30,
+        85,
+        [
+          52428,
+          4369,
+          30583
+        ]
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-shadow",
+      "bind": "rr",
+      "role": "primary"
+    },
+    {
+      "object_id": "polygon-shadow",
+      "bind": "pg",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-shadow",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "polygon-shadow",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.py names the vs.SetDropShadowData arguments and gives no unit codes. rect-shadow passes units 1 with a 2.5 offset, 1.5 blur, angle 315 and opacity 60. polygon-shadow passes units 0 with a 0.05 offset, 0.03 blur, angle 30 and opacity 85. The source census reads the stored kDropShadowNode (td101) fields, so the live run shows which unit code is world and which is page.",
+    "In the read run of 2026-10-19, vs.GetDropShadowData returned the values each call passed, units 1 and 0 included. The read names no unit, so which code is world and which is page is still open."
+  ]
+}

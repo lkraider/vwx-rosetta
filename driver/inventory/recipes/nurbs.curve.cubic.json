@@ -1,0 +1,143 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "nurbs.curve.cubic",
+  "family_id": "nurbs.curve",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Cubic NURBS curve by control points with one weight changed",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateNurbsCurve",
+      "args": [
+        [
+          2.5,
+          1.25,
+          0.5
+        ],
+        true,
+        3
+      ],
+      "bind": "nc",
+      "name": "nurbs-curve-a",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$nc",
+        [
+          14.75,
+          9.5,
+          3.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$nc",
+        [
+          27,
+          -4.25,
+          7.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$nc",
+        [
+          41.5,
+          12,
+          1.75
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$nc",
+        [
+          53.25,
+          3.5,
+          11
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetWeight",
+      "args": [
+        "$nc",
+        0,
+        2,
+        2.75
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "nurbs-curve-a",
+      "bind": "nc",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "nurbs-curve-a",
+      "quantity": "control_points",
+      "api": "vs.NurbsGetPt3D",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "nurbs-curve-a",
+      "quantity": "weights",
+      "api": "vs.NurbsGetWeight",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "nurbs-curve-a",
+      "quantity": "knots",
+      "api": "vs.NurbsKnot",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "nurbs-curve-a",
+      "quantity": "count",
+      "api": "vs.NurbsDegree",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "nurbs-curve-a",
+      "quantity": "domain",
+      "api": "vs.NurbsCurveEvalPt",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

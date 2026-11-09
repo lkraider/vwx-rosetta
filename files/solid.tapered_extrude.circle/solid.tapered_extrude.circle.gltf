@@ -1,0 +1,164 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.2.83d4ab85)"
+    },
+    "extensionsUsed": [
+        "KHR_materials_volume",
+        "FB_ngon_encoding"
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 210,
+            "type": "VEC3",
+            "max": [
+                0.00624999962747097,
+                0.008937499485909939,
+                0.0062500000931322578
+            ],
+            "min": [
+                -0.00624999962747097,
+                -0.0073124999180436138,
+                -0.00624999962747097
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 210,
+            "type": "VEC3",
+            "max": [
+                0.9762960076332092,
+                1.0,
+                0.9762960076332092
+            ],
+            "min": [
+                -0.9762960076332092,
+                -1.0,
+                -0.9762960076332092
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 210,
+            "type": "VEC2",
+            "max": [
+                16.25,
+                1.0
+            ],
+            "min": [
+                3.75,
+                -15.25
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 474,
+            "type": "SCALAR",
+            "max": [
+                209
+            ],
+            "min": [
+                0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 8616,
+            "uri": "solid.tapered_extrude.circle.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 2520,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 2520,
+            "byteLength": 2520,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 5040,
+            "byteLength": 1680,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 6720,
+            "byteLength": 1896,
+            "target": 34963
+        }
+    ],
+    "materials": [
+        {
+            "name": "material",
+            "pbrMetallicRoughness": {
+                "metallicFactor": 0.0
+            },
+            "doubleSided": true
+        }
+    ],
+    "meshes": [
+        {
+            "name": "..",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "$MergedNode_0",
+            "matrix": [
+                1.0,
+                0.0,
+                -0.0,
+                0.0,
+                0.0,
+                1.0,
+                -0.0,
+                0.0,
+                -0.0,
+                -0.0,
+                1.0,
+                -0.0,
+                0.009999999776482582,
+                0.0073124999180436138,
+                -0.010999999940395356,
+                1.0
+            ],
+            "mesh": 0
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0
+}

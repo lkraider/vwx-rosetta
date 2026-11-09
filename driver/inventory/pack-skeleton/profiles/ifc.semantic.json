@@ -1,0 +1,24 @@
+{
+  "profile_id": "ifc.semantic",
+  "profile_revision": "1",
+  "format": "ifc",
+  "format_revision": "unverified",
+  "scope": "semantic",
+  "options": {
+    "ifc_schema": null,
+    "mvd": null
+  },
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "building",
+      "semantic"
+    ],
+    "excludes": [
+      "landscape",
+      "entertainment"
+    ]
+  },
+  "verification": "unverified",
+  "purpose": "vs.IFC_ExportNoUI for building objects."
+}

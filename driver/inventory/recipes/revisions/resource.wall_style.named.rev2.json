@@ -1,0 +1,123 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "resource.wall_style.named",
+  "family_id": "resource.wall_style",
+  "recipe_revision": "2",
+  "supersedes": {
+    "recipe_revision": "1",
+    "recipe_sha256": "108578bd5b302ab0e75c3c9b90da60c0c1bdef1a60bb6f36c0a73f0f7b1e90ff"
+  },
+  "universe": "controlled",
+  "title": "A straight wall drawn with the two-component Rosetta-WallStyle",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateWallStyle",
+      "args": [
+        "Rosetta-WallStyle"
+      ],
+      "bind": "wst",
+      "name": "Rosetta-WallStyle",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetComponentWidth",
+      "args": [
+        "$wst",
+        1,
+        60
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.InsertNewComponentN",
+      "args": [
+        "$wst",
+        2,
+        140,
+        3,
+        0,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Wall",
+      "args": [
+        [
+          0,
+          0
+        ],
+        [
+          300,
+          0
+        ]
+      ],
+      "bind": "w",
+      "name": "wall-styled"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetWallStyle",
+      "args": [
+        "$w",
+        "Rosetta-WallStyle",
+        0,
+        0
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "wall-styled",
+      "bind": "w",
+      "role": "primary"
+    },
+    {
+      "object_id": "Rosetta-WallStyle",
+      "bind": "wst",
+      "role": "resource"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "wall-styled",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "Rosetta-WallStyle",
+      "quantity": "name",
+      "api": "vs.GetName",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "A new wall style holds one component. vs.SetComponentWidth sets it to 60 mm. vs.InsertNewComponentN with index 2 adds a component of 140 mm, and index 0 adds none.",
+    "In Vectorworks 2027 the styled wall reads vs.GetBBox y -100 to 100, so it is 200 mm wide. vs.GetWallWidth reads 150 on the wall and on the style."
+  ]
+}

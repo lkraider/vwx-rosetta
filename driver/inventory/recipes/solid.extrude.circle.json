@@ -1,0 +1,83 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "solid.extrude.circle",
+  "family_id": "solid.extrude",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Extrude of a circle of diameter 11.5 from z 1.5 to 15.25",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        1.5,
+        15.25
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Oval",
+      "args": [
+        [
+          4.25,
+          18.5
+        ],
+        [
+          15.75,
+          7
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndXtrd",
+      "args": [],
+      "bind": "ex",
+      "name": "extrude-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "extrude-a",
+      "bind": "ex",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "extrude-a",
+      "quantity": "volume",
+      "api": "vs.ObjVolume",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "extrude-a",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "A curved solid held as a profile and a height."
+  ]
+}

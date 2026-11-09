@@ -1,0 +1,55 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "resource.slab_style.named",
+  "family_id": "resource.slab_style",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Named slab style",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateSlabStyle",
+      "args": [
+        "Rosetta-SlabStyle"
+      ],
+      "bind": "sst",
+      "name": "Rosetta-SlabStyle",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "Rosetta-SlabStyle",
+      "bind": "sst",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "Rosetta-SlabStyle",
+      "quantity": "name",
+      "api": "vs.GetName",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "A style resource has no geometry."
+}

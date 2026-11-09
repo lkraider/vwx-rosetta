@@ -1,0 +1,67 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "building.wall.straight",
+  "family_id": "building.wall",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Straight wall from (10.5, 4.25) to (312, 97.75)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Wall",
+      "args": [
+        [
+          10.5,
+          4.25
+        ],
+        [
+          312,
+          97.75
+        ]
+      ],
+      "bind": "w",
+      "name": "wall-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "wall-a",
+      "bind": "w",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "wall-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "wall-a",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

@@ -1,0 +1,111 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "entertainment.soft_goods.single",
+  "family_id": "entertainment.soft_goods",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Soft Goods plug-in object on an open 6000 path",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.soft-goods",
+      "kind": "plugin_object",
+      "acquisition_state": "pending",
+      "reason": "In plug-in probe document probe.plugins.L4-09, each create call returned no handle."
+    }
+  ],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.OpenPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          6000,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndPoly",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "pa",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectPath",
+      "args": [
+        "Soft Goods",
+        "$pa",
+        null
+      ],
+      "bind": "sg",
+      "name": "soft-goods-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "soft-goods-a",
+      "bind": "sg",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "soft-goods-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Stage 2.5 source for the row entertainment.soft_goods.single of driver/export-inventory-input/gaps.tsv.",
+    "No vs call is known to make this object. The Soft Goods tool is the other route."
+  ]
+}

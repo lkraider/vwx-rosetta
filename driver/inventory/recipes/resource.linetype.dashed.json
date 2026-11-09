@@ -1,0 +1,136 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "resource.linetype.dashed",
+  "family_id": "resource.linetype",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "A line and a rectangle drawn with the Rosetta-Dash line type",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.SetDashStyleN",
+      "args": [
+        "Rosetta-Dash",
+        false,
+        4,
+        0.1,
+        0.05,
+        0.02,
+        0.05
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Name2Index",
+      "args": [
+        "Rosetta-Dash"
+      ],
+      "bind": "lt",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.MoveTo",
+      "args": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LineTo",
+      "args": [
+        [
+          50,
+          0
+        ]
+      ],
+      "bind": "ln",
+      "name": "line-dashed"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLSN",
+      "args": [
+        "$ln",
+        "-$lt"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          30
+        ],
+        [
+          40,
+          10
+        ]
+      ],
+      "bind": "rd",
+      "name": "rect-dashed"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLSN",
+      "args": [
+        "$rd",
+        "-$lt"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "line-dashed",
+      "bind": "ln",
+      "role": "primary"
+    },
+    {
+      "object_id": "rect-dashed",
+      "bind": "rd",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "line-dashed",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "rect-dashed",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "The third argument of vs.SetDashStyleN counts the dash and gap values, so 4 gives two pairs. vs.Name2Index returns the index of Rosetta-Dash, and a negative index names a line type.",
+    "Rosetta-Dash has two dash and gap pairs, 0.1/0.05 and 0.02/0.05, that do not scale with line thickness."
+  ]
+}

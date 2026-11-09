@@ -1,0 +1,86 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "document.working_plane.tilted",
+  "family_id": "document.working_plane",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Working plane tilted about x with a 3D locus",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames",
+    "native_document"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.SetWorkingPlaneN",
+      "args": [
+        [
+          120.5,
+          -40.25,
+          15
+        ],
+        [
+          0,
+          0.6,
+          0.8
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Locus3D",
+      "args": [
+        [
+          3.5,
+          7.25,
+          0
+        ]
+      ],
+      "bind": "l3",
+      "name": "locus-wp"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "locus-wp",
+      "bind": "l3",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "document",
+      "quantity": "transform4x4",
+      "api": "vs.GetWorkingPlaneN",
+      "frame": "working_plane"
+    },
+    {
+      "object_id": "locus-wp",
+      "quantity": "point3",
+      "api": "vs.GetLocus3D",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

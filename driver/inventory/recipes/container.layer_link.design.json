@@ -1,0 +1,143 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "container.layer_link.design",
+  "family_id": "container.layer_link",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Layer link to a design layer holding an extrude",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "nominal_bounds": [
+      [
+        3,
+        2.5,
+        0
+      ],
+      [
+        21.75,
+        13,
+        8.5
+      ]
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Linked",
+        1
+      ],
+      "bind": "src",
+      "name": "Rosetta-Linked",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Linked"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        8.5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          3,
+          13
+        ],
+        [
+          21.75,
+          2.5
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndXtrd",
+      "args": [],
+      "bind": "ex",
+      "name": "linked-extrude"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Host",
+        1
+      ],
+      "bind": "hst",
+      "name": "Rosetta-Host",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Host"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LayerRef",
+      "args": [
+        "Rosetta-Linked"
+      ],
+      "bind": "lr",
+      "name": "layer-link-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "layer-link-a",
+      "bind": "lr",
+      "role": "primary"
+    },
+    {
+      "object_id": "linked-extrude",
+      "bind": "ex",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "layer-link-a",
+      "quantity": "topology_counts",
+      "api": "vs.GetTypeN",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "references_layer",
+      "object_id": "layer-link-a",
+      "layer": "Rosetta-Linked"
+    }
+  ],
+  "exclude_profiles": []
+}

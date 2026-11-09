@@ -1,0 +1,30 @@
+{
+  "profile_id": "dwg.all-content",
+  "profile_revision": "2",
+  "format": "dwg",
+  "format_revision": "unverified",
+  "scope": "drawing",
+  "options": {
+    "dwg_version": "2018",
+    "export_3d_as": "acis_solids",
+    "classes_as_layers": true
+  },
+  "state_overrides": {
+    "hidden_content": "show_all"
+  },
+  "applicability": {
+    "requires_any": [
+      "2d",
+      "3d",
+      "annotation",
+      "container",
+      "solid",
+      "nurbs",
+      "mesh",
+      "text"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "DWG with hidden classes and layers shown before export."
+}

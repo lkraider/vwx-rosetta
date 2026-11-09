@@ -1,0 +1,296 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "container.layer.frames_base",
+  "family_id": "container.layer",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Design layer L1 in Top/Plan with a box, a 3D symbol instance and a Section-Elevation Marker, Unified View off, and an empty sheet layer",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "view": "Top/Plan",
+    "standard_views_index": 1,
+    "var_stack_layers": 94
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.Section-Elevation Marker",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "The plug-in probe created it with vs.CreateCustomObjectPath on a closed path."
+    }
+  ],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "L1",
+        1
+      ],
+      "bind": "l1",
+      "name": "L1",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "L1"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetPref",
+      "args": [
+        94,
+        false
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        500
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          1000,
+          2500
+        ],
+        [
+          1500,
+          2000
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndXtrd",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "bx",
+      "name": "frames-box",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Rosetta-Frames-Sym"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        300
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          300
+        ],
+        [
+          300,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndXtrd",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.Symbol",
+      "args": [
+        "Rosetta-Frames-Sym",
+        [
+          3000,
+          0
+        ],
+        0
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "si",
+      "name": "frames-sym",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.ClosePoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          -1000,
+          -4000
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          1000,
+          -4000
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          1000,
+          -2000
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          -1000,
+          -2000
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndPoly",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "pa",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectPath",
+      "args": [
+        "Section-Elevation Marker",
+        "$pa",
+        null
+      ],
+      "bind": "se",
+      "name": "frames-section",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Sheet",
+        2
+      ],
+      "bind": "sl",
+      "name": "Rosetta-Sheet",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "L1"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "frames-box",
+      "bind": "bx",
+      "role": "primary"
+    },
+    {
+      "object_id": "frames-sym",
+      "bind": "si",
+      "role": "primary"
+    },
+    {
+      "object_id": "frames-section",
+      "bind": "se",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "frames-box",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "frames-sym",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "frames-section",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Question F1 of /Volumes/volxxxx/Caches/tmp/vwx-reader-tilt/VW-QUESTIONS.md, fixture of FRAMES.md section 3.",
+    "vs.SetPref(94, False) turns varStackLayers off, so L1 keeps its own view.",
+    "The base document stays in Top/Plan, the view of a new document.",
+    "The box corner is at (1000, 2000, 0) mm. The sheet layer Rosetta-Sheet is empty. Exports c and d of F1 make it active."
+  ]
+}

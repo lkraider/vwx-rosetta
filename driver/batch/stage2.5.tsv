@@ -1,0 +1,4 @@
+# Stage 2.5. Run make-sources.py --record --batch stage2.5 on the cases below that have a recipe before this plan runs.
+# option.linetype.complex, building.wall.with_door_window and plugin.combined.11-13 already hold the other gap cases. They had no DXF row.
+step	driver	format	profile	cases	options	expect	ext
+dxf.all-content	ui	dxf	dxf.all-content	annotation.title_block.single,annotation.worksheet.database,building.roof_face.single,building.stair.custom,entertainment.lighting_pipe.straight,spatial.sweep.pitch,document.polybreak,entertainment.seating_section.single,entertainment.lighting_device.plugin,entertainment.soft_goods.single,landscape.hardscape.single,landscape.plant.plugin,option.class.fill_texture,option.hatch.class_fill,spatial.extrude_along_path.single,spatial.tapered_extrude.single,spatial.floor.legacy,option.linetype.complex,building.wall.with_door_window,plugin.combined.11,plugin.combined.12,plugin.combined.13	--unlisted	install	dxf

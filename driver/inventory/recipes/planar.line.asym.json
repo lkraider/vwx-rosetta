@@ -1,0 +1,78 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "planar.line.asym",
+  "family_id": "planar.line",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Line from (12.5, 7.25) to (61, 33.5)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.MoveTo",
+      "args": [
+        [
+          12.5,
+          7.25
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LineTo",
+      "args": [
+        [
+          61,
+          33.5
+        ]
+      ],
+      "bind": "ln",
+      "name": "line-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "line-a",
+      "bind": "ln",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "line-a",
+      "quantity": "point3",
+      "api": "vs.GetSegPt1",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "line-a",
+      "quantity": "point3",
+      "api": "vs.GetSegPt2",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "line-a",
+      "quantity": "length",
+      "api": "vs.HLength",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

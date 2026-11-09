@@ -1,0 +1,210 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "option.fill.texture_on_extrude",
+  "family_id": "option.fill",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Default texture applied to an extrude and to a CSG solid",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateTexture",
+      "args": [],
+      "bind": "tx",
+      "name": "Rosetta-Texture",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.Name2Index",
+      "args": [
+        "Rosetta-Texture"
+      ],
+      "bind": "tr",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        12.5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          3.25,
+          18.75
+        ],
+        [
+          27.5,
+          2.25
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndXtrd",
+      "args": [],
+      "bind": "ex",
+      "name": "extrude-textured"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextureRefN",
+      "args": [
+        "$ex",
+        "$tr",
+        3,
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTexMapRealN",
+      "args": [
+        "$ex",
+        3,
+        0,
+        3,
+        2.5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTexMapRealN",
+      "args": [
+        "$ex",
+        3,
+        0,
+        4,
+        30
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        9.75
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          41.5,
+          17.25
+        ],
+        [
+          66.75,
+          1.5
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndXtrd",
+      "args": [],
+      "bind": "bx",
+      "name": "box-a"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateSphere",
+      "args": [
+        [
+          63.5,
+          15.25,
+          9.75
+        ],
+        6.25
+      ],
+      "bind": "sp",
+      "name": "sphere-b",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.AddSolid",
+      "args": [
+        "$bx",
+        "$sp"
+      ],
+      "bind": "cs",
+      "name": "csg-textured",
+      "result": "tuple",
+      "result_index": 1
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextureRefN",
+      "args": [
+        "$cs",
+        "$tr",
+        3,
+        0
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "Rosetta-Texture",
+      "bind": "tx",
+      "role": "context"
+    },
+    {
+      "object_id": "extrude-textured",
+      "bind": "ex",
+      "role": "primary"
+    },
+    {
+      "object_id": "csg-textured",
+      "bind": "cs",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "extrude-textured",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "csg-textured",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.SetTexMapRealN documents part 3 as the overall part. The recipe uses part 3 in vs.SetTextureRefN too. The texture reference is the vs.Name2Index value of Rosetta-Texture.",
+    "Selector 3 sets the 2D scale to 2.5 and selector 4 sets the rotation to 30 degrees.",
+    "resource.texture.default creates the texture and places no object. vs.CreateTexture gives a texture with no image, so the export material carries a colour only."
+  ]
+}

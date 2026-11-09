@@ -1,0 +1,131 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "option.fill.image_applied",
+  "family_id": "option.fill",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Image resource from an imported bitmap, applied as the fill of a rectangle through object variable 695",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "bitmap.asym-png",
+      "kind": "other",
+      "acquisition_state": "acquired",
+      "path": "fixtures/bitmap-asym.png",
+      "sha256": "05e3c1edef9f6ecb99652505e6320b2568adbccd6a5d2c5d11bb389d7a78fe00",
+      "license": "Generated in this repository by fixtures/make_bitmap.py. It holds no third-party content.",
+      "source": "fixtures/make_bitmap.py"
+    }
+  ],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.ImportImageFile",
+      "args": [
+        {
+          "dependency": "bitmap.asym-png"
+        },
+        [
+          -40,
+          10
+        ]
+      ],
+      "bind": "pt",
+      "name": "bitmap-source",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateImageFromPaint",
+      "args": [
+        "$pt",
+        "Rosetta-Image"
+      ],
+      "bind": "im",
+      "name": "Rosetta-Image",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.Name2Index",
+      "args": [
+        "Rosetta-Image"
+      ],
+      "bind": "ii",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          2.5,
+          21.25
+        ],
+        [
+          33.75,
+          4.5
+        ]
+      ],
+      "bind": "ra",
+      "name": "rect-image-ov"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableLongInt",
+      "args": [
+        "$ra",
+        695,
+        "-$ii"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "bitmap-source",
+      "bind": "pt",
+      "role": "context"
+    },
+    {
+      "object_id": "Rosetta-Image",
+      "bind": "im",
+      "role": "context"
+    },
+    {
+      "object_id": "rect-image-ov",
+      "bind": "ra",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-image-ov",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "STATUS.md records failed image fill attempts with vs.CreateImgFromSymbolN, which named its resource none. vs.CreateImageFromPaint makes a named image resource from the paint node that vs.ImportImageFile returns.",
+    "rect-image-ov sets object variable 695 to the negative image index. rect-image-vf calls vs.SetVectorFill with the image name. This is a probe. The live run records which rectangle draws the image, and whether kImageDefNode (td119) and kFillSpaceNode (td121) appear.",
+    "Revision 2 drops rect-image-vf. In the read run of 2026-10-19, vs.GetVectorFill of rect-image-ov returned the image name and vs.GetFPat returned the negative index. rect-image-vf returned no fill name and vs.GetFPat 1, a solid fill."
+  ]
+}

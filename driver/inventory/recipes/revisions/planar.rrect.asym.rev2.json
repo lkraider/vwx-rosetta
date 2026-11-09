@@ -1,0 +1,82 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "planar.rrect.asym",
+  "family_id": "planar.rounded_rectangle",
+  "recipe_revision": "2",
+  "supersedes": {
+    "recipe_revision": "1",
+    "recipe_sha256": "d857fa3bbda905e7be326a9098937c32b98514178ee1237b29209eca7ed17c98"
+  },
+  "universe": "controlled",
+  "title": "Rounded rectangle with corner diameters 6.5 and 4.25",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.RRect",
+      "args": [
+        [
+          -12,
+          40.5
+        ],
+        [
+          27.75,
+          18.25
+        ],
+        [
+          6.5,
+          4.25
+        ]
+      ],
+      "bind": "rr",
+      "name": "rrect-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rrect-a",
+      "bind": "rr",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rrect-a",
+      "quantity": "length",
+      "api": "vs.GetRRDiam",
+      "frame": "document_world",
+      "component": "rrect.diam.x"
+    },
+    {
+      "object_id": "rrect-a",
+      "quantity": "length",
+      "api": "vs.GetRRDiam",
+      "frame": "document_world",
+      "component": "rrect.diam.y"
+    },
+    {
+      "object_id": "rrect-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

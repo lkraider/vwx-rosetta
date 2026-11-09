@@ -1,0 +1,72 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "document.georeference.epsg",
+  "family_id": "document.georeference",
+  "recipe_revision": "2",
+  "supersedes": {
+    "recipe_revision": "1",
+    "recipe_sha256": "40e2ee4c816e64dbbab142f3b2f5d547ac75e844e036eb4090be9294af38dfd1"
+  },
+  "universe": "controlled",
+  "title": "Georeference by user origin with EPSG 32633",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_document"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.SetOriginAbsolute",
+      "args": [
+        -1250.5,
+        830.25
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetDocGeoRefByUsrOrg",
+      "args": [
+        32633
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [],
+  "queries": [
+    {
+      "object_id": "document",
+      "quantity": "point3",
+      "api": "vs.GetGISOriginN",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "document",
+      "quantity": "angle",
+      "api": "vs.GetGISOriginN",
+      "frame": "document_world",
+      "component": "gis.angle_to_north"
+    },
+    {
+      "object_id": "document",
+      "quantity": "angle",
+      "api": "vs.GetAngleToNorth",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "Document setting without geometry."
+}

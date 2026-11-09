@@ -1,0 +1,71 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "entertainment.lighting_pipe.straight",
+  "family_id": "entertainment.lighting_pipe",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Straight Truss plug-in object placed at (0, 0)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.straight-truss",
+      "kind": "plugin_object",
+      "acquisition_state": "pending",
+      "reason": "In plug-in probe document probe.plugins.L4-09, each create call returned no handle."
+    }
+  ],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObject",
+      "args": [
+        "Straight Truss",
+        [
+          0,
+          0
+        ],
+        0
+      ],
+      "bind": "tr",
+      "name": "truss-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "truss-a",
+      "bind": "tr",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "truss-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Stage 2.5 source for the row entertainment.lighting_pipe.straight of driver/export-inventory-input/gaps.tsv.",
+    "No vs call is known to make this object. The Lighting Pipe tool is the other route."
+  ]
+}

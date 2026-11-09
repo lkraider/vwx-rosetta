@@ -1,0 +1,101 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "solid.sphere.union_offset",
+  "family_id": "solid.csg",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Solid addition of two overlapping spheres off every axis",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "recipe_checkpoint",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateSphere",
+      "args": [
+        [
+          12.5,
+          8.25,
+          3
+        ],
+        6.75
+      ],
+      "bind": "sa",
+      "name": "sphere-a",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateSphere",
+      "args": [
+        [
+          19.75,
+          11.5,
+          5.5
+        ],
+        4.25
+      ],
+      "bind": "sb",
+      "name": "sphere-b",
+      "result": "return"
+    },
+    {
+      "op": "checkpoint",
+      "id": "before-boolean"
+    },
+    {
+      "op": "create",
+      "api": "vs.AddSolid",
+      "args": [
+        "$sa",
+        "$sb"
+      ],
+      "bind": "res",
+      "name": "csg-add",
+      "result": "tuple",
+      "result_index": 1
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "csg-add",
+      "bind": "res",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "csg-add",
+      "quantity": "volume",
+      "api": "vs.ObjVolume",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "csg-add",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Sphere faces meet at a circle edge. A .vwx reader asked for more solids with sphere faces."
+  ]
+}

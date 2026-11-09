@@ -1,0 +1,372 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "ix.mech.rational-surface-trim-hole-units",
+  "family_id": "nurbs.surface",
+  "recipe_revision": "1",
+  "universe": "interaction",
+  "title": "Rational NURBS surface trimmed by a closed curve with an inner hole in inch units. Seam and fin reversal have no documented API",
+  "mechanism": "mech.rational-surface-trim-hole-units",
+  "blank_control": "control.blank.imperial",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "recipe_checkpoint",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.SetUnits",
+      "args": [
+        4096,
+        64,
+        3,
+        1.0,
+        "\"",
+        "sq ft"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateNurbsSurface",
+      "args": [
+        3,
+        3,
+        2,
+        2
+      ],
+      "bind": "ns",
+      "name": "nurbs-surface-a",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        0,
+        0,
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        0,
+        1,
+        [
+          12.5,
+          -1.5,
+          3.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        0,
+        2,
+        [
+          26,
+          0.75,
+          1
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        1,
+        0,
+        [
+          1.5,
+          11,
+          4.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        1,
+        1,
+        [
+          13.75,
+          12.25,
+          9.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        1,
+        2,
+        [
+          24.5,
+          10.5,
+          2.75
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        2,
+        0,
+        [
+          -0.5,
+          23.5,
+          1.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        2,
+        1,
+        [
+          12,
+          24.75,
+          6
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        2,
+        2,
+        [
+          27.25,
+          22,
+          0.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetWeight",
+      "args": [
+        "$ns",
+        1,
+        1,
+        0.625
+      ]
+    },
+    {
+      "op": "checkpoint",
+      "id": "surface-built"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateNurbsCurve",
+      "args": [
+        [
+          6.5,
+          5.25,
+          0
+        ],
+        true,
+        1
+      ],
+      "bind": "tc",
+      "name": "trim-outer",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$tc",
+        [
+          21,
+          4.75,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$tc",
+        [
+          22.5,
+          19.25,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$tc",
+        [
+          5.75,
+          18,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$tc",
+        [
+          6.5,
+          5.25,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TrimNurbsSurface",
+      "args": [
+        "$ns",
+        "$tc"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateNurbsCurve",
+      "args": [
+        [
+          11,
+          9.5,
+          0
+        ],
+        true,
+        1
+      ],
+      "bind": "th",
+      "name": "trim-hole",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$th",
+        [
+          15.25,
+          9.75,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$th",
+        [
+          14.5,
+          13,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$th",
+        [
+          11,
+          9.5,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TrimNurbsSurface",
+      "args": [
+        "$ns",
+        "$th"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "nurbs-surface-a",
+      "bind": "ns",
+      "role": "primary"
+    },
+    {
+      "object_id": "trim-outer",
+      "bind": "tc",
+      "role": "dependency"
+    },
+    {
+      "object_id": "trim-hole",
+      "bind": "th",
+      "role": "dependency"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "nurbs-surface-a",
+      "quantity": "control_points",
+      "api": "vs.NurbsSurfaceEvalPt",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "nurbs-surface-a",
+      "quantity": "area",
+      "api": "vs.ObjSurfaceArea",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "trimmed_by",
+      "object_id": "nurbs-surface-a",
+      "curves": [
+        "trim-outer",
+        "trim-hole"
+      ]
+    }
+  ],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.SetUnits argument values follow the SetUnits docs example. Their effect on the installed release is unverified.",
+    "A periodic seam and fin reversal have no documented creation API. Their factor stays open for native-prep."
+  ]
+}

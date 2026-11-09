@@ -1,0 +1,207 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "option.linetype.complex",
+  "family_id": "option.linetype",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Library line types Sine Wave and Hot Water on a line and a polyline",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "library.linetype",
+      "kind": "other",
+      "acquisition_state": "acquired",
+      "reason": "The Line Types library of the Vectorworks 2027 install holds Sine Wave and Hot Water."
+    }
+  ],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.BuildResourceList",
+      "args": [
+        96,
+        -174,
+        ""
+      ],
+      "bind": "ls",
+      "name": null,
+      "result": "tuple",
+      "result_index": 0
+    },
+    {
+      "op": "call",
+      "api": "vs.ImportResourceToCurrentFile",
+      "args": [
+        "$ls",
+        37
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ImportResourceToCurrentFile",
+      "args": [
+        "$ls",
+        15
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Name2Index",
+      "args": [
+        "Sine Wave"
+      ],
+      "bind": "lw",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.Name2Index",
+      "args": [
+        "Hot Water"
+      ],
+      "bind": "lh",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.MoveTo",
+      "args": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LineTo",
+      "args": [
+        [
+          100,
+          0
+        ]
+      ],
+      "bind": "ln",
+      "name": "line-sine-wave"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLSN",
+      "args": [
+        "$ln",
+        "-$lw"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.OpenPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          0,
+          20
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          40,
+          50
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          100,
+          30
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndPoly",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "pl",
+      "name": "polyline-hot-water",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLSN",
+      "args": [
+        "$pl",
+        "-$lh"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "line-sine-wave",
+      "bind": "ln",
+      "role": "primary"
+    },
+    {
+      "object_id": "polyline-hot-water",
+      "bind": "pl",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "line-sine-wave",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "polyline-hot-water",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.BuildResourceList(96, -174, \"\") lists the 43 line types of Libraries/Attributes/Line Types in the application folder. The probe of 2026-10-19 read item 37 as Sine Wave and item 15 as Hot Water. The list is sorted by name, so a library with other line types moves these items.",
+    "The probe listed Sine Wave and Hot Water among the complex line types of the library. DXF writes a complex line type as an LTYPE with shape or text elements. resource.linetype.dashed covers a simple dash.",
+    "In the DXF of 2026-10-19 (dxf.all-content), Hot Water is an LTYPE of 5 elements with one text element, and the polyline uses it. Sine Wave has no LTYPE. The line is an INSERT of an anonymous block."
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "solid.cone.asym",
+  "family_id": "solid.primitive",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Cone with base at (8.5, -3.25, 1.75) and tilted tip",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateCone",
+      "args": [
+        [
+          8.5,
+          -3.25,
+          1.75
+        ],
+        [
+          15,
+          6.5,
+          38.25
+        ],
+        9.75
+      ],
+      "bind": "cone",
+      "name": "cone-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "cone-a",
+      "bind": "cone",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "cone-a",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "cone-a",
+      "quantity": "volume",
+      "api": "vs.ObjVolume",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "cone-a",
+      "quantity": "area",
+      "api": "vs.ObjSurfaceArea",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "cone-a",
+      "quantity": "transform4x4",
+      "api": "vs.GetEntityMatrix",
+      "frame": "object_local"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

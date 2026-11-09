@@ -1,0 +1,190 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "building.roof.hip",
+  "family_id": "building.roof",
+  "recipe_revision": "3",
+  "universe": "controlled",
+  "title": "Hip roof of 10 m by 6 m. The script adds a gable dormer and a skylight, and the saved document holds neither.",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateRoof",
+      "args": [
+        false,
+        0,
+        200,
+        1,
+        0
+      ],
+      "bind": "rf",
+      "name": "roof-adorned",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.AppendRoofEdge",
+      "args": [
+        "$rf",
+        [
+          0,
+          0
+        ],
+        35,
+        300,
+        3000
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AppendRoofEdge",
+      "args": [
+        "$rf",
+        [
+          10000,
+          0
+        ],
+        35,
+        300,
+        3000
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AppendRoofEdge",
+      "args": [
+        "$rf",
+        [
+          10000,
+          6000
+        ],
+        35,
+        300,
+        3000
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AppendRoofEdge",
+      "args": [
+        "$rf",
+        [
+          0,
+          6000
+        ],
+        35,
+        300,
+        3000
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ResetObject",
+      "args": [
+        "$rf"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateGableDormer",
+      "args": [
+        "$rf"
+      ],
+      "bind": "dr",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetDormerAttributes",
+      "args": [
+        "$rf",
+        "$dr",
+        1,
+        2000,
+        true,
+        1000,
+        0,
+        true,
+        0
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateSkylight",
+      "args": [
+        "$rf"
+      ],
+      "bind": "sk",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetSkylight",
+      "args": [
+        "$rf",
+        "$sk",
+        3,
+        2000,
+        1500,
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ResetObject",
+      "args": [
+        "$rf"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "roof-adorned",
+      "bind": "rf",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "roof-adorned",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "roof-adorned",
+      "quantity": "volume",
+      "api": "vs.ObjVolume",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Revision 1 added the dormer and the skylight to the 410 mm by 258 mm roof of building.roof.two_edges. The live run saved that roof with a 0 by 0 bounding box and no roof body nodes. building.roof.two_edges alone exports 24 faces, so the default dormer and skylight emptied the roof.",
+    "Revision 2 is a hip roof of 10000 mm by 6000 mm. All four edges have slope 35, projection 300 mm and eave height 3000 mm. vs.SetDormerAttributes puts the dormer on edge 1, 2000 mm from the corner and 1000 mm in from the edge. vs.SetSkylight puts the skylight on edge 3, 2000 mm from the corner and 1500 mm in from the edge. Both offsets fit inside a 6000 mm edge, so they hold whether edge indexes start at 0 or 1.",
+    "Revision 2 saved a roof body of 10600 mm by 6600 mm. vs.GetNumRoofElements returned 0, and the roof held no dormer and no skylight. Revision 3 calls vs.ResetObject after the edges, so the roof faces exist before vs.CreateGableDormer and vs.CreateSkylight run.",
+    "vs.CreateGableDormer and vs.CreateSkylight each add a kRoofAdornerNode (td87) to the roof and return its index. vs.CreateGableDormer requests a dormer volume on the roof, and vs.CreateSkylight requests an opening in it.",
+    "This is a probe. The read run reads each adorner with vs.GetRoofElementType, vs.GetDormerAttributes and vs.GetSkylight.",
+    "In the probe of 2026-10-19, vs.GetNumRoofElements counted 1 after vs.CreateGableDormer and 2 after vs.CreateSkylight, inside the script. The saved source of revision 3 counts 0, and vs.GetDormerAttributes returns uninitialised numbers. The dormer and the skylight are lost between the end of the script and the reopen. The source holds the roof body and one td87 kRoofAdornerNode, which no other stored source holds.",
+    "The case id was building.roof.dormer_skylight until the source was stored. The id names what the source holds."
+  ]
+}

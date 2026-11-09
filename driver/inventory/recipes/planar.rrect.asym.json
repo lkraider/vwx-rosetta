@@ -1,0 +1,67 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "planar.rrect.asym",
+  "family_id": "planar.rounded_rectangle",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Rounded rectangle with diameter 6.5",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.RRect",
+      "args": [
+        [
+          -12,
+          40.5
+        ],
+        [
+          27.75,
+          18.25
+        ],
+        6.5
+      ],
+      "bind": "rr",
+      "name": "rrect-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rrect-a",
+      "bind": "rr",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rrect-a",
+      "quantity": "radius",
+      "api": "vs.GetRRDiam",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "rrect-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

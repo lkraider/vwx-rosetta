@@ -1,0 +1,72 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "planar.oval.asym",
+  "family_id": "planar.oval",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Oval in box (-31.75, 4.5)-(9.25, 23)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Oval",
+      "args": [
+        [
+          -31.75,
+          23
+        ],
+        [
+          9.25,
+          4.5
+        ]
+      ],
+      "bind": "ov",
+      "name": "oval-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "oval-a",
+      "bind": "ov",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "oval-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "oval-a",
+      "quantity": "point3",
+      "api": "vs.HCenter",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "oval-a",
+      "quantity": "area",
+      "api": "vs.ObjArea",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

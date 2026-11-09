@@ -1,0 +1,124 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "container.symbol.nested_3d",
+  "family_id": "container.symbol",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "A 3D symbol inside another symbol, placed two levels below the layer",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Rosetta-Inner-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        8
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          6
+        ],
+        [
+          10,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndXtrd",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Rosetta-Outer-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Symbol",
+      "args": [
+        "Rosetta-Inner-3D",
+        [
+          5,
+          5
+        ],
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.Symbol",
+      "args": [
+        "Rosetta-Outer-3D",
+        [
+          40,
+          20
+        ],
+        0
+      ],
+      "bind": "so",
+      "name": "outer-inst-3d"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "outer-inst-3d",
+      "bind": "so",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "outer-inst-3d",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "The layer holds Rosetta-Outer-3D. Rosetta-Outer-3D holds Rosetta-Inner-3D, and Rosetta-Inner-3D holds the extrude. Every object is in the None class, which is visible."
+  ]
+}

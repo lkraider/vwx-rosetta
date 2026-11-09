@@ -1,0 +1,299 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.sheet.multiple",
+  "family_id": "annotation.sheet",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Two sheet layers, each with a viewport of a different design layer",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Model-A",
+        1
+      ],
+      "bind": "da",
+      "name": "Rosetta-Model-A",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Model-A"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          2000
+        ],
+        [
+          4000,
+          0
+        ]
+      ],
+      "bind": "r",
+      "name": "model-rect"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Model-B",
+        1
+      ],
+      "bind": "db",
+      "name": "Rosetta-Model-B",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Model-B"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Oval",
+      "args": [
+        [
+          5000,
+          1500
+        ],
+        [
+          6000,
+          0
+        ]
+      ],
+      "bind": "o",
+      "name": "model-oval"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Sheet-1",
+        2
+      ],
+      "bind": "s1",
+      "name": "Rosetta-Sheet-1",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateVP",
+      "args": [
+        "$s1"
+      ],
+      "bind": "v1",
+      "name": "viewport-1",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPLayerVisibility",
+      "args": [
+        "$v1",
+        "$da",
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPLayerVisibility",
+      "args": [
+        "$v1",
+        "$db",
+        -1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPClassVisibility",
+      "args": [
+        "$v1",
+        "None",
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableReal",
+      "args": [
+        "$v1",
+        1003,
+        50
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ResetObject",
+      "args": [
+        "$v1"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.UpdateVP",
+      "args": [
+        "$v1"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Sheet-2",
+        2
+      ],
+      "bind": "s2",
+      "name": "Rosetta-Sheet-2",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateVP",
+      "args": [
+        "$s2"
+      ],
+      "bind": "v2",
+      "name": "viewport-2",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPLayerVisibility",
+      "args": [
+        "$v2",
+        "$da",
+        -1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPLayerVisibility",
+      "args": [
+        "$v2",
+        "$db",
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPClassVisibility",
+      "args": [
+        "$v2",
+        "None",
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableReal",
+      "args": [
+        "$v2",
+        1003,
+        50
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ResetObject",
+      "args": [
+        "$v2"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.UpdateVP",
+      "args": [
+        "$v2"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Sheet-2"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "viewport-1",
+      "bind": "v1",
+      "role": "primary"
+    },
+    {
+      "object_id": "viewport-2",
+      "bind": "v2",
+      "role": "primary"
+    },
+    {
+      "object_id": "model-rect",
+      "bind": "r",
+      "role": "context"
+    },
+    {
+      "object_id": "model-oval",
+      "bind": "o",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "viewport-1",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "viewport-2",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "viewport_shows",
+      "object_id": "viewport-1",
+      "layer": "Rosetta-Model-A",
+      "sheet": "Rosetta-Sheet-1"
+    },
+    {
+      "kind": "viewport_shows",
+      "object_id": "viewport-2",
+      "layer": "Rosetta-Model-B",
+      "sheet": "Rosetta-Sheet-2"
+    }
+  ],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.CreateVP makes a viewport that hides class None, and its box is a 13.34 mm placeholder square at the sheet origin. vs.SetVPClassVisibility(vp, 'None', 0) and then vs.ResetObject(vp) make it frame the model. Object variable 1003 is the scale, here 1:50.",
+    "Each viewport shows one design layer. visibilityType 0 is visible and -1 is invisible. The document is saved with Rosetta-Sheet-2 active."
+  ]
+}

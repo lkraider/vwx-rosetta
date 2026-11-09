@@ -1,0 +1,36 @@
+case	kind	shows
+annotation.callout.single	types	td86 Callout
+building.roof.hip	types	td83
+building.site_model.points	types	td86 DTM6
+building.slab.profile	types	td86 Slab
+building.space.rect	types	td86 Data Tag td86 Space
+building.wall.with_door_window	types	td68 td86 Door td86 Window
+container.group.asym	types	td11 td24
+container.layer_link.design	types	td29
+document.working_plane.tilted	types	td9
+entertainment.lighting_device.single	types	td15 td81
+ix.spatial.156868e1946a	types	td95
+nurbs.curve.cubic	types	td111
+nurbs.loft.closed	types	td84
+plugin.combined.01	types	td86 Lock Washer (Inch)-3D
+plugin.combined.02	types	td86 Dowel Pin (Inch) td86 Dowel Pin (Inch)-3D td86 Machine Screw (ISO) td86 Machine Screw (ISO)-3D td86 Machine Screw (Inch) td86 Machine Screw (Inch)-3D td86 Machine Screw (Metric) td86 Machine Screw (Metric)-3D td86 Piping td86 Plain Washer (DIN) td86 Plain Washer (DIN)-3D td86 Plain Washer (ISO) td86 Plain Washer (ISO)-3D td86 Plain Washer (Metric) td86 Plain Washer (Metric)-3D td86 Retaining Washer (DIN) td86 Retaining Washer (DIN)-3D td86 Rivet (DIN) td86 Rivet (DIN) - 3D td86 Roller Chain - Offset Link td86 Roller Chain-Offset Link-3D td86 Set Screw (DIN) td86 Set Screw (DIN)-3D td86 Set Screw (ISO) td86 Set Screw (ISO)-3D td86 Set Screw (Inch) td86 Set Screw (Metric) td86 Set Screw (Metric)-3D td86 Woodruff Key td86 Woodruff Key-3D
+plugin.combined.03	types	td86 Hex Bolt (Metric) td86 Hole - Tapped (Inch) td86 Hole - Tapped (Inch)-3D td86 Hole - Tapped (Metric) td86 Hole - Tapped (Metric)-3D td86 Key td86 Key-3D td86 Keyway td86 Parallel Pin (DIN) td86 Parallel Pin (DIN)-3D td86 Plain Washer (Inch) td86 Plain Washer (Inch)-3D td86 Retaining Ring (ASME) td86 Retaining Ring (ASME)-3D td86 Retaining Ring (DIN) td86 Retaining Ring (DIN)-3D td86 Rivet - Small (Inch) td86 Rivet - Small (Inch)-3D td86 Set Screw (Inch)-3D td86 Sheet Metal Screw td86 Sheet Metal Screw - 3D td86 Shoulder Screw (DIN) td86 Shoulder Screw (DIN)-3D td86 Taper Pin (DIN) td86 Taper Pin (Inch) td86 Taper Pin (Inch)-3D td86 Wing Nut - Type C (inch) td86 Wing Nut - Type C (inch)-3D td86 Wing Nut - Type D (inch) td86 Wing Nut - Type D (inch)-3D
+plugin.combined.04	types	td86 Shoulder Screw (Metric)-3D
+plugin.combined.05a	types	td86 Bearing Lock Nut td86 Bearing Lock Nut-3D td86 Belleville Spring td86 Belleville Spring-3D td86 Cotter Pin (Inch) td86 Cotter Pin (Inch) - 3D td86 Lag Screw td86 Lag Screw - 3D td86 Shoulder Screw (Inch) td86 Shoulder Screw (Inch)-3D td86 Spiral td86 Thumb Screw (Inch) td86 Thumb Screw (Inch) - 3D td86 Wing Nut - Type B (Inch) td86 Wing Nut - Type B (Inch)-3D
+plugin.combined.05ba	types	td86 Hole - Drilled td86 Hole - Drilled - 3D td86 Screw and Nut (ISO) td86 Screw and Nut (Inch) td86 Shaft Break td86 Shaft Break 2 td86 Square Tubing td86 Square Tubing (Inch) td86 Square Tubing (Metric) td86 Square Tubing - 3D td86 Taper Pin (DIN)-3D td86 Wing Nut (DIN) td86 Wing Nut (DIN)-3D
+plugin.combined.06	types	td86 Swing Bolt - 3D
+plugin.combined.07	types	td86 Worm - 3D
+plugin.combined.08	types	td86 Bolt and Nut - inch td86 Bolt and Nut - mm td86 Cone Object td86 Cylinder Object td86 Die Spring td86 Die Spring - 3D td86 Eye  Bolt td86 Eye  Bolt - 3D td86 Flanged Bearing - 2 Hole td86 Flanged Bearing - 2 Hole-3D td86 Geneva Mechanism td86 I-Beam td86 I-Beam (Inch) td86 I-Beam (Metric) td86 I-Beam - 3D td86 Mullion td86 Parabaloid Object td86 Pyramid Object td86 Rectangular Tubing td86 Rectangular Tubing - 3D td86 Roller Chain - Circular td86 Roller Chain - Circular-3D td86 Sphere Object td86 Spur Gear Rack td86 Spur Gear Rack - 3D td86 Swing Eye Bolt td86 Swing Eye Bolt - 3D td86 Tee (Inch) td86 Z-Section td86 Z-Section - 3D
+plugin.combined.09	types	td86 Bevel Gears td86 Bevel Gears - 3D td86 Bulb Flat td86 Bulb Flat - 3D td86 Column2 td86 Datum Feature Symbol td86 Extension Spring - 3D td86 Extension Spring - Front td86 Flanged Bearing - 4 Hole td86 Flanged Bearing - 4 Hole-3D td86 Hole Pattern td86 Hub - 3D td86 Pilaster2 td86 Pipe Fitting td86 Pulley td86 Pulley - 3D td86 Roller Chain - Linear-3D td86 Sprocket td86 Sprocket - 3D td86 Spur Gear td86 Spur Gear-3D td86 Tee td86 Tee (Metric) td86 Tee - 3D td86 Torus Object td86 Wide Flange td86 Wide Flange (Inch) td86 Wide Flange (Metric) td86 Worm Gear td86 Worm Gear - 3D
+plugin.combined.10	types	td86 Batt Insulation td86 Center Line Marker td86 Comm Device td86 Datum Target Symbol td86 Detail Bubble td86 Detail Cut Wood td86 Ellipsoid Object td86 Geom Dim and Tol Note td86 HVAC Damper td86 HVAC Diffuser td86 HVAC Outlet td86 HVAC Transition td86 HVAC Vertical Duct td86 HVAC Vertical Elbow td86 ID Leader td86 Pillow Block td86 Pillow Block - 3D td86 Piping Connection td86 Receptacle td86 Revision Bubble td86 Revision Marker td86 Roller Chain - Linear td86 Storypole td86 Switch td86 Symmetry Label Object td86 Table td86 Utility Cabinet td86 Wall Cabinet td86 Wide Flange - 3D td86 Workstation Pedestal
+plugin.combined.11	types	td86 Adjacency Score td86 Base Cabinet td86 Camera Match Reference td86 Counter Top td86 Feature Control Frame td86 Fireplace td86 Flowchart Node td86 Grab Bars td86 Grid Bubble td86 HVAC Elbow Duct td86 HVAC Splitter td86 HVAC Straight Duct td86 Incandescent Fixture td86 Leader Line td86 North Arrow td86 Rafter td86 Reference Marker td86 Room Name Simple td86 Scale Bar td86 Shelving Unit td86 Surface Texture Symbol td86 Welding Sym-Fillet (AWS) td86 Welding Sym-Flange (ISO) td86 Welding Sym-Groove (AWS) td86 Welding Sym-Groove (ISO) td86 Welding Sym-Misc (AWS) td86 WindowWall(Straight) td86 Workstation Counter td86 Workstation Overhead td86 Workstation Panel
+plugin.combined.12	types	td86 Bath-Shower td86 Break Line td86 Camera Match Mask td86 Camera Match Shadow td86 Campanile td86 Circular Stair td86 Compartment Sink td86 Data Stamp td86 Desk td86 Drilled Footing td86 Elevation Benchmark td86 Escalator td86 Flowchart Link td86 Guardrail (Straight) td86 HVAC Flex Duct td86 Handrail (Curved) td86 Handrail (Straight) td86 Joist td86 Redline Object td86 Room Name td86 Slope Dimension td86 Stacking Diagram td86 Table and Chairs td86 Toilet Stall td86 Welding Sym-Fillet (ISO) td86 Welding Sym-Flange (AWS) td86 Welding Sym-Misc (ISO) td86 Welding Sym-Slot-Plug (AWS) td86 Welding Sym-Slot-Plug (ISO) td86 WindowWall(Curved)
+plugin.combined.13	types	td86 Adjacency Matrix td86 Camera Match Object td86 Detail-Callout Marker td86 Drawing Border - Old td86 Drawing Label td86 Dwg Label Simple td86 Grid - Polar td86 Grid - Rectangular td86 Guardrail (Curved) td86 Linear Material td86 Massing Model td86 Parking Spaces td86 Piping Run td86 Ramp td86 Repetitive Unit td86 Revision Cloud td86 Roadway (Bezier) td86 Roadway (NURBS) td86 Section-Elevation Marker td86 Stipple
+plugin.combined.14	types	td86 Custom Stair
+solid.sweep.circle	types	td34
+solid.tapered_extrude.circle	types	td113 td114
+spatial.mesh.from_group	types	td40
+spatial.mxtrd.asym	types	td38
+spatial.poly3d.asym	types	td25
+solid.cylinder.subtract_sphere	pinned	curved faces from a boolean subtraction
+building.wall.with_door_window	option	sat.solids sat_version

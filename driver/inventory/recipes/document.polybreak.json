@@ -1,0 +1,122 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "document.polybreak",
+  "family_id": "document",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Polygon with one hidden edge, a candidate writer of kPolyBreakNode",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          40,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          40,
+          30
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          0,
+          30
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ClosePoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.EndPoly",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "pg",
+      "name": "poly-hidden-edge",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVertexVisibility",
+      "args": [
+        "$pg",
+        1,
+        false
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "poly-hidden-edge",
+      "bind": "pg",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "poly-hidden-edge",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Stage 2.5 source for the row document.polybreak of driver/export-inventory-input/gaps.tsv.",
+    "gaps.tsv names a polyline with hidden edges as a candidate. The census shows whether td116 appears.",
+    "If it does not, the next candidate is a wall with breaks."
+  ]
+}

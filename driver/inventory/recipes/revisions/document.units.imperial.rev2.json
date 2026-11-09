@@ -1,0 +1,70 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "document.units.imperial",
+  "family_id": "document.units",
+  "recipe_revision": "2",
+  "supersedes": {
+    "recipe_revision": "1",
+    "recipe_sha256": "5a5c3c90b16dc7e7a649e859e2a3821d6eb9fdf3a3ab1edfc5c532bdfcf7bf90"
+  },
+  "universe": "controlled",
+  "title": "Inch units on the millimetre blank",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_document"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.SetUnits",
+      "args": [
+        4096,
+        64,
+        3,
+        1.0,
+        "\"",
+        "sq ft"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [],
+  "queries": [
+    {
+      "object_id": "document",
+      "api": "vs.GetUnits",
+      "frame": "document_world",
+      "acquisition": "raw_only",
+      "raw_call": "GetUnits",
+      "raw_return": [
+        "fraction LONGINT",
+        "display LONGINT",
+        "format INTEGER",
+        "upi REAL",
+        "lenUnitMk STRING",
+        "areaUnitMk STRING"
+      ],
+      "normalization": "unresolved",
+      "decision": "decision.quantity.unit_mark"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "Document setting without geometry.",
+  "notes": [
+    "vs.SetUnits argument values follow the SetUnits docs example. Their effect on the installed release is unverified."
+  ]
+}

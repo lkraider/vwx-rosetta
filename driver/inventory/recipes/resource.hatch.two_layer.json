@@ -1,0 +1,87 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "resource.hatch.two_layer",
+  "family_id": "resource.hatch",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Hatch definition with two layers",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginVectorFillN",
+      "args": [
+        "Rosetta-Hatch",
+        false,
+        false,
+        256
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVectorFillLayer",
+      "args": [
+        0,
+        0,
+        1.5,
+        2.25,
+        0.25,
+        -0.75,
+        1,
+        1,
+        257
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVectorFillLayer",
+      "args": [
+        0,
+        0.5,
+        -1.25,
+        3,
+        0.5,
+        0.125,
+        0.4,
+        2,
+        257
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndVectorFill",
+      "args": []
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [],
+  "queries": [
+    {
+      "object_id": "document",
+      "quantity": "name",
+      "api": "vs.GetVectorFill",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "A hatch definition has no placed geometry.",
+  "notes": [
+    "AddVectorFillLayer arguments follow the docs example order."
+  ]
+}

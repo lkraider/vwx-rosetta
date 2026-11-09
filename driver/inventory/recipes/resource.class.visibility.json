@@ -1,0 +1,108 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "resource.class.visibility",
+  "family_id": "resource.class",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Named class with a hidden state and one member",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "nominal_bounds": [
+      [
+        11.5,
+        9.25
+      ],
+      [
+        44.75,
+        26
+      ]
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_document"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Class-Ä1"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        11.5,
+        26,
+        44.75,
+        9.25
+      ],
+      "bind": "r",
+      "name": "rect-classed"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$r",
+        "Rosetta-Class-Ä1"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.HideClass",
+      "args": [
+        "Rosetta-Class-Ä1"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-classed",
+      "bind": "r",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-classed",
+      "quantity": "class_name",
+      "api": "vs.GetClass",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "document",
+      "quantity": "visibility",
+      "api": "vs.GetCVis",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "document",
+      "quantity": "count",
+      "api": "vs.ClassNum",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "class_membership",
+      "object_id": "rect-classed",
+      "class_name": "Rosetta-Class-Ä1"
+    }
+  ],
+  "exclude_profiles": []
+}

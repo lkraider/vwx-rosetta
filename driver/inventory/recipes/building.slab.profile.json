@@ -1,0 +1,127 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "building.slab.profile",
+  "family_id": "building.slab",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Slab from an irregular pentagon profile",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          7.5,
+          3.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          420.0,
+          3.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          420.0,
+          178.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          195.5,
+          264.0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          7.5,
+          213.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ClosePoly",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.EndPoly",
+      "args": [],
+      "bind": "pr",
+      "name": "slab-profile"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateSlab",
+      "args": [
+        "$pr"
+      ],
+      "bind": "sb",
+      "name": "slab-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "slab-a",
+      "bind": "sb",
+      "role": "primary"
+    },
+    {
+      "object_id": "slab-profile",
+      "bind": "pr",
+      "role": "dependency"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "slab-a",
+      "quantity": "bounds3",
+      "api": "vs.Get3DInfo",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

@@ -1,0 +1,144 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "container.symbol.mirror_3d",
+  "family_id": "container.symbol",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "A mirrored instance of a symbol that holds two 3D extrudes",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Rosetta-Sym-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        12
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          10
+        ],
+        [
+          20,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndXtrd",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        4
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          20,
+          4
+        ],
+        [
+          26,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndXtrd",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.Symbol",
+      "args": [
+        "Rosetta-Sym-3D",
+        [
+          50,
+          20
+        ],
+        0
+      ],
+      "bind": "sm",
+      "name": "sym-inst-mirrored"
+    },
+    {
+      "op": "call",
+      "api": "vs.Mirror",
+      "args": [
+        "$sm",
+        false,
+        [
+          50,
+          0
+        ],
+        [
+          50,
+          10
+        ]
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "sym-inst-mirrored",
+      "bind": "sm",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "sym-inst-mirrored",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "The short extrude makes the symbol asymmetric about x. The axis of vs.Mirror is the line x = 50. In Vectorworks 2027 the instance is reflected, and the DXF INSERT has x scale -1 at (100, 0). A reflection about the axis would place the symbol at x 24 to 50 and y 20 to 30. The source reads its bounding box as x 74 to 100 and y 0 to 10.",
+    "Every object is in the None class, which is visible."
+  ]
+}

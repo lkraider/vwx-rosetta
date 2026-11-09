@@ -1,0 +1,64 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "spatial.light.point",
+  "family_id": "spatial.light",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Spot light at (14.5, -22.25, 31)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateLight",
+      "args": [
+        14.5,
+        -22.25,
+        31,
+        2,
+        true,
+        false
+      ],
+      "bind": "li",
+      "name": "light-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "light-a",
+      "bind": "li",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "light-a",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "A light has one position. Each coordinate differs.",
+  "notes": [
+    "The case passes kind 2. The FBX export of spatial.light.spot names kind 2 a spot light and kind 1 a point light, so this source holds a spot light. The case id keeps the word point because the stored exports carry it. spatial.light.spot holds a point light of kind 1."
+  ]
+}

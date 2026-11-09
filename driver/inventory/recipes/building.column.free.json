@@ -1,0 +1,69 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "building.column.free",
+  "family_id": "building.column",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Column plug-in object placed at (0, 0)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObject",
+      "args": [
+        "Column2",
+        [
+          0,
+          0
+        ],
+        0
+      ],
+      "bind": "cl",
+      "name": "column-a",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.ResetObject",
+      "args": [
+        "$cl"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "column-a",
+      "bind": "cl",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "column-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Column2 is the universal name of the Column tool in Vectorworks Architect 2027. The name Column gives a NIL handle. vs.CreateCustomObject opens the column preferences, and make-sources.py accepts them with OK. The object takes the default style and parameters of a new Vectorworks Architect 2027 document. vs.ResetObject regenerates it before the save."
+  ]
+}

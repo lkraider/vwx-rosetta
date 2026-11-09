@@ -1,0 +1,1131 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.text.align",
+  "family_id": "annotation.text",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Fifteen one-line Arial 12 pt texts, one per justification and vertical alignment pair",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "font": "Arial",
+    "size_pt": 12,
+    "origins_mm": {
+      "just1-valign1": [
+        2000.0,
+        3000.0
+      ],
+      "just1-valign2": [
+        2000.0,
+        2400.0
+      ],
+      "just1-valign3": [
+        2000.0,
+        1800.0
+      ],
+      "just1-valign4": [
+        2000.0,
+        1200.0
+      ],
+      "just1-valign5": [
+        2000.0,
+        600.0
+      ],
+      "just2-valign1": [
+        4000.0,
+        3000.0
+      ],
+      "just2-valign2": [
+        4000.0,
+        2400.0
+      ],
+      "just2-valign3": [
+        4000.0,
+        1800.0
+      ],
+      "just2-valign4": [
+        4000.0,
+        1200.0
+      ],
+      "just2-valign5": [
+        4000.0,
+        600.0
+      ],
+      "just3-valign1": [
+        6000.0,
+        3000.0
+      ],
+      "just3-valign2": [
+        6000.0,
+        2400.0
+      ],
+      "just3-valign3": [
+        6000.0,
+        1800.0
+      ],
+      "just3-valign4": [
+        6000.0,
+        1200.0
+      ],
+      "just3-valign5": [
+        6000.0,
+        600.0
+      ]
+    },
+    "justification": {
+      "1": "left",
+      "2": "center",
+      "3": "right"
+    },
+    "vertical_alignment": {
+      "1": "top box",
+      "2": "top baseline",
+      "3": "center box",
+      "4": "bottom baseline",
+      "5": "bottom box"
+    }
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.GetFontID",
+      "args": [
+        "Arial"
+      ],
+      "bind": "font",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.TextFont",
+      "args": [
+        "$font"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextSize",
+      "args": [
+        12
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextJust",
+      "args": [
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextVerticalAlign",
+      "args": [
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          2000.0,
+          3000.0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "just1-valign1"
+      ],
+      "bind": "j1v1",
+      "name": "just1-valign1"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$j1v1",
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextVerticalAlign",
+      "args": [
+        "$j1v1",
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextJust",
+      "args": [
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextVerticalAlign",
+      "args": [
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          2000.0,
+          2400.0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "just1-valign2"
+      ],
+      "bind": "j1v2",
+      "name": "just1-valign2"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$j1v2",
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextVerticalAlign",
+      "args": [
+        "$j1v2",
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextJust",
+      "args": [
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextVerticalAlign",
+      "args": [
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          2000.0,
+          1800.0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "just1-valign3"
+      ],
+      "bind": "j1v3",
+      "name": "just1-valign3"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$j1v3",
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextVerticalAlign",
+      "args": [
+        "$j1v3",
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextJust",
+      "args": [
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextVerticalAlign",
+      "args": [
+        4
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          2000.0,
+          1200.0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "just1-valign4"
+      ],
+      "bind": "j1v4",
+      "name": "just1-valign4"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$j1v4",
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextVerticalAlign",
+      "args": [
+        "$j1v4",
+        4
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextJust",
+      "args": [
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextVerticalAlign",
+      "args": [
+        5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          2000.0,
+          600.0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "just1-valign5"
+      ],
+      "bind": "j1v5",
+      "name": "just1-valign5"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$j1v5",
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextVerticalAlign",
+      "args": [
+        "$j1v5",
+        5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextJust",
+      "args": [
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextVerticalAlign",
+      "args": [
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          4000.0,
+          3000.0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "just2-valign1"
+      ],
+      "bind": "j2v1",
+      "name": "just2-valign1"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$j2v1",
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextVerticalAlign",
+      "args": [
+        "$j2v1",
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextJust",
+      "args": [
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextVerticalAlign",
+      "args": [
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          4000.0,
+          2400.0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "just2-valign2"
+      ],
+      "bind": "j2v2",
+      "name": "just2-valign2"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$j2v2",
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextVerticalAlign",
+      "args": [
+        "$j2v2",
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextJust",
+      "args": [
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextVerticalAlign",
+      "args": [
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          4000.0,
+          1800.0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "just2-valign3"
+      ],
+      "bind": "j2v3",
+      "name": "just2-valign3"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$j2v3",
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextVerticalAlign",
+      "args": [
+        "$j2v3",
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextJust",
+      "args": [
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextVerticalAlign",
+      "args": [
+        4
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          4000.0,
+          1200.0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "just2-valign4"
+      ],
+      "bind": "j2v4",
+      "name": "just2-valign4"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$j2v4",
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextVerticalAlign",
+      "args": [
+        "$j2v4",
+        4
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextJust",
+      "args": [
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextVerticalAlign",
+      "args": [
+        5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          4000.0,
+          600.0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "just2-valign5"
+      ],
+      "bind": "j2v5",
+      "name": "just2-valign5"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$j2v5",
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextVerticalAlign",
+      "args": [
+        "$j2v5",
+        5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextJust",
+      "args": [
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextVerticalAlign",
+      "args": [
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          6000.0,
+          3000.0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "just3-valign1"
+      ],
+      "bind": "j3v1",
+      "name": "just3-valign1"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$j3v1",
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextVerticalAlign",
+      "args": [
+        "$j3v1",
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextJust",
+      "args": [
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextVerticalAlign",
+      "args": [
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          6000.0,
+          2400.0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "just3-valign2"
+      ],
+      "bind": "j3v2",
+      "name": "just3-valign2"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$j3v2",
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextVerticalAlign",
+      "args": [
+        "$j3v2",
+        2
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextJust",
+      "args": [
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextVerticalAlign",
+      "args": [
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          6000.0,
+          1800.0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "just3-valign3"
+      ],
+      "bind": "j3v3",
+      "name": "just3-valign3"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$j3v3",
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextVerticalAlign",
+      "args": [
+        "$j3v3",
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextJust",
+      "args": [
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextVerticalAlign",
+      "args": [
+        4
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          6000.0,
+          1200.0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "just3-valign4"
+      ],
+      "bind": "j3v4",
+      "name": "just3-valign4"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$j3v4",
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextVerticalAlign",
+      "args": [
+        "$j3v4",
+        4
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextJust",
+      "args": [
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextVerticalAlign",
+      "args": [
+        5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          6000.0,
+          600.0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "just3-valign5"
+      ],
+      "bind": "j3v5",
+      "name": "just3-valign5"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextJust",
+      "args": [
+        "$j3v5",
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetTextVerticalAlign",
+      "args": [
+        "$j3v5",
+        5
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "just1-valign1",
+      "bind": "j1v1",
+      "role": "primary"
+    },
+    {
+      "object_id": "just1-valign2",
+      "bind": "j1v2",
+      "role": "primary"
+    },
+    {
+      "object_id": "just1-valign3",
+      "bind": "j1v3",
+      "role": "primary"
+    },
+    {
+      "object_id": "just1-valign4",
+      "bind": "j1v4",
+      "role": "primary"
+    },
+    {
+      "object_id": "just1-valign5",
+      "bind": "j1v5",
+      "role": "primary"
+    },
+    {
+      "object_id": "just2-valign1",
+      "bind": "j2v1",
+      "role": "primary"
+    },
+    {
+      "object_id": "just2-valign2",
+      "bind": "j2v2",
+      "role": "primary"
+    },
+    {
+      "object_id": "just2-valign3",
+      "bind": "j2v3",
+      "role": "primary"
+    },
+    {
+      "object_id": "just2-valign4",
+      "bind": "j2v4",
+      "role": "primary"
+    },
+    {
+      "object_id": "just2-valign5",
+      "bind": "j2v5",
+      "role": "primary"
+    },
+    {
+      "object_id": "just3-valign1",
+      "bind": "j3v1",
+      "role": "primary"
+    },
+    {
+      "object_id": "just3-valign2",
+      "bind": "j3v2",
+      "role": "primary"
+    },
+    {
+      "object_id": "just3-valign3",
+      "bind": "j3v3",
+      "role": "primary"
+    },
+    {
+      "object_id": "just3-valign4",
+      "bind": "j3v4",
+      "role": "primary"
+    },
+    {
+      "object_id": "just3-valign5",
+      "bind": "j3v5",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "just1-valign1",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just1-valign1",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just1-valign2",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just1-valign2",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just1-valign3",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just1-valign3",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just1-valign4",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just1-valign4",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just1-valign5",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just1-valign5",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just2-valign1",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just2-valign1",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just2-valign2",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just2-valign2",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just2-valign3",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just2-valign3",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just2-valign4",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just2-valign4",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just2-valign5",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just2-valign5",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just3-valign1",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just3-valign1",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just3-valign2",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just3-valign2",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just3-valign3",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just3-valign3",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just3-valign4",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just3-valign4",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just3-valign5",
+      "quantity": "name",
+      "api": "vs.GetText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "just3-valign5",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "A .vwx reader decodes text alignment as DXF group 71, the attachment point. The labels of a project document are 18.2 mm off without it.",
+    "Each text holds its own name. Its origin is origins_mm. The layer scale is 1:50, so 12 pt text is about 151 mm high and the longest name about 1.2 m wide. Columns are 2000 mm apart and rows 600 mm apart.",
+    "vs.TextJust and vs.TextVerticalAlign set the document defaults before each vs.CreateText, so each text is created anchored at its origin. vs.SetTextJust and vs.SetTextVerticalAlign then set the same values on the object.",
+    "Justification: 1 left, 2 center, 3 right (varTextJustification, ProgramVariables.h of SDK 2026). Vertical alignment: 1 top box, 2 top baseline, 3 center box, 4 bottom baseline, 5 bottom box (varTextVerticalAlignment).",
+    "The font comes from vs.GetFontID(\"Arial\"). A Mac without Arial gives another font ID, and native_objects then records that font."
+  ]
+}

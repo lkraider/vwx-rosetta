@@ -1,0 +1,83 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "spatial.floor.legacy",
+  "family_id": "spatial.floor",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Legacy floor 200 thick from a 4000 x 3000 rectangle",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginFloor",
+      "args": [
+        200
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          3000
+        ],
+        [
+          4000,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndGroup",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "fl",
+      "name": "floor-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "floor-a",
+      "bind": "fl",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "floor-a",
+      "quantity": "bounds3",
+      "api": "vs.Get3DInfo",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Stage 2.5 source for the row spatial.floor.legacy of driver/export-inventory-input/gaps.tsv.",
+    "vs.BeginFloor takes 2D calls up to vs.EndGroup as its outline."
+  ]
+}

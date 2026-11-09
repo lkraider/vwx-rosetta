@@ -1,0 +1,72 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "landscape.plant.plugin",
+  "family_id": "landscape.plant",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Plant plug-in object placed at (0, 0) with no preferences dialog",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.plant",
+      "kind": "plugin_object",
+      "acquisition_state": "pending",
+      "reason": "The plug-in probe did not try `Plant`, because no installed .vso file has that name."
+    }
+  ],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Plant",
+        [
+          0,
+          0
+        ],
+        0,
+        false
+      ],
+      "bind": "pl",
+      "name": "plant-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "plant-a",
+      "bind": "pl",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "plant-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Stage 2.5 source for the row landscape.plant.plugin of driver/export-inventory-input/gaps.tsv.",
+    "In the scratch rerun b2-rerun-20261018T193144Z, vs.CreateCustomObject(\"Plant\") in landscape.plant.single returned no handle. The plug-in needs a plant style, and a new document holds none. No vs call is known to make this object."
+  ]
+}

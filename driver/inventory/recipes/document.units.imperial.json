@@ -1,0 +1,55 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "document.units.imperial",
+  "family_id": "document.units",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Inch units on the millimetre blank",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_document"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.SetUnits",
+      "args": [
+        4096,
+        64,
+        3,
+        1.0,
+        "\"",
+        "sq ft"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [],
+  "queries": [
+    {
+      "object_id": "document",
+      "quantity": "name",
+      "api": "vs.GetUnits",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "Document setting without geometry.",
+  "notes": [
+    "vs.SetUnits argument values follow the SetUnits docs example. Their effect on the installed release is unverified."
+  ]
+}

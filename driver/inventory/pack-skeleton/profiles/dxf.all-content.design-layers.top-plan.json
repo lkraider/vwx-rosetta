@@ -1,0 +1,35 @@
+{
+  "profile_id": "dxf.all-content.design-layers.top-plan",
+  "profile_revision": "1",
+  "format": "dxf",
+  "format_revision": "unverified",
+  "scope": "drawing",
+  "options": {
+    "dxf_version": "2018",
+    "layer_scope": "all_visible_design_layers",
+    "export_3d_as": "acis_solids",
+    "classes_as_layers": false,
+    "view": "top_plan"
+  },
+  "state_overrides": {
+    "hidden_content": "as_saved"
+  },
+  "state_override_reasons": {
+    "hidden_content": "Export invisible classes is disabled under the layers mapping"
+  },
+  "applicability": {
+    "requires_any": [
+      "2d",
+      "3d",
+      "annotation",
+      "container",
+      "solid",
+      "nurbs",
+      "mesh",
+      "text"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "DXF with one DXF layer per design layer, exported from View > Standard Views > Top/Plan. It differs from dxf.all-content.design-layers only in the view."
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "solid.sweep.circle",
+  "family_id": "solid.sweep",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Sweep of 360 degrees of a circle off the axis",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginSweep",
+      "args": [
+        0,
+        360,
+        7.5,
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Oval",
+      "args": [
+        [
+          14,
+          6.5
+        ],
+        [
+          22.5,
+          -2
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndSweep",
+      "args": [],
+      "bind": "sw",
+      "name": "sweep-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "sweep-a",
+      "bind": "sw",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "sweep-a",
+      "quantity": "volume",
+      "api": "vs.ObjVolume",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "sweep-a",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "A curved solid held as a profile and a sweep angle."
+  ]
+}

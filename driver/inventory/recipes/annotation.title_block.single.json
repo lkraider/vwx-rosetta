@@ -1,0 +1,90 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.title_block.single",
+  "family_id": "annotation.title_block",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Title Block Border plug-in object at (0, 0) on a sheet layer",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.title-block-border",
+      "kind": "plugin_object",
+      "acquisition_state": "pending",
+      "reason": "The plug-in probe did not try `Title Block Border`, because no installed .vso file has that name."
+    }
+  ],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Sheet",
+        2
+      ],
+      "bind": "sl",
+      "name": "Rosetta-Sheet",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Sheet"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Title Block Border",
+        [
+          0,
+          0
+        ],
+        0,
+        false
+      ],
+      "bind": "tb",
+      "name": "title-block-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "title-block-a",
+      "bind": "tb",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "title-block-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Stage 2.5 source for the row annotation.title_block.single of driver/export-inventory-input/gaps.tsv.",
+    "The object goes on the sheet layer Rosetta-Sheet, which vs.Layer makes active."
+  ]
+}

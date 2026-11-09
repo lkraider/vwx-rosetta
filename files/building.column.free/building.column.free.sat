@@ -1,0 +1,1411 @@
+500 327 3 0 
+11 Vectorworks 22 HarmonyWare SAT v2.1.9 24 Sun Oct 18 13:19:00 2026 
+1 1.000000000000000e-06 1.000000000000000e-10 
+-0 body $-1 $3 $-1 $-1 #
+-1 body $-1 $111 $-1 $-1 #
+-2 body $-1 $219 $-1 $-1 #
+-3 lump $-1 $-1 $4 $0 #
+-4 shell $-1 $-1 $-1 $5 $-1 $3 #
+-5 face $-1 $32 $7 $4 $-1 $6 forward single #
+-6 spline-surface $-1 forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    250 250 2800 
+    250 250 250 
+    -250 250 2800 
+    -250 250 250 
+    0.02646223724479849 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I #
+-7 loop $-1 $-1 $8 $5 #
+-8 coedge $-1 $16 $28 $94 $9 reversed $7 $15 #
+-9 edge $-1 $10 0 $12 1 $8 $14 forward 7 unknown #
+-10 vertex $-1 $9 $11 #
+-11 point $-1 250 250 250 #
+-12 vertex $-1 $9 $13 #
+-13 point $-1 250 250 2800 #
+-14 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    250 250 250 
+    250 250 2800 
+    0.02646223724479849 
+    spline forward { ref 0 } I I I I 
+    spline forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    250 -250 2800 
+    250 -250 250 
+    250 250 2800 
+    250 250 250 
+    0.02646223724479849 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-15 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 0 
+    1 0 
+    0.02646223724479849 
+    spline forward { ref 0 } I I I I } 0 0 #
+-16 coedge $-1 $22 $8 $47 $17 forward $7 $21 #
+-17 edge $-1 $10 0 $18 1 $16 $20 forward 7 unknown #
+-18 vertex $-1 $17 $19 #
+-19 point $-1 -250 250 250 #
+-20 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    250 250 250 
+    -250 250 250 
+    0.02646223724479849 
+    spline forward { ref 0 } I I I I 
+    spline forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    250 -250 250 
+    -250 -250 250 
+    250 250 250 
+    -250 250 250 
+    0.02646223724479849 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-21 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 0 
+    1 1 
+    0.02646223724479849 
+    spline forward { ref 0 } I I I I } 0 0 #
+-22 coedge $-1 $28 $16 $62 $23 forward $7 $27 #
+-23 edge $-1 $18 0 $24 1 $22 $26 forward 7 unknown #
+-24 vertex $-1 $23 $25 #
+-25 point $-1 -250 250 2800 #
+-26 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    -250 250 250 
+    -250 250 2800 
+    0.02646223724479849 
+    spline forward { ref 0 } I I I I 
+    spline forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    -250 250 2800 
+    -250 250 250 
+    -250 -250 2800 
+    -250 -250 250 
+    0.02646223724479849 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-27 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 1 
+    0 1 
+    0.02646223724479849 
+    spline forward { ref 0 } I I I I } 0 0 #
+-28 coedge $-1 $8 $22 $107 $29 reversed $7 $31 #
+-29 edge $-1 $12 0 $24 1 $28 $30 forward 7 unknown #
+-30 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    250 250 2800 
+    -250 250 2800 
+    0.02646223724479849 
+    spline forward { ref 0 } I I I I 
+    spline forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    -250 -250 2800 
+    250 -250 2800 
+    -250 250 2800 
+    250 250 2800 
+    0.02646223724479849 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-31 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 1 
+    0 0 
+    0.02646223724479849 
+    spline forward { ref 0 } I I I I } 0 0 #
+-32 face $-1 $53 $34 $4 $-1 $33 forward single #
+-33 spline-surface $-1 forward { ref 5 } I I I I #
+-34 loop $-1 $-1 $35 $32 #
+-35 coedge $-1 $43 $49 $75 $36 forward $34 $42 #
+-36 edge $-1 $37 0 $39 1 $35 $41 forward 7 unknown #
+-37 vertex $-1 $36 $38 #
+-38 point $-1 250 -250 250 #
+-39 vertex $-1 $36 $40 #
+-40 point $-1 -250 -250 250 #
+-41 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    250 -250 250 
+    -250 -250 250 
+    0.02646223724479849 
+    spline forward { ref 5 } I I I I 
+    spline forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    -250 -250 2800 
+    -250 -250 250 
+    250 -250 2800 
+    250 -250 250 
+    0.02646223724479849 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-42 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 0 
+    1 0 
+    0.02646223724479849 
+    spline forward { ref 5 } I I I I } 0 0 #
+-43 coedge $-1 $47 $35 $64 $44 forward $34 $46 #
+-44 edge $-1 $39 0 $18 1 $43 $45 forward 7 unknown #
+-45 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    -250 -250 250 
+    -250 250 250 
+    0.02646223724479849 
+    spline forward { ref 5 } I I I I 
+    spline forward { ref 8 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-46 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 0 
+    1 1 
+    0.02646223724479849 
+    spline forward { ref 5 } I I I I } 0 0 #
+-47 coedge $-1 $49 $43 $16 $17 reversed $34 $48 #
+-48 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 1 
+    0 1 
+    0.02646223724479849 
+    spline forward { ref 5 } I I I I } 0 0 #
+-49 coedge $-1 $35 $47 $92 $50 forward $34 $52 #
+-50 edge $-1 $10 0 $37 1 $49 $51 forward 7 unknown #
+-51 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    250 250 250 
+    250 -250 250 
+    0.02646223724479849 
+    spline forward { ref 5 } I I I I 
+    spline forward { ref 2 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-52 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 1 
+    0 0 
+    0.02646223724479849 
+    spline forward { ref 5 } I I I I } 0 0 #
+-53 face $-1 $70 $55 $4 $-1 $54 forward single #
+-54 spline-surface $-1 forward { ref 8 } I I I I #
+-55 loop $-1 $-1 $56 $53 #
+-56 coedge $-1 $62 $66 $109 $57 reversed $55 $61 #
+-57 edge $-1 $24 0 $58 1 $56 $60 forward 7 unknown #
+-58 vertex $-1 $57 $59 #
+-59 point $-1 -250 -250 2800 #
+-60 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    -250 250 2800 
+    -250 -250 2800 
+    0.02646223724479849 
+    spline forward { ref 8 } I I I I 
+    spline forward { ref 11 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-61 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 1 
+    0 0 
+    0.02646223724479849 
+    spline forward { ref 8 } I I I I } 0 0 #
+-62 coedge $-1 $64 $56 $22 $23 reversed $55 $63 #
+-63 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 0 
+    1 0 
+    0.02646223724479849 
+    spline forward { ref 8 } I I I I } 0 0 #
+-64 coedge $-1 $66 $62 $43 $44 reversed $55 $65 #
+-65 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 0 
+    1 1 
+    0.02646223724479849 
+    spline forward { ref 8 } I I I I } 0 0 #
+-66 coedge $-1 $56 $64 $73 $67 reversed $55 $69 #
+-67 edge $-1 $58 0 $39 1 $66 $68 forward 7 unknown #
+-68 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    -250 -250 2800 
+    -250 -250 250 
+    0.02646223724479849 
+    spline forward { ref 8 } I I I I 
+    spline forward { ref 14 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-69 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 1 
+    0 1 
+    0.02646223724479849 
+    spline forward { ref 8 } I I I I } 0 0 #
+-70 face $-1 $87 $72 $4 $-1 $71 forward single #
+-71 spline-surface $-1 forward { ref 14 } I I I I #
+-72 loop $-1 $-1 $73 $70 #
+-73 coedge $-1 $75 $83 $66 $67 forward $72 $74 #
+-74 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 0 
+    1 0 
+    0.02646223724479849 
+    spline forward { ref 14 } I I I I } 0 0 #
+-75 coedge $-1 $77 $73 $35 $36 reversed $72 $76 #
+-76 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 0 
+    1 1 
+    0.02646223724479849 
+    spline forward { ref 14 } I I I I } 0 0 #
+-77 coedge $-1 $83 $75 $90 $78 forward $72 $82 #
+-78 edge $-1 $37 0 $79 1 $77 $81 forward 7 unknown #
+-79 vertex $-1 $78 $80 #
+-80 point $-1 250 -250 2800 #
+-81 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    250 -250 250 
+    250 -250 2800 
+    0.02646223724479849 
+    spline forward { ref 14 } I I I I 
+    spline forward { ref 2 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-82 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 1 
+    0 1 
+    0.02646223724479849 
+    spline forward { ref 14 } I I I I } 0 0 #
+-83 coedge $-1 $73 $77 $103 $84 forward $72 $86 #
+-84 edge $-1 $79 0 $58 1 $83 $85 forward 7 unknown #
+-85 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    250 -250 2800 
+    -250 -250 2800 
+    0.02646223724479849 
+    spline forward { ref 14 } I I I I 
+    spline forward { ref 11 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-86 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 1 
+    0 0 
+    0.02646223724479849 
+    spline forward { ref 14 } I I I I } 0 0 #
+-87 face $-1 $100 $89 $4 $-1 $88 forward single #
+-88 spline-surface $-1 forward { ref 2 } I I I I #
+-89 loop $-1 $-1 $90 $87 #
+-90 coedge $-1 $92 $96 $77 $78 reversed $89 $91 #
+-91 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 0 
+    1 0 
+    0.02646223724479849 
+    spline forward { ref 2 } I I I I } 0 0 #
+-92 coedge $-1 $94 $90 $49 $50 reversed $89 $93 #
+-93 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 0 
+    1 1 
+    0.02646223724479849 
+    spline forward { ref 2 } I I I I } 0 0 #
+-94 coedge $-1 $96 $92 $8 $9 forward $89 $95 #
+-95 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 1 
+    0 1 
+    0.02646223724479849 
+    spline forward { ref 2 } I I I I } 0 0 #
+-96 coedge $-1 $90 $94 $105 $97 forward $89 $99 #
+-97 edge $-1 $12 0 $79 1 $96 $98 forward 7 unknown #
+-98 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    250 250 2800 
+    250 -250 2800 
+    0.02646223724479849 
+    spline forward { ref 2 } I I I I 
+    spline forward { ref 11 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-99 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 1 
+    0 0 
+    0.02646223724479849 
+    spline forward { ref 2 } I I I I } 0 0 #
+-100 face $-1 $-1 $102 $4 $-1 $101 forward single #
+-101 spline-surface $-1 forward { ref 11 } I I I I #
+-102 loop $-1 $-1 $103 $100 #
+-103 coedge $-1 $105 $109 $83 $84 reversed $102 $104 #
+-104 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 0 
+    1 0 
+    0.02646223724479849 
+    spline forward { ref 11 } I I I I } 0 0 #
+-105 coedge $-1 $107 $103 $96 $97 reversed $102 $106 #
+-106 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 0 
+    1 1 
+    0.02646223724479849 
+    spline forward { ref 11 } I I I I } 0 0 #
+-107 coedge $-1 $109 $105 $28 $29 forward $102 $108 #
+-108 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 1 
+    0 1 
+    0.02646223724479849 
+    spline forward { ref 11 } I I I I } 0 0 #
+-109 coedge $-1 $103 $107 $56 $57 forward $102 $110 #
+-110 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 1 
+    0 0 
+    0.02646223724479849 
+    spline forward { ref 11 } I I I I } 0 0 #
+-111 lump $-1 $-1 $112 $1 #
+-112 shell $-1 $-1 $-1 $113 $-1 $111 #
+-113 face $-1 $140 $115 $112 $-1 $114 forward single #
+-114 spline-surface $-1 forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    300 -300 2800 
+    -300 -300 2800 
+    300 300 2800 
+    -300 300 2800 
+    0.008717797887081347 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I #
+-115 loop $-1 $-1 $116 $113 #
+-116 coedge $-1 $124 $136 $166 $117 forward $115 $123 #
+-117 edge $-1 $118 0 $120 1 $116 $122 forward 7 unknown #
+-118 vertex $-1 $117 $119 #
+-119 point $-1 -300 -300 2800 #
+-120 vertex $-1 $117 $121 #
+-121 point $-1 -300 300 2800 #
+-122 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    -300 -300 2800 
+    -300 300 2800 
+    0.008717797887081347 
+    spline forward { ref 42 } I I I I 
+    spline forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    -300 300 3000 
+    -300 300 2800 
+    -300 -300 3000 
+    -300 -300 2800 
+    0.008717797887081347 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-123 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 0 
+    1 1 
+    0.008717797887081347 
+    spline forward { ref 42 } I I I I } 0 0 #
+-124 coedge $-1 $130 $116 $149 $125 forward $115 $129 #
+-125 edge $-1 $120 0 $126 1 $124 $128 forward 7 unknown #
+-126 vertex $-1 $125 $127 #
+-127 point $-1 300 300 2800 #
+-128 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    -300 300 2800 
+    300 300 2800 
+    0.008717797887081347 
+    spline forward { ref 42 } I I I I 
+    spline forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    300 300 3000 
+    300 300 2800 
+    -300 300 3000 
+    -300 300 2800 
+    0.008717797887081347 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-129 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 1 
+    0 1 
+    0.008717797887081347 
+    spline forward { ref 42 } I I I I } 0 0 #
+-130 coedge $-1 $136 $124 $200 $131 forward $115 $135 #
+-131 edge $-1 $126 0 $132 1 $130 $134 forward 7 unknown #
+-132 vertex $-1 $131 $133 #
+-133 point $-1 300 -300 2800 #
+-134 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    300 300 2800 
+    300 -300 2800 
+    0.008717797887081347 
+    spline forward { ref 42 } I I I I 
+    spline forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    300 -300 3000 
+    300 -300 2800 
+    300 300 3000 
+    300 300 2800 
+    0.008717797887081347 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-135 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 1 
+    0 0 
+    0.008717797887081347 
+    spline forward { ref 42 } I I I I } 0 0 #
+-136 coedge $-1 $116 $130 $183 $137 forward $115 $139 #
+-137 edge $-1 $132 0 $118 1 $136 $138 forward 7 unknown #
+-138 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    300 -300 2800 
+    -300 -300 2800 
+    0.008717797887081347 
+    spline forward { ref 42 } I I I I 
+    spline forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    -300 -300 3000 
+    -300 -300 2800 
+    300 -300 3000 
+    300 -300 2800 
+    0.008717797887081347 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-139 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 0 
+    1 0 
+    0.008717797887081347 
+    spline forward { ref 42 } I I I I } 0 0 #
+-140 face $-1 $161 $142 $112 $-1 $141 forward single #
+-141 spline-surface $-1 forward { ref 47 } I I I I #
+-142 loop $-1 $-1 $143 $140 #
+-143 coedge $-1 $149 $157 $202 $144 reversed $142 $148 #
+-144 edge $-1 $126 0 $145 1 $143 $147 forward 7 unknown #
+-145 vertex $-1 $144 $146 #
+-146 point $-1 300 300 3000 #
+-147 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    300 300 2800 
+    300 300 3000 
+    0.008717797887081347 
+    spline forward { ref 47 } I I I I 
+    spline forward { ref 50 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-148 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 0 
+    1 0 
+    0.008717797887081347 
+    spline forward { ref 47 } I I I I } 0 0 #
+-149 coedge $-1 $151 $143 $124 $125 reversed $142 $150 #
+-150 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 0 
+    1 1 
+    0.008717797887081347 
+    spline forward { ref 47 } I I I I } 0 0 #
+-151 coedge $-1 $157 $149 $164 $152 forward $142 $156 #
+-152 edge $-1 $120 0 $153 1 $151 $155 forward 7 unknown #
+-153 vertex $-1 $152 $154 #
+-154 point $-1 -300 300 3000 #
+-155 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    -300 300 2800 
+    -300 300 3000 
+    0.008717797887081347 
+    spline forward { ref 47 } I I I I 
+    spline forward { ref 44 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-156 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 1 
+    0 1 
+    0.008717797887081347 
+    spline forward { ref 47 } I I I I } 0 0 #
+-157 coedge $-1 $143 $151 $217 $158 forward $142 $160 #
+-158 edge $-1 $153 0 $145 1 $157 $159 forward 7 unknown #
+-159 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    -300 300 3000 
+    300 300 3000 
+    0.008717797887081347 
+    spline forward { ref 47 } I I I I 
+    spline forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    -300 -300 3000 
+    300 -300 3000 
+    -300 300 3000 
+    300 300 3000 
+    0.008717797887081347 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-160 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 1 
+    0 0 
+    0.008717797887081347 
+    spline forward { ref 47 } I I I I } 0 0 #
+-161 face $-1 $178 $163 $112 $-1 $162 forward single #
+-162 spline-surface $-1 forward { ref 44 } I I I I #
+-163 loop $-1 $-1 $164 $161 #
+-164 coedge $-1 $166 $174 $151 $152 reversed $163 $165 #
+-165 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 0 
+    1 0 
+    0.008717797887081347 
+    spline forward { ref 44 } I I I I } 0 0 #
+-166 coedge $-1 $168 $164 $116 $117 reversed $163 $167 #
+-167 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 0 
+    1 1 
+    0.008717797887081347 
+    spline forward { ref 44 } I I I I } 0 0 #
+-168 coedge $-1 $174 $166 $181 $169 reversed $163 $173 #
+-169 edge $-1 $170 0 $118 1 $168 $172 forward 7 unknown #
+-170 vertex $-1 $169 $171 #
+-171 point $-1 -300 -300 3000 #
+-172 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    -300 -300 3000 
+    -300 -300 2800 
+    0.008717797887081347 
+    spline forward { ref 44 } I I I I 
+    spline forward { ref 53 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-173 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 1 
+    0 1 
+    0.008717797887081347 
+    spline forward { ref 44 } I I I I } 0 0 #
+-174 coedge $-1 $164 $168 $211 $175 reversed $163 $177 #
+-175 edge $-1 $153 0 $170 1 $174 $176 forward 7 unknown #
+-176 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    -300 300 3000 
+    -300 -300 3000 
+    0.008717797887081347 
+    spline forward { ref 44 } I I I I 
+    spline forward { ref 61 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-177 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 1 
+    0 0 
+    0.008717797887081347 
+    spline forward { ref 44 } I I I I } 0 0 #
+-178 face $-1 $195 $180 $112 $-1 $179 forward single #
+-179 spline-surface $-1 forward { ref 53 } I I I I #
+-180 loop $-1 $-1 $181 $178 #
+-181 coedge $-1 $183 $191 $168 $169 forward $180 $182 #
+-182 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 0 
+    1 0 
+    0.008717797887081347 
+    spline forward { ref 53 } I I I I } 0 0 #
+-183 coedge $-1 $185 $181 $136 $137 reversed $180 $184 #
+-184 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 0 
+    1 1 
+    0.008717797887081347 
+    spline forward { ref 53 } I I I I } 0 0 #
+-185 coedge $-1 $191 $183 $198 $186 forward $180 $190 #
+-186 edge $-1 $132 0 $187 1 $185 $189 forward 7 unknown #
+-187 vertex $-1 $186 $188 #
+-188 point $-1 300 -300 3000 #
+-189 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    300 -300 2800 
+    300 -300 3000 
+    0.008717797887081347 
+    spline forward { ref 53 } I I I I 
+    spline forward { ref 50 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-190 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 1 
+    0 1 
+    0.008717797887081347 
+    spline forward { ref 53 } I I I I } 0 0 #
+-191 coedge $-1 $181 $185 $213 $192 forward $180 $194 #
+-192 edge $-1 $187 0 $170 1 $191 $193 forward 7 unknown #
+-193 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    300 -300 3000 
+    -300 -300 3000 
+    0.008717797887081347 
+    spline forward { ref 53 } I I I I 
+    spline forward { ref 61 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-194 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 1 
+    0 0 
+    0.008717797887081347 
+    spline forward { ref 53 } I I I I } 0 0 #
+-195 face $-1 $208 $197 $112 $-1 $196 forward single #
+-196 spline-surface $-1 forward { ref 50 } I I I I #
+-197 loop $-1 $-1 $198 $195 #
+-198 coedge $-1 $200 $204 $185 $186 reversed $197 $199 #
+-199 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 0 
+    1 0 
+    0.008717797887081347 
+    spline forward { ref 50 } I I I I } 0 0 #
+-200 coedge $-1 $202 $198 $130 $131 reversed $197 $201 #
+-201 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 0 
+    1 1 
+    0.008717797887081347 
+    spline forward { ref 50 } I I I I } 0 0 #
+-202 coedge $-1 $204 $200 $143 $144 forward $197 $203 #
+-203 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 1 
+    0 1 
+    0.008717797887081347 
+    spline forward { ref 50 } I I I I } 0 0 #
+-204 coedge $-1 $198 $202 $215 $205 forward $197 $207 #
+-205 edge $-1 $145 0 $187 1 $204 $206 forward 7 unknown #
+-206 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    300 300 3000 
+    300 -300 3000 
+    0.008717797887081347 
+    spline forward { ref 50 } I I I I 
+    spline forward { ref 61 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-207 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 1 
+    0 0 
+    0.008717797887081347 
+    spline forward { ref 50 } I I I I } 0 0 #
+-208 face $-1 $-1 $210 $112 $-1 $209 forward single #
+-209 spline-surface $-1 forward { ref 61 } I I I I #
+-210 loop $-1 $-1 $211 $208 #
+-211 coedge $-1 $213 $217 $174 $175 forward $210 $212 #
+-212 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 1 
+    0 0 
+    0.008717797887081347 
+    spline forward { ref 61 } I I I I } 0 0 #
+-213 coedge $-1 $215 $211 $191 $192 reversed $210 $214 #
+-214 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 0 
+    1 0 
+    0.008717797887081347 
+    spline forward { ref 61 } I I I I } 0 0 #
+-215 coedge $-1 $217 $213 $204 $205 reversed $210 $216 #
+-216 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 0 
+    1 1 
+    0.008717797887081347 
+    spline forward { ref 61 } I I I I } 0 0 #
+-217 coedge $-1 $211 $215 $157 $158 reversed $210 $218 #
+-218 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 1 
+    0 1 
+    0.008717797887081347 
+    spline forward { ref 61 } I I I I } 0 0 #
+-219 lump $-1 $-1 $220 $2 #
+-220 shell $-1 $-1 $-1 $221 $-1 $219 #
+-221 face $-1 $248 $223 $220 $-1 $222 forward single #
+-222 spline-surface $-1 forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    -300 300 0 
+    -300 300 250 
+    300 300 0 
+    300 300 250 
+    0.008845903006477068 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I #
+-223 loop $-1 $-1 $224 $221 #
+-224 coedge $-1 $232 $244 $325 $225 forward $223 $231 #
+-225 edge $-1 $226 0 $228 1 $224 $230 forward 7 unknown #
+-226 vertex $-1 $225 $227 #
+-227 point $-1 300 300 0 #
+-228 vertex $-1 $225 $229 #
+-229 point $-1 -300 300 0 #
+-230 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    300 300 0 
+    -300 300 0 
+    0.008845903006477068 
+    spline forward { ref 84 } I I I I 
+    spline forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    300 -300 0 
+    -300 -300 0 
+    300 300 0 
+    -300 300 0 
+    0.008845903006477068 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-231 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 1 
+    0 0 
+    0.008845903006477068 
+    spline forward { ref 84 } I I I I } 0 0 #
+-232 coedge $-1 $238 $224 $267 $233 forward $223 $237 #
+-233 edge $-1 $228 0 $234 1 $232 $236 forward 7 unknown #
+-234 vertex $-1 $233 $235 #
+-235 point $-1 -300 300 250 #
+-236 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    -300 300 0 
+    -300 300 250 
+    0.008845903006477068 
+    spline forward { ref 84 } I I I I 
+    spline forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    -300 -300 0 
+    -300 -300 250 
+    -300 300 0 
+    -300 300 250 
+    0.008845903006477068 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-237 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 0 
+    1 0 
+    0.008845903006477068 
+    spline forward { ref 84 } I I I I } 0 0 #
+-238 coedge $-1 $244 $232 $310 $239 reversed $223 $243 #
+-239 edge $-1 $240 0 $234 1 $238 $242 forward 7 unknown #
+-240 vertex $-1 $239 $241 #
+-241 point $-1 300 300 250 #
+-242 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    300 300 250 
+    -300 300 250 
+    0.008845903006477068 
+    spline forward { ref 84 } I I I I 
+    spline forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    -300 -300 250 
+    300 -300 250 
+    -300 300 250 
+    300 300 250 
+    0.008845903006477068 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-243 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 0 
+    1 1 
+    0.008845903006477068 
+    spline forward { ref 84 } I I I I } 0 0 #
+-244 coedge $-1 $224 $238 $297 $245 reversed $223 $247 #
+-245 edge $-1 $226 0 $240 1 $244 $246 forward 7 unknown #
+-246 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    300 300 0 
+    300 300 250 
+    0.008845903006477068 
+    spline forward { ref 84 } I I I I 
+    spline forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    300 -300 250 
+    300 -300 0 
+    300 300 250 
+    300 300 0 
+    0.008845903006477068 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-247 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 1 
+    0 1 
+    0.008845903006477068 
+    spline forward { ref 84 } I I I I } 0 0 #
+-248 face $-1 $269 $250 $220 $-1 $249 forward single #
+-249 spline-surface $-1 forward { ref 89 } I I I I #
+-250 loop $-1 $-1 $251 $248 #
+-251 coedge $-1 $257 $267 $323 $252 forward $250 $256 #
+-252 edge $-1 $228 0 $253 1 $251 $255 forward 7 unknown #
+-253 vertex $-1 $252 $254 #
+-254 point $-1 -300 -300 0 #
+-255 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    -300 300 0 
+    -300 -300 0 
+    0.008845903006477068 
+    spline forward { ref 89 } I I I I 
+    spline forward { ref 86 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-256 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 1 
+    0 0 
+    0.008845903006477068 
+    spline forward { ref 89 } I I I I } 0 0 #
+-257 coedge $-1 $263 $251 $288 $258 forward $250 $262 #
+-258 edge $-1 $253 0 $259 1 $257 $261 forward 7 unknown #
+-259 vertex $-1 $258 $260 #
+-260 point $-1 -300 -300 250 #
+-261 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    -300 -300 0 
+    -300 -300 250 
+    0.008845903006477068 
+    spline forward { ref 89 } I I I I 
+    spline forward { exactsur full nubs 1 1 open open none none 2 2 
+    0 1 1 1 
+    0 1 1 1 
+    -300 -300 250 
+    -300 -300 0 
+    300 -300 250 
+    300 -300 0 
+    0.008845903006477068 
+    0 
+    0 
+    0 
+    0 
+    0 
+    0 
+    F 1 F 0 F 1 F 0 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-262 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 0 
+    1 0 
+    0.008845903006477068 
+    spline forward { ref 89 } I I I I } 0 0 #
+-263 coedge $-1 $267 $257 $312 $264 forward $250 $266 #
+-264 edge $-1 $259 0 $234 1 $263 $265 forward 7 unknown #
+-265 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    -300 -300 250 
+    -300 300 250 
+    0.008845903006477068 
+    spline forward { ref 89 } I I I I 
+    spline forward { ref 92 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-266 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 0 
+    1 1 
+    0.008845903006477068 
+    spline forward { ref 89 } I I I I } 0 0 #
+-267 coedge $-1 $251 $263 $232 $233 reversed $250 $268 #
+-268 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 1 
+    0 1 
+    0.008845903006477068 
+    spline forward { ref 89 } I I I I } 0 0 #
+-269 face $-1 $290 $271 $220 $-1 $270 forward single #
+-270 spline-surface $-1 forward { ref 100 } I I I I #
+-271 loop $-1 $-1 $272 $269 #
+-272 coedge $-1 $278 $288 $321 $273 forward $271 $277 #
+-273 edge $-1 $253 0 $274 1 $272 $276 forward 7 unknown #
+-274 vertex $-1 $273 $275 #
+-275 point $-1 300 -300 0 #
+-276 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    -300 -300 0 
+    300 -300 0 
+    0.008845903006477068 
+    spline forward { ref 100 } I I I I 
+    spline forward { ref 86 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-277 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 0 
+    1 1 
+    0.008845903006477068 
+    spline forward { ref 100 } I I I I } 0 0 #
+-278 coedge $-1 $284 $272 $303 $279 forward $271 $283 #
+-279 edge $-1 $274 0 $280 1 $278 $282 forward 7 unknown #
+-280 vertex $-1 $279 $281 #
+-281 point $-1 300 -300 250 #
+-282 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    300 -300 0 
+    300 -300 250 
+    0.008845903006477068 
+    spline forward { ref 100 } I I I I 
+    spline forward { ref 95 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-283 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 1 
+    0 1 
+    0.008845903006477068 
+    spline forward { ref 100 } I I I I } 0 0 #
+-284 coedge $-1 $288 $278 $314 $285 forward $271 $287 #
+-285 edge $-1 $280 0 $259 1 $284 $286 forward 7 unknown #
+-286 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    300 -300 250 
+    -300 -300 250 
+    0.008845903006477068 
+    spline forward { ref 100 } I I I I 
+    spline forward { ref 92 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-287 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 1 
+    0 0 
+    0.008845903006477068 
+    spline forward { ref 100 } I I I I } 0 0 #
+-288 coedge $-1 $272 $284 $257 $258 reversed $271 $289 #
+-289 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 0 
+    1 0 
+    0.008845903006477068 
+    spline forward { ref 100 } I I I I } 0 0 #
+-290 face $-1 $305 $292 $220 $-1 $291 forward single #
+-291 spline-surface $-1 forward { ref 95 } I I I I #
+-292 loop $-1 $-1 $293 $290 #
+-293 coedge $-1 $297 $303 $319 $294 reversed $292 $296 #
+-294 edge $-1 $226 0 $274 1 $293 $295 forward 7 unknown #
+-295 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    300 300 0 
+    300 -300 0 
+    0.008845903006477068 
+    spline forward { ref 95 } I I I I 
+    spline forward { ref 86 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-296 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 0 
+    1 1 
+    0.008845903006477068 
+    spline forward { ref 95 } I I I I } 0 0 #
+-297 coedge $-1 $299 $293 $244 $245 forward $292 $298 #
+-298 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 1 
+    0 1 
+    0.008845903006477068 
+    spline forward { ref 95 } I I I I } 0 0 #
+-299 coedge $-1 $303 $297 $308 $300 forward $292 $302 #
+-300 edge $-1 $240 0 $280 1 $299 $301 forward 7 unknown #
+-301 intcurve-curve $-1 forward { exactcur full nubs 1 open 2 
+    0 1 1 1 
+    300 300 250 
+    300 -300 250 
+    0.008845903006477068 
+    spline forward { ref 95 } I I I I 
+    spline forward { ref 92 } I I I I 
+    nullbs 
+    nullbs 
+    I I 
+    0 
+    0 
+    0 
+    F 0 F 1 } I I #
+-302 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 1 
+    0 0 
+    0.008845903006477068 
+    spline forward { ref 95 } I I I I } 0 0 #
+-303 coedge $-1 $293 $299 $278 $279 reversed $292 $304 #
+-304 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 0 
+    1 0 
+    0.008845903006477068 
+    spline forward { ref 95 } I I I I } 0 0 #
+-305 face $-1 $316 $307 $220 $-1 $306 forward single #
+-306 spline-surface $-1 forward { ref 92 } I I I I #
+-307 loop $-1 $-1 $308 $305 #
+-308 coedge $-1 $310 $314 $299 $300 reversed $307 $309 #
+-309 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 0 
+    1 1 
+    0.008845903006477068 
+    spline forward { ref 92 } I I I I } 0 0 #
+-310 coedge $-1 $312 $308 $238 $239 forward $307 $311 #
+-311 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    1 1 
+    0 1 
+    0.008845903006477068 
+    spline forward { ref 92 } I I I I } 0 0 #
+-312 coedge $-1 $314 $310 $263 $264 reversed $307 $313 #
+-313 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 1 
+    0 0 
+    0.008845903006477068 
+    spline forward { ref 92 } I I I I } 0 0 #
+-314 coedge $-1 $308 $312 $284 $285 reversed $307 $315 #
+-315 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 0 
+    1 0 
+    0.008845903006477068 
+    spline forward { ref 92 } I I I I } 0 0 #
+-316 face $-1 $-1 $318 $220 $-1 $317 forward single #
+-317 spline-surface $-1 forward { ref 86 } I I I I #
+-318 loop $-1 $-1 $319 $316 #
+-319 coedge $-1 $321 $325 $293 $294 forward $318 $320 #
+-320 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    0 1 1 1 
+    0 1 
+    0 0 
+    0.008845903006477068 
+    spline forward { ref 86 } I I I I } 0 0 #
+-321 coedge $-1 $323 $319 $272 $273 reversed $318 $322 #
+-322 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    0 0 
+    1 0 
+    0.008845903006477068 
+    spline forward { ref 86 } I I I I } 0 0 #
+-323 coedge $-1 $325 $321 $251 $252 reversed $318 $324 #
+-324 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 0 
+    1 1 
+    0.008845903006477068 
+    spline forward { ref 86 } I I I I } 0 0 #
+-325 coedge $-1 $319 $323 $224 $225 reversed $318 $326 #
+-326 pcurve $-1 0 forward { exppc nubs 1 open 2 
+    -1 1 -0 1 
+    1 1 
+    0 1 
+    0.008845903006477068 
+    spline forward { ref 86 } I I I I } 0 0 #
+End-of-ACIS-data 

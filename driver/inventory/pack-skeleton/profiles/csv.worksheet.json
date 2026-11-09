@@ -1,0 +1,19 @@
+{
+  "profile_id": "csv.worksheet",
+  "profile_revision": "1",
+  "format": "csv",
+  "format_revision": "unverified",
+  "scope": "table",
+  "options": {
+    "delimiter": ","
+  },
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "table"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "Worksheet export as CSV."
+}

@@ -1,0 +1,81 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "building.space.rect",
+  "family_id": "building.space",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Space object 3000 mm high made from a 5000 x 4000 mm rectangle",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          4000
+        ],
+        [
+          5000,
+          0
+        ]
+      ],
+      "bind": "rc",
+      "name": "space-boundary"
+    },
+    {
+      "op": "create",
+      "api": "vs.Space_CreateSpace",
+      "args": [
+        "$rc",
+        3000.0
+      ],
+      "bind": "sp",
+      "name": "space-a",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.ResetObject",
+      "args": [
+        "$sp"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "space-a",
+      "bind": "sp",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "space-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.Space_CreateSpace takes the rectangle as the space boundary and removes it from the drawing. Its second argument is the space height, 3000 mm. The object takes the default style and parameters of a new Vectorworks Architect 2027 document. vs.ResetObject regenerates it before the save."
+  ]
+}

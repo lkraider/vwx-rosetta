@@ -1,0 +1,9 @@
+step	driver	format	profile	cases	options	expect	ext
+opt-triangulate-off	ui	dxf	dxf.opt.triangulate-off	plugin.combined.10	--unlisted	install	dxf
+opt-records-off	ui	dxf	dxf.opt.records-off	plugin.combined.10	--unlisted	install	dxf
+opt-hatch-fill-layers	ui	dxf	dxf.opt.hatch-fill-layers	plugin.combined.10	--unlisted	install	dxf
+opt-single-layer-classes	ui	dxf	dxf.opt.single-layer-classes	plugin.combined.10	--unlisted	install	dxf
+opt-reset-plugins-off	ui	dxf	dxf.opt.reset-plugins-off	plugin.combined.10	--unlisted	install	dxf
+opt-update-vp-off	ui	dxf	dxf.opt.update-vp-off	annotation.viewport.sheet	--unlisted	install	dxf
+opt-first-vp-scale-off	ui	dxf	dxf.opt.first-vp-scale-off	annotation.viewport.sheet	--unlisted	install	dxf
+opt-clip-objects	ui	dxf	dxf.opt.clip-objects	annotation.viewport.sheet	--unlisted	install	dxf

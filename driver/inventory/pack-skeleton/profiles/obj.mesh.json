@@ -1,0 +1,19 @@
+{
+  "profile_id": "obj.mesh",
+  "profile_revision": "1",
+  "format": "obj",
+  "format_revision": "unverified",
+  "scope": "mesh",
+  "options": {
+    "export_materials": null
+  },
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "3d"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "OBJ tessellation of 3D content."
+}

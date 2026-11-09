@@ -1,0 +1,136 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "planar.polyline.asym",
+  "family_id": "planar.polyline",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Open polyline with corner, arc, Bezier and radius vertices",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.Add2DVertex",
+      "args": [
+        [
+          5.5,
+          3.25
+        ],
+        0,
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add2DVertex",
+      "args": [
+        [
+          44,
+          9.75
+        ],
+        3,
+        7.5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add2DVertex",
+      "args": [
+        [
+          38.25,
+          31
+        ],
+        1,
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add2DVertex",
+      "args": [
+        [
+          12.75,
+          24.5
+        ],
+        4,
+        3.25
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add2DVertex",
+      "args": [
+        [
+          -2.5,
+          14
+        ],
+        0,
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.OpenPoly",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.EndPoly",
+      "args": [],
+      "bind": "pl",
+      "name": "polyline-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "polyline-a",
+      "bind": "pl",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "polyline-a",
+      "quantity": "count",
+      "api": "vs.GetVertNum",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "polyline-a",
+      "quantity": "control_points",
+      "api": "vs.GetPolylineVertex",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "polyline-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Vertex type codes 0 corner, 1 bezier, 3 arc, 4 radius come from the Add2DVertex docs remark."
+  ]
+}

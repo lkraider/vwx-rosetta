@@ -1,0 +1,74 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.dimension.linear",
+  "family_id": "annotation.dimension",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Linear dimension from (5.5, 3.25) to (47, 11.75)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.LinearDim",
+      "args": [
+        [
+          5.5,
+          3.25
+        ],
+        [
+          47,
+          11.75
+        ],
+        6.5,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bind": "dm",
+      "name": "dim-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "dim-a",
+      "bind": "dm",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "dim-a",
+      "quantity": "name",
+      "api": "vs.GetDimText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "dimType, arrow and textFlag 0 are placeholders. The LinearDim docs do not list their codes."
+  ]
+}

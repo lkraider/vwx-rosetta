@@ -1,0 +1,7 @@
+step	driver	format	profile	cases	options	expect	ext
+# Reruns of the 5 top-8 pairs whose DXF exists only as a copy in rosetta-parked/rosetta-cover-rest/dialog-top8-dxf. Needs main with 7a34c30.
+kept-indexed-colors	ui	dxf	dxf.opt.indexed-colors	plugin.combined.10	--unlisted	install	dxf
+kept-fills-off	ui	dxf	dxf.opt.fills-off	plugin.combined.10	--unlisted	install	dxf
+kept-hatches-off	ui	dxf	dxf.opt.hatches-off	plugin.combined.10	--unlisted	install	dxf
+kept-decompose-3d	ui	dxf	dxf.opt.decompose-3d	ix.mech.hybrid-2d-3d-class-override	--unlisted	install	dxf
+kept-viewports-2d-model	ui	dxf	dxf.opt.viewports-2d-model	annotation.viewport.sheet	--unlisted	install	dxf

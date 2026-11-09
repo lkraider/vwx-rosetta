@@ -1,0 +1,199 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "container.symbol.hidden_class_2d",
+  "family_id": "container.symbol",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Visible instance of a 2D symbol that holds a rectangle in a hidden class and an oval in a visible class",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "question": "M2"
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Hidden-H"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Visible-V"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "None"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Rosetta-Sym-2D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          600
+        ],
+        [
+          1000,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "r",
+      "name": "sym-rect-hidden",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$r",
+        "Rosetta-Hidden-H"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Oval",
+      "args": [
+        [
+          1200,
+          600
+        ],
+        [
+          1800,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "o",
+      "name": "sym-oval-visible",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$o",
+        "Rosetta-Visible-V"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.Symbol",
+      "args": [
+        "Rosetta-Sym-2D",
+        [
+          500,
+          1500
+        ],
+        0
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "si",
+      "name": "sym-2d-inst",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$si",
+        "None"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.HideClass",
+      "args": [
+        "Rosetta-Hidden-H"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "sym-2d-inst",
+      "bind": "si",
+      "role": "primary"
+    },
+    {
+      "object_id": "sym-rect-hidden",
+      "bind": "r",
+      "role": "dependency"
+    },
+    {
+      "object_id": "sym-oval-visible",
+      "bind": "o",
+      "role": "dependency"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "sym-2d-inst",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "sym-rect-hidden",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "sym-oval-visible",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "The instance is in class None. Inside the definition the rectangle is in Rosetta-Hidden-H and the oval in Rosetta-Visible-V."
+  ]
+}

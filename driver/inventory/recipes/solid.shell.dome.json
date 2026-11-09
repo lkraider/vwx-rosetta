@@ -1,0 +1,219 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "solid.shell.dome",
+  "family_id": "solid.shell",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Shell of thickness 1.25 from a rational NURBS dome",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "recipe_checkpoint",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateNurbsSurface",
+      "args": [
+        3,
+        3,
+        2,
+        2
+      ],
+      "bind": "ns",
+      "name": "nurbs-surface-a",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        0,
+        0,
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        0,
+        1,
+        [
+          10.5,
+          -0.75,
+          6.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        0,
+        2,
+        [
+          22,
+          0.5,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        1,
+        0,
+        [
+          -0.5,
+          9.75,
+          5.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        1,
+        1,
+        [
+          10.75,
+          10.25,
+          15.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        1,
+        2,
+        [
+          21.25,
+          11,
+          6.75
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        2,
+        0,
+        [
+          0.25,
+          19.5,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        2,
+        1,
+        [
+          11.5,
+          20.75,
+          5.75
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetPt3D",
+      "args": [
+        "$ns",
+        2,
+        2,
+        [
+          22.75,
+          21.25,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NurbsSetWeight",
+      "args": [
+        "$ns",
+        1,
+        1,
+        0.5
+      ]
+    },
+    {
+      "op": "checkpoint",
+      "id": "before-shell"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateShell",
+      "args": [
+        "$ns",
+        1.25
+      ],
+      "bind": "sh",
+      "name": "shell-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "shell-a",
+      "bind": "sh",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "shell-a",
+      "quantity": "volume",
+      "api": "vs.ObjVolume",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "shell-a",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "The shell offsets a doubly curved surface, so it holds offset faces."
+  ]
+}

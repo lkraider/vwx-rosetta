@@ -1,0 +1,79 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "building.wall.curved",
+  "family_id": "building.wall",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Round wall, a quarter arc of radius 2500 about (2250, 750)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.RoundWall",
+      "args": [
+        [
+          2250,
+          750
+        ],
+        [
+          4750,
+          750
+        ],
+        [
+          2250,
+          3250
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "w",
+      "name": "wall-round",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "wall-round",
+      "bind": "w",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "wall-round",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "wall-round",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.RoundWall draws counter-clockwise from the start point to the end point, so the wall runs through (4017.77, 2517.77). The wall outline is two concentric arcs. building.wall.straight holds a straight wall."
+  ]
+}

@@ -1,0 +1,290 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.dimension.direction",
+  "family_id": "annotation.dimension",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Vertical, 30 degree and 135 degree linear dimensions of 381 mm under the default standard and standard 5",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.ActLayer",
+      "args": [],
+      "bind": "ly",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLScale",
+      "args": [
+        "$ly",
+        1
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LinearDim",
+      "args": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          381.0
+        ],
+        50,
+        4,
+        0,
+        0,
+        0
+      ],
+      "bind": "dvd",
+      "name": "dim-vertical-default"
+    },
+    {
+      "op": "create",
+      "api": "vs.LinearDim",
+      "args": [
+        [
+          200.0,
+          0.0
+        ],
+        [
+          529.955679,
+          190.5
+        ],
+        50,
+        4,
+        0,
+        0,
+        0
+      ],
+      "bind": "d30d",
+      "name": "dim-30-default"
+    },
+    {
+      "op": "create",
+      "api": "vs.LinearDim",
+      "args": [
+        [
+          1000.0,
+          0.0
+        ],
+        [
+          730.592316,
+          269.407684
+        ],
+        50,
+        4,
+        0,
+        0,
+        0
+      ],
+      "bind": "d135d",
+      "name": "dim-135-default"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetDimStd",
+      "args": [
+        5
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LinearDim",
+      "args": [
+        [
+          0.0,
+          1000.0
+        ],
+        [
+          0.0,
+          1381.0
+        ],
+        50,
+        4,
+        0,
+        0,
+        0
+      ],
+      "bind": "dvs",
+      "name": "dim-vertical-std5"
+    },
+    {
+      "op": "create",
+      "api": "vs.LinearDim",
+      "args": [
+        [
+          200.0,
+          1000.0
+        ],
+        [
+          529.955679,
+          1190.5
+        ],
+        50,
+        4,
+        0,
+        0,
+        0
+      ],
+      "bind": "d30s",
+      "name": "dim-30-std5"
+    },
+    {
+      "op": "create",
+      "api": "vs.LinearDim",
+      "args": [
+        [
+          1000.0,
+          1000.0
+        ],
+        [
+          730.592316,
+          1269.407684
+        ],
+        50,
+        4,
+        0,
+        0,
+        0
+      ],
+      "bind": "d135s",
+      "name": "dim-135-std5"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "dim-vertical-default",
+      "bind": "dvd",
+      "role": "primary"
+    },
+    {
+      "object_id": "dim-30-default",
+      "bind": "d30d",
+      "role": "primary"
+    },
+    {
+      "object_id": "dim-135-default",
+      "bind": "d135d",
+      "role": "primary"
+    },
+    {
+      "object_id": "dim-vertical-std5",
+      "bind": "dvs",
+      "role": "primary"
+    },
+    {
+      "object_id": "dim-30-std5",
+      "bind": "d30s",
+      "role": "primary"
+    },
+    {
+      "object_id": "dim-135-std5",
+      "bind": "d135s",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "dim-vertical-default",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-vertical-default",
+      "quantity": "name",
+      "api": "vs.GetDimText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-30-default",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-30-default",
+      "quantity": "name",
+      "api": "vs.GetDimText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-135-default",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-135-default",
+      "quantity": "name",
+      "api": "vs.GetDimText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-vertical-std5",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-vertical-std5",
+      "quantity": "name",
+      "api": "vs.GetDimText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-30-std5",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-30-std5",
+      "quantity": "name",
+      "api": "vs.GetDimText",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-135-std5",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-135-std5",
+      "quantity": "name",
+      "api": "vs.GetDimText",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "A .vwx reader asked for dimension blocks whose dimension line is not horizontal. Each dimension measures 381 mm. vs.SetLScale sets the active design layer to 1:1 before any object is drawn.",
+    "The first three dimensions take the default standard of the blank document. vs.SetDimStd(5) then sets standard 5 for the last three, as annotation.dimension.standard does.",
+    "dimType 4 aligns the dimension line with the measured points. The r134 probe read dimType 4 as DXF DIMENSION type 161 (aligned). All six dimensions use it.",
+    "The slanted end points are rounded to 6 decimals, so their length differs from 381 mm by less than 0.000001 mm."
+  ]
+}

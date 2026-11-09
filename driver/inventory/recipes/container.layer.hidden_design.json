@@ -1,0 +1,206 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "container.layer.hidden_design",
+  "family_id": "container.layer",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Hidden design layer with a rectangle and an extrude, beside a visible layer with an oval",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "question": "M1"
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Hidden-L",
+        1
+      ],
+      "bind": "lh",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Hidden-L"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          1000
+        ],
+        [
+          1500,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "r",
+      "name": "rect-hidden-layer",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        500
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          2000,
+          1000
+        ],
+        [
+          3000,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndXtrd",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "x",
+      "name": "extrude-hidden-layer",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Visible-L",
+        1
+      ],
+      "bind": "lv",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Visible-L"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Oval",
+      "args": [
+        [
+          0,
+          2800
+        ],
+        [
+          1200,
+          2000
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "o",
+      "name": "oval-visible-layer",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Hidden-L"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.HideLayer",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Visible-L"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-hidden-layer",
+      "bind": "r",
+      "role": "primary"
+    },
+    {
+      "object_id": "extrude-hidden-layer",
+      "bind": "x",
+      "role": "primary"
+    },
+    {
+      "object_id": "oval-visible-layer",
+      "bind": "o",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-hidden-layer",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "extrude-hidden-layer",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "oval-visible-layer",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.HideLayer acts on the active layer only. The recipe draws both layers, makes Rosetta-Hidden-L active, hides it, and makes Rosetta-Visible-L active before the save.",
+    "driver/source-census.json records vs.GetLVis of each layer in the saved document. source-census.py --check-hidden fails when Rosetta-Hidden-L reads visible."
+  ]
+}

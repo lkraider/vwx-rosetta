@@ -1,0 +1,282 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "ix.mech.viewport-crop-annotation-visibility",
+  "family_id": "annotation.viewport",
+  "recipe_revision": "3",
+  "supersedes": {
+    "recipe_revision": "2",
+    "recipe_sha256": "94a5da3f5ea13b218f4bfb29ba5a4b0ac4663e94646baf13f9e452ebd3c41fae"
+  },
+  "universe": "interaction",
+  "title": "Sheet viewport with a crop, an annotation, a layer link source and a saved view",
+  "mechanism": "mech.viewport-crop-annotation-visibility",
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Ref-Src",
+        1
+      ],
+      "bind": "rs",
+      "name": "Rosetta-Ref-Src",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Ref-Src"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        11
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          4,
+          29.25
+        ],
+        [
+          47.5,
+          3
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndXtrd",
+      "args": [],
+      "bind": "ex",
+      "name": "ref-extrude"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Model-2",
+        1
+      ],
+      "bind": "md",
+      "name": "Rosetta-Model-2",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Model-2"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LayerRef",
+      "args": [
+        "Rosetta-Ref-Src"
+      ],
+      "bind": "lr",
+      "name": "link-in-model"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Sheet-2",
+        2
+      ],
+      "bind": "sh",
+      "name": "Rosetta-Sheet-2",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateVP",
+      "args": [
+        "$sh"
+      ],
+      "bind": "vp",
+      "name": "viewport-b",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPLayerVisibility",
+      "args": [
+        "$vp",
+        "$md",
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPLayerVisibility",
+      "args": [
+        "$vp",
+        "$rs",
+        0
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          9.5,
+          22
+        ],
+        [
+          31.25,
+          6.75
+        ]
+      ],
+      "bind": "cr",
+      "name": "vp-crop"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPCropObject",
+      "args": [
+        "$vp",
+        "$cr"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          12.25,
+          18.5
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "Note Ø 1"
+      ],
+      "bind": "an",
+      "name": "vp-note"
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVPAnnotationObject",
+      "args": [
+        "$vp",
+        "$an"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.UpdateVP",
+      "args": [
+        "$vp"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SaveSheet",
+      "args": [
+        "Rosetta-Sheet-View",
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "viewport-b",
+      "bind": "vp",
+      "role": "primary"
+    },
+    {
+      "object_id": "vp-crop",
+      "bind": "cr",
+      "role": "dependency"
+    },
+    {
+      "object_id": "vp-note",
+      "bind": "an",
+      "role": "dependency"
+    },
+    {
+      "object_id": "link-in-model",
+      "bind": "lr",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "viewport-b",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "viewport-b",
+      "quantity": "visibility",
+      "api": "vs.GetVPLayerVisibility",
+      "frame": "document_world",
+      "args": [
+        {
+          "handle": "object"
+        },
+        {
+          "handle": "layer",
+          "name": "Rosetta-Model-2"
+        }
+      ]
+    },
+    {
+      "object_id": "viewport-b",
+      "quantity": "count",
+      "api": "vs.GetVPCropObject",
+      "frame": "document_world",
+      "component": "crop_objects"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "viewport_crop",
+      "object_id": "viewport-b",
+      "crop": "vp-crop"
+    },
+    {
+      "kind": "viewport_annotation",
+      "object_id": "viewport-b",
+      "annotation": "vp-note"
+    },
+    {
+      "kind": "references_layer",
+      "object_id": "link-in-model",
+      "layer": "Rosetta-Ref-Src"
+    }
+  ],
+  "exclude_profiles": []
+}

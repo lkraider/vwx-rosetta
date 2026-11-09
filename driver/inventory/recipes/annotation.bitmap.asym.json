@@ -1,0 +1,88 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.bitmap.asym",
+  "family_id": "annotation.bitmap",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Asymmetric 23 by 17 PNG imported at (12.5, -7.25)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "image_pixels": [
+      23,
+      17
+    ],
+    "corner_blocks": {
+      "top_left": "red 5x3",
+      "top_right": "green 4x6",
+      "bottom_left": "blue 2x4",
+      "bottom_right": "orange 7x2"
+    }
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "bitmap.asym-png",
+      "kind": "other",
+      "acquisition_state": "acquired",
+      "path": "fixtures/bitmap-asym.png",
+      "sha256": "05e3c1edef9f6ecb99652505e6320b2568adbccd6a5d2c5d11bb389d7a78fe00",
+      "license": "Generated in this repository by fixtures/make_bitmap.py. It holds no third-party content.",
+      "source": "fixtures/make_bitmap.py"
+    }
+  ],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.ImportImageFile",
+      "args": [
+        {
+          "dependency": "bitmap.asym-png"
+        },
+        [
+          12.5,
+          -7.25
+        ]
+      ],
+      "result": "return",
+      "bind": "img",
+      "name": "bitmap-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "bitmap-a",
+      "bind": "img",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "bitmap-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "bitmap-a",
+      "quantity": "topology_counts",
+      "api": "vs.GetTypeN",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "The import call takes one point. The point is off both axes. The placed size depends on an image resolution that the ImportImageFile reference does not state. The PNG pixels have a distinct block in each corner."
+}

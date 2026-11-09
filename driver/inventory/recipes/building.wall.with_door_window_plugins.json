@@ -1,0 +1,122 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "building.wall.with_door_window_plugins",
+  "family_id": "building.wall",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Straight wall with a Door and a Window plug-in object inserted",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.door",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "building.door.free records the plug-in name Door."
+    },
+    {
+      "dependency_id": "plugin.window",
+      "kind": "plugin_object",
+      "acquisition_state": "acquired",
+      "reason": "building.window.free records the plug-in name Window."
+    }
+  ],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Wall",
+      "args": [
+        [
+          0,
+          0
+        ],
+        [
+          5200,
+          0
+        ]
+      ],
+      "bind": "w",
+      "name": "wall-inserts"
+    },
+    {
+      "op": "call",
+      "api": "vs.AddSymToWall",
+      "args": [
+        "$w",
+        1350,
+        0,
+        false,
+        false,
+        "Door"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "dp",
+      "name": "door-in-wall",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.AddSymToWall",
+      "args": [
+        "$w",
+        3725,
+        900,
+        false,
+        false,
+        "Window"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "wp",
+      "name": "window-in-wall",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "wall-inserts",
+      "bind": "w",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "wall-inserts",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "wall-inserts",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.AddSymToWall with the plug-in name Door or Window inserts a plug-in object of type 86 whose parent is the wall. The IFC export writes it as IfcDoor or IfcWindow with an IfcOpeningElement. building.wall.with_door_window inserts the same plug-ins inside symbols, and its IFC file holds the wall only."
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "spatial.mesh.tetra",
+  "family_id": "spatial.mesh",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Mesh of an irregular tetrahedron",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginMesh",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginPoly3D",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          0.5,
+          1.25,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          22,
+          3.5,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          9.75,
+          17,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndPoly3D",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginPoly3D",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          0.5,
+          1.25,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          22,
+          3.5,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          11.25,
+          6.5,
+          14.75
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndPoly3D",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginPoly3D",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          22,
+          3.5,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          9.75,
+          17,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          11.25,
+          6.5,
+          14.75
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndPoly3D",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginPoly3D",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          9.75,
+          17,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          0.5,
+          1.25,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Add3DPt",
+      "args": [
+        [
+          11.25,
+          6.5,
+          14.75
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndPoly3D",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.EndMesh",
+      "args": [],
+      "bind": "me",
+      "name": "mesh-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "mesh-a",
+      "bind": "me",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "mesh-a",
+      "quantity": "count",
+      "api": "vs.GetMeshVertsCnt",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "mesh-a",
+      "quantity": "point3",
+      "api": "vs.GetMeshVertex",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

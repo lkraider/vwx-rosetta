@@ -1,0 +1,137 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "nurbs.surface.revolved",
+  "family_id": "nurbs.surface",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "NURBS surface from a full 360 degree sweep of an open profile",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginSweep",
+      "args": [
+        0,
+        360,
+        7.5,
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          6.25,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          11.5,
+          4.75
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          8.25,
+          13.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          9.75,
+          19.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.OpenPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.EndPoly",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.EndSweep",
+      "args": [],
+      "bind": "sw",
+      "name": null
+    },
+    {
+      "op": "create",
+      "api": "vs.ConvertToNURBS",
+      "args": [
+        "$sw",
+        false
+      ],
+      "bind": "ns",
+      "name": "nurbs-revolved",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "nurbs-revolved",
+      "bind": "ns",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "nurbs-revolved",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "nurbs-revolved",
+      "quantity": "topology_counts",
+      "api": "vs.GetTypeN",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "A 360 degree sweep converted to NURBS gives a surface that is periodic around the sweep axis. nurbs.surface.rational is open in both directions.",
+    "vs.ConvertToNURBS may return a group of surfaces. topology_counts records the type of the result."
+  ]
+}

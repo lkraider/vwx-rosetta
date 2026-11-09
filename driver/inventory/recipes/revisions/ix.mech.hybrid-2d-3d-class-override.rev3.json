@@ -1,0 +1,197 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "ix.mech.hybrid-2d-3d-class-override",
+  "family_id": "container.symbol",
+  "recipe_revision": "3",
+  "supersedes": {
+    "recipe_revision": "2",
+    "recipe_sha256": "2cf2679b6d0960011959b5921beaaf414cecbc85c96f598cb1a5eb52c7a074bd"
+  },
+  "universe": "interaction",
+  "title": "Hybrid symbol with a 2D component in the visible class Rosetta-2D and a 3D component in the hidden class Rosetta-3D. The instance sits in None. An extruded cylinder in the visible class Rosetta-Visible sits beside it. A plug-in variant waits for plug-in verification",
+  "mechanism": "mech.hybrid-2d-3d-class-override",
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.hybrid-variant",
+      "kind": "plugin_object",
+      "acquisition_state": "pending",
+      "reason": "A plug-in hybrid object needs a verified plug-in name."
+    }
+  ],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-2D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Rosetta-Hybrid"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          14.5
+        ],
+        [
+          23.75,
+          0
+        ]
+      ],
+      "bind": "r2",
+      "name": "hyb-2d"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$r2",
+        "Rosetta-2D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        31.25
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          2.5,
+          11
+        ],
+        [
+          20.25,
+          3.5
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndXtrd",
+      "args": [],
+      "bind": "x3",
+      "name": "hyb-3d"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$x3",
+        "Rosetta-3D"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.Symbol",
+      "args": [
+        "Rosetta-Hybrid",
+        [
+          57.5,
+          22.25
+        ],
+        0
+      ],
+      "bind": "hi",
+      "name": "hybrid-inst"
+    },
+    {
+      "op": "call",
+      "api": "vs.HideClass",
+      "args": [
+        "Rosetta-3D"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "hybrid-inst",
+      "bind": "hi",
+      "role": "primary"
+    },
+    {
+      "object_id": "hyb-2d",
+      "bind": "r2",
+      "role": "dependency"
+    },
+    {
+      "object_id": "hyb-3d",
+      "bind": "x3",
+      "role": "dependency"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "hybrid-inst",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "hybrid-inst",
+      "quantity": "bounds3",
+      "api": "vs.Get3DInfo",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "hybrid_components",
+      "definition": "Rosetta-Hybrid",
+      "planar": "hyb-2d",
+      "spatial": "hyb-3d"
+    },
+    {
+      "kind": "class_override",
+      "object_id": "hyb-3d",
+      "class_name": "Rosetta-3D"
+    },
+    {
+      "kind": "class_membership",
+      "object_id": "cylinder-visible",
+      "class_name": "Rosetta-Visible"
+    }
+  ],
+  "exclude_profiles": []
+}

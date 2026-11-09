@@ -1,0 +1,265 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "ix.mech.repeated-shared-distinct-metadata",
+  "family_id": "container.symbol",
+  "recipe_revision": "2",
+  "universe": "interaction",
+  "title": "Three instances of one definition with distinct names, records and occurrence paths",
+  "mechanism": "mech.repeated-shared-distinct-metadata",
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Rosetta-Sym-A"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          9.5
+        ],
+        [
+          17.25,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Locus",
+      "args": [
+        [
+          3.5,
+          2.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.NewField",
+      "args": [
+        "Rosetta-Occ",
+        "Tag",
+        "",
+        4,
+        0
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Symbol",
+      "args": [
+        "Rosetta-Sym-A",
+        [
+          31.5,
+          7.25
+        ],
+        0
+      ],
+      "bind": "o0",
+      "name": "occ-1"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetRecord",
+      "args": [
+        "$o0",
+        "Rosetta-Occ"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetRField",
+      "args": [
+        "$o0",
+        "Rosetta-Occ",
+        "Tag",
+        "A-1"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Symbol",
+      "args": [
+        "Rosetta-Sym-A",
+        [
+          78,
+          22.5
+        ],
+        41.25
+      ],
+      "bind": "o1",
+      "name": "occ-2"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetRecord",
+      "args": [
+        "$o1",
+        "Rosetta-Occ"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetRField",
+      "args": [
+        "$o1",
+        "Rosetta-Occ",
+        "Tag",
+        "B-2"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Symbol",
+      "args": [
+        "Rosetta-Sym-A",
+        [
+          -19.75,
+          54
+        ],
+        197.5
+      ],
+      "bind": "o2",
+      "name": "occ-3"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetRecord",
+      "args": [
+        "$o2",
+        "Rosetta-Occ"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetRField",
+      "args": [
+        "$o2",
+        "Rosetta-Occ",
+        "Tag",
+        "Ç-3"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "occ-1",
+      "bind": "o0",
+      "role": "primary"
+    },
+    {
+      "object_id": "occ-2",
+      "bind": "o1",
+      "role": "primary"
+    },
+    {
+      "object_id": "occ-3",
+      "bind": "o2",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "occ-1",
+      "quantity": "point3",
+      "api": "vs.GetSymLoc3D",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "occ-2",
+      "quantity": "point3",
+      "api": "vs.GetSymLoc3D",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "occ-3",
+      "quantity": "point3",
+      "api": "vs.GetSymLoc3D",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "occ-1",
+      "quantity": "name",
+      "api": "vs.GetRField",
+      "frame": "document_world",
+      "args": [
+        {
+          "handle": "object"
+        },
+        "Rosetta-Occ",
+        "Tag"
+      ]
+    },
+    {
+      "object_id": "occ-2",
+      "quantity": "name",
+      "api": "vs.GetRField",
+      "frame": "document_world",
+      "args": [
+        {
+          "handle": "object"
+        },
+        "Rosetta-Occ",
+        "Tag"
+      ]
+    },
+    {
+      "object_id": "occ-3",
+      "quantity": "name",
+      "api": "vs.GetRField",
+      "frame": "document_world",
+      "args": [
+        {
+          "handle": "object"
+        },
+        "Rosetta-Occ",
+        "Tag"
+      ]
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "instance_of",
+      "object_id": "occ-1",
+      "definition": "Rosetta-Sym-A"
+    },
+    {
+      "kind": "instance_of",
+      "object_id": "occ-2",
+      "definition": "Rosetta-Sym-A"
+    },
+    {
+      "kind": "instance_of",
+      "object_id": "occ-3",
+      "definition": "Rosetta-Sym-A"
+    }
+  ],
+  "exclude_profiles": []
+}

@@ -1,0 +1,74 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "building.window.free",
+  "family_id": "building.window",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Window plug-in object placed at (93.5, -12.25)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.window",
+      "kind": "plugin_object",
+      "acquisition_state": "pending",
+      "reason": "The installed plug-in list and the universal name `Window` are unverified."
+    }
+  ],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObject",
+      "args": [
+        "Window",
+        [
+          93.5,
+          -12.25
+        ],
+        33
+      ],
+      "bind": "po",
+      "name": "window-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "window-a",
+      "bind": "po",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "window-a",
+      "quantity": "point3",
+      "api": "vs.GetSymLoc3D",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "window-a",
+      "quantity": "topology_counts",
+      "api": "vs.GetTypeN",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "A plug-in object has one insertion point. The point is off both axes."
+}

@@ -1,0 +1,92 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "resource.text_style.applied",
+  "family_id": "resource.text_style",
+  "recipe_revision": "2",
+  "supersedes": {
+    "recipe_revision": "1",
+    "recipe_sha256": "da1ff4d3d35508baa8090b6a1fa45cf4a152e617f9c222d2ead22c0c759c32e4"
+  },
+  "universe": "controlled",
+  "title": "Text style resource applied to a text object",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateTextStyleRes",
+      "args": [
+        "Rosetta-TextStyle"
+      ],
+      "bind": "ts",
+      "name": "Rosetta-TextStyle",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.TextOrigin",
+      "args": [
+        [
+          9.5,
+          21.25
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateText",
+      "args": [
+        "styled"
+      ],
+      "bind": "tx",
+      "name": "text-styled"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "Rosetta-TextStyle",
+      "bind": "ts",
+      "role": "primary"
+    },
+    {
+      "object_id": "text-styled",
+      "bind": "tx",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "text-styled",
+      "api": "vs.GetTextStyleRef",
+      "frame": "document_world",
+      "acquisition": "raw_only",
+      "raw_call": "GetTextStyleRef",
+      "raw_return": [
+        "LONGINT"
+      ],
+      "normalization": "unresolved",
+      "decision": "decision.quantity.reference"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "Text has one origin point.",
+  "notes": [
+    "vs.SetTextStyleRef takes a reference number. The recipe leaves the style unapplied until the capture owner records the reference API."
+  ]
+}

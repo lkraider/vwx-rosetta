@@ -1,0 +1,57 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "planar.locus.asym",
+  "family_id": "planar.locus",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "2D locus at (37.25, -14.5)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Locus",
+      "args": [
+        [
+          37.25,
+          -14.5
+        ]
+      ],
+      "bind": "lc",
+      "name": "locus-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "locus-a",
+      "bind": "lc",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "locus-a",
+      "quantity": "point3",
+      "api": "vs.GetLocPt",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "A locus has one point. The point is off both axes."
+}

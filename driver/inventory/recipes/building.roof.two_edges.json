@@ -1,0 +1,118 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "building.roof.two_edges",
+  "family_id": "building.roof",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Roof with two sloped edges",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateRoof",
+      "args": [
+        false,
+        0,
+        12.5,
+        1,
+        0
+      ],
+      "bind": "rf",
+      "name": "roof-a",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.AppendRoofEdge",
+      "args": [
+        "$rf",
+        [
+          5,
+          2.5
+        ],
+        32.5,
+        18,
+        240
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AppendRoofEdge",
+      "args": [
+        "$rf",
+        [
+          415.5,
+          2.5
+        ],
+        40,
+        18,
+        240
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AppendRoofEdge",
+      "args": [
+        "$rf",
+        [
+          415.5,
+          260.75
+        ],
+        90,
+        0,
+        240
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AppendRoofEdge",
+      "args": [
+        "$rf",
+        [
+          5,
+          198
+        ],
+        90,
+        0,
+        240
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "roof-a",
+      "bind": "rf",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "roof-a",
+      "quantity": "bounds3",
+      "api": "vs.Get3DInfo",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "miterType 1 is vertical miter, from the CreateRoof docs remark. slopeAngle 90 marking a gable is unverified."
+  ]
+}

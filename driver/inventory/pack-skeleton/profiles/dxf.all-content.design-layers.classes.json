@@ -1,0 +1,32 @@
+{
+  "profile_id": "dxf.all-content.design-layers.classes",
+  "profile_revision": "1",
+  "format": "dxf",
+  "format_revision": "unverified",
+  "scope": "drawing",
+  "options": {
+    "dxf_version": "2018",
+    "layer_scope": "all_visible_design_layers",
+    "export_3d_as": "acis_solids",
+    "classes_as_layers": true,
+    "view": "as_saved"
+  },
+  "state_overrides": {
+    "hidden_content": "show_all"
+  },
+  "applicability": {
+    "requires_any": [
+      "2d",
+      "3d",
+      "annotation",
+      "container",
+      "solid",
+      "nurbs",
+      "mesh",
+      "text"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "DXF of all visible design layers with one DXF layer per class. Hidden classes are shown. Question F1 compares it with dxf.all-content.design-layers."
+}

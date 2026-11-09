@@ -1,0 +1,19 @@
+{
+  "profile_id": "3ds.mesh.all-layers",
+  "profile_revision": "1",
+  "format": "3ds",
+  "format_revision": "unverified",
+  "scope": "mesh",
+  "options": {
+    "export_scope": "all_visible_all_layers"
+  },
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "3d"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "3DS tessellation of every visible design layer, with the radio All Visible Objects in All Layers."
+}

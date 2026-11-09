@@ -1,0 +1,20 @@
+{
+  "profile_id": "parasolid.solids",
+  "profile_revision": "1",
+  "format": "parasolid",
+  "format_revision": "unverified",
+  "scope": "solid",
+  "options": {
+    "schema_version": null
+  },
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "solid",
+      "nurbs"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "Parasolid transmit file for solids and NURBS."
+}

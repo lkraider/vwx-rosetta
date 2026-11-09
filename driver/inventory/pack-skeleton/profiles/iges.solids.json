@@ -1,0 +1,20 @@
+{
+  "profile_id": "iges.solids",
+  "profile_revision": "1",
+  "format": "iges",
+  "format_revision": "unverified",
+  "scope": "solid",
+  "options": {
+    "solid_as_trimmed_surfaces": false
+  },
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "solid",
+      "nurbs"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "IGES file of solids and NURBS from the Parasolid IGES translator, with solids as manifold solid B-rep objects."
+}

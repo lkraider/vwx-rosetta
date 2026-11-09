@@ -1,0 +1,59 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "spatial.locus3d.asym",
+  "family_id": "spatial.locus3d",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "3D locus at (21.5, -8.75, 13.25)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Locus3D",
+      "args": [
+        [
+          21.5,
+          -8.75,
+          13.25
+        ]
+      ],
+      "bind": "l3",
+      "name": "locus3d-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "locus3d-a",
+      "bind": "l3",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "locus3d-a",
+      "quantity": "point3",
+      "api": "vs.GetLocus3D",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "A 3D locus has one point. Each coordinate differs."
+}

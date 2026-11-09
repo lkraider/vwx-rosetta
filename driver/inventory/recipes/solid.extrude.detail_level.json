@@ -1,0 +1,331 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "solid.extrude.detail_level",
+  "family_id": "solid.extrude",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Extrudes hidden at the low, the medium and the high 3D detail level, beside an extrude visible at every level",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "question": "D1"
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        500
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          600
+        ],
+        [
+          1000,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndXtrd",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "xl",
+      "name": "extrude-hidden-low",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableBoolean",
+      "args": [
+        "$xl",
+        752,
+        false
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableBoolean",
+      "args": [
+        "$xl",
+        751,
+        true
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableBoolean",
+      "args": [
+        "$xl",
+        750,
+        true
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        500
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          1600
+        ],
+        [
+          1000,
+          1000
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndXtrd",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "xm",
+      "name": "extrude-hidden-medium",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableBoolean",
+      "args": [
+        "$xm",
+        752,
+        true
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableBoolean",
+      "args": [
+        "$xm",
+        751,
+        false
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableBoolean",
+      "args": [
+        "$xm",
+        750,
+        true
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        500
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          2600
+        ],
+        [
+          1000,
+          2000
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndXtrd",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "xh",
+      "name": "extrude-hidden-high",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableBoolean",
+      "args": [
+        "$xh",
+        752,
+        true
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableBoolean",
+      "args": [
+        "$xh",
+        751,
+        true
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableBoolean",
+      "args": [
+        "$xh",
+        750,
+        false
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        500
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          3600
+        ],
+        [
+          1000,
+          3000
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndXtrd",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "xa",
+      "name": "extrude-all-levels",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableBoolean",
+      "args": [
+        "$xa",
+        752,
+        true
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableBoolean",
+      "args": [
+        "$xa",
+        751,
+        true
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableBoolean",
+      "args": [
+        "$xa",
+        750,
+        true
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "extrude-hidden-low",
+      "bind": "xl",
+      "role": "primary"
+    },
+    {
+      "object_id": "extrude-hidden-medium",
+      "bind": "xm",
+      "role": "primary"
+    },
+    {
+      "object_id": "extrude-hidden-high",
+      "bind": "xh",
+      "role": "primary"
+    },
+    {
+      "object_id": "extrude-all-levels",
+      "bind": "xa",
+      "role": "dependency"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "extrude-hidden-low",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "extrude-hidden-medium",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "extrude-hidden-high",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "extrude-all-levels",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Object variables 752, 751 and 750 are ovLowDetailVisible, ovMidDetailVisible and ovHighDetailVisible in ObjectVariables.h of SDK 2026. A .vwx reader reads them as td24 +0x63 bits 1, 2 and 4.",
+    "The extrude visible at every level shows that the export ran when the other extrudes write nothing."
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "resource.gradient.three_stop",
+  "family_id": "resource.gradient",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Gradient with an inserted segment",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateGradient",
+      "args": [
+        "Rosetta-Gradient"
+      ],
+      "bind": "gd",
+      "name": "Rosetta-Gradient",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.InsertGradientSegment",
+      "args": [
+        "$gd",
+        0.3125,
+        0.5,
+        65535,
+        12000,
+        0
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "Rosetta-Gradient",
+      "bind": "gd",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "Rosetta-Gradient",
+      "quantity": "name",
+      "api": "vs.GetName",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "symmetry_waiver": "A gradient resource has no geometry."
+}

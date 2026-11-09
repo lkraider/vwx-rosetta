@@ -1,0 +1,25 @@
+{
+  "profile_id": "png.top-plan",
+  "profile_revision": "1",
+  "format": "png",
+  "format_revision": "unverified",
+  "scope": "view",
+  "options": {
+    "width_px": 1600,
+    "height_px": 1200,
+    "view": "top_plan",
+    "render_mode": "wireframe"
+  },
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "2d",
+      "3d",
+      "annotation",
+      "view"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "Raster capture of the top plan view."
+}

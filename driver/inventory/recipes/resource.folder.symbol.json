@@ -1,0 +1,108 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "resource.folder.symbol",
+  "family_id": "resource.folder",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Resource folder holding one symbol definition",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "nominal_bounds": [
+      [
+        0,
+        0
+      ],
+      [
+        17.25,
+        9.5
+      ]
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.NameObject",
+      "args": [
+        "Rosetta-Folder"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginFolder",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Rosetta-Sym-A"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          9.5
+        ],
+        [
+          17.25,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Locus",
+      "args": [
+        [
+          3.5,
+          2.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.EndFolder",
+      "args": []
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [],
+  "queries": [
+    {
+      "object_id": "document",
+      "quantity": "count",
+      "api": "vs.FSymDef",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "folder_contains",
+      "folder": "Rosetta-Folder",
+      "member": "Rosetta-Sym-A"
+    }
+  ],
+  "exclude_profiles": []
+}

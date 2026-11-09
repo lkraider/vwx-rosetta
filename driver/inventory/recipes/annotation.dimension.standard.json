@@ -1,0 +1,82 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.dimension.standard",
+  "family_id": "annotation.dimension",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Linear dimension under built-in dimension standard 5",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.SetDimStd",
+      "args": [
+        5
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LinearDim",
+      "args": [
+        [
+          5.5,
+          3.25
+        ],
+        [
+          47,
+          11.75
+        ],
+        6.5,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bind": "dm",
+      "name": "dim-standard-5"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "dim-standard-5",
+      "bind": "dm",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "dim-standard-5",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "dim-standard-5",
+      "quantity": "name",
+      "api": "vs.GetDimText",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.SetDimStd takes 1 to 9 for the built-in standards, in the order of the preference menu. annotation.dimension.linear draws the same dimension under the default standard. The standard sets the arrows and the text placement that DXF and PDF write.",
+    "This is a probe. The live census shows whether a built-in standard writes a dimStandardNode (td39). A custom standard needs the Custom Dimensions dialog."
+  ]
+}

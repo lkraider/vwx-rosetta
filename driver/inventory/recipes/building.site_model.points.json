@@ -1,0 +1,176 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "building.site_model.points",
+  "family_id": "building.site_model",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Site model from six 3D loci, 10000 x 8000 mm and 2000 mm high",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Locus3D",
+      "args": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "bind": "p1",
+      "name": "point-1"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetSelect",
+      "args": [
+        "$p1"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Locus3D",
+      "args": [
+        [
+          10000,
+          0,
+          500
+        ]
+      ],
+      "bind": "p2",
+      "name": "point-2"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetSelect",
+      "args": [
+        "$p2"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Locus3D",
+      "args": [
+        [
+          10000,
+          8000,
+          1200
+        ]
+      ],
+      "bind": "p3",
+      "name": "point-3"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetSelect",
+      "args": [
+        "$p3"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Locus3D",
+      "args": [
+        [
+          0,
+          8000,
+          800
+        ]
+      ],
+      "bind": "p4",
+      "name": "point-4"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetSelect",
+      "args": [
+        "$p4"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Locus3D",
+      "args": [
+        [
+          5000,
+          4000,
+          2000
+        ]
+      ],
+      "bind": "p5",
+      "name": "point-5"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetSelect",
+      "args": [
+        "$p5"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Locus3D",
+      "args": [
+        [
+          2500,
+          6000,
+          1000
+        ]
+      ],
+      "bind": "p6",
+      "name": "point-6"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetSelect",
+      "args": [
+        "$p6"
+      ]
+    },
+    {
+      "op": "menu",
+      "path": [
+        "AEC",
+        "Terrain",
+        "Site Model from Source Data..."
+      ],
+      "dialogs": "accept with OK"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "Site Model",
+      "bind": null,
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "Site Model",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Vectorworks 2027 has no script call that builds a site model. vs.CreateCustomObjectN('Site Model') returns a NIL handle, and vs.DoMenuTextByName('Site Model from Source Data', 0) raises a script error. rosetta_menu() makes make-sources.py choose AEC > Terrain > Site Model from Source Data... after the script ends and accept the Site Model Settings dialog with OK. The site model takes the six selected loci into its source data, and the drawing holds one DTM6 object named Site Model."
+  ]
+}

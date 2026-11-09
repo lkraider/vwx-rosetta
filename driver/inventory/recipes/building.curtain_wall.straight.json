@@ -1,0 +1,78 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "building.curtain_wall.straight",
+  "family_id": "building.curtain_wall",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Curtain wall from (0, 0) to (4000, 0)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.Wall",
+      "args": [
+        [
+          0,
+          0
+        ],
+        [
+          4000,
+          0
+        ]
+      ],
+      "bind": "w",
+      "name": "curtain-wall-a"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetIsCurtainWall",
+      "args": [
+        "$w",
+        true
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ResetObject",
+      "args": [
+        "$w"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "curtain-wall-a",
+      "bind": "w",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "curtain-wall-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.SetIsCurtainWall turns the straight wall into a curtain wall with the default frame and panel settings. The object takes the default style and parameters of a new Vectorworks Architect 2027 document. vs.ResetObject regenerates it before the save."
+  ]
+}

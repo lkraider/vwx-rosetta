@@ -1,0 +1,160 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "building.wall.with_door_window",
+  "family_id": "building.wall",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Straight wall with a door symbol and a window symbol inserted",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.door",
+      "kind": "plugin_object",
+      "acquisition_state": "pending",
+      "reason": "building.door.free records the plug-in name Door."
+    },
+    {
+      "dependency_id": "plugin.window",
+      "kind": "plugin_object",
+      "acquisition_state": "pending",
+      "reason": "building.window.free records the plug-in name Window."
+    }
+  ],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Rosetta-Door-Sym"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObject",
+      "args": [
+        "Door",
+        [
+          0,
+          0
+        ],
+        0
+      ],
+      "bind": "dp",
+      "name": "door-in-symbol",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Rosetta-Window-Sym"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObject",
+      "args": [
+        "Window",
+        [
+          0,
+          0
+        ],
+        0
+      ],
+      "bind": "wp",
+      "name": "window-in-symbol",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.Wall",
+      "args": [
+        [
+          10.5,
+          4.25
+        ],
+        [
+          5212,
+          97.75
+        ]
+      ],
+      "bind": "w",
+      "name": "wall-inserts"
+    },
+    {
+      "op": "call",
+      "api": "vs.AddSymToWall",
+      "args": [
+        "$w",
+        1350,
+        0,
+        false,
+        false,
+        "Rosetta-Door-Sym"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddSymToWall",
+      "args": [
+        "$w",
+        3725,
+        900,
+        false,
+        false,
+        "Rosetta-Window-Sym"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "wall-inserts",
+      "bind": "w",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "wall-inserts",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "wall-inserts",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Library door and window symbols hold a Door or Window plug-in object. vs.AddSymToWall inserts such a symbol, and the wall cuts an opening. The live run checks that the wall holds two inserts and that the wall outline breaks at each. vs.CreateCustomObject('Door') runs in building.door.free."
+  ]
+}

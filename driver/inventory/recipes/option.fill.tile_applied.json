@@ -1,0 +1,128 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "option.fill.tile_applied",
+  "family_id": "option.fill",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Tile applied as the fill of a rectangle through object variable 695",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateTile",
+      "args": [
+        "Rosetta-Tile"
+      ],
+      "bind": "tl",
+      "name": "Rosetta-Tile",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0.5,
+          3.25
+        ],
+        [
+          4.75,
+          1
+        ]
+      ],
+      "bind": "tg",
+      "name": "tile-rect"
+    },
+    {
+      "op": "call",
+      "api": "vs.AddTileGeometryObject",
+      "args": [
+        "$tl",
+        "$tg"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Name2Index",
+      "args": [
+        "Rosetta-Tile"
+      ],
+      "bind": "ti",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          2.5,
+          21.25
+        ],
+        [
+          33.75,
+          4.5
+        ]
+      ],
+      "bind": "ra",
+      "name": "rect-tile-ov"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableLongInt",
+      "args": [
+        "$ra",
+        695,
+        "-$ti"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "Rosetta-Tile",
+      "bind": "tl",
+      "role": "context"
+    },
+    {
+      "object_id": "tile-rect",
+      "bind": "tg",
+      "role": "context"
+    },
+    {
+      "object_id": "rect-tile-ov",
+      "bind": "ra",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-tile-ov",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "The tile is the one of resource.tile.rect.",
+    "rect-tile-ov sets object variable 695 to the negative tile index. rect-tile-vf calls vs.SetVectorFill with the tile name. The live run records which rectangle draws the tile. Keep that one and drop the other in revision 2.",
+    "Revision 2 drops rect-tile-vf. In the read run of 2026-10-19, vs.GetVectorFill of rect-tile-ov returned the tile name and vs.GetFPat returned the negative index. rect-tile-vf returned no fill name and vs.GetFPat 1, a solid fill."
+  ]
+}

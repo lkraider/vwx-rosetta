@@ -1,0 +1,107 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "spatial.mxtrd.asym",
+  "family_id": "spatial.multi_extrude",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Multiple extrude between two offset rectangles",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "nominal_bounds": [
+      [
+        3,
+        5.25,
+        0
+      ],
+      [
+        31.5,
+        22,
+        27.5
+      ]
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginMXtrd",
+      "args": [
+        0,
+        27.5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          3,
+          22
+        ],
+        [
+          31.5,
+          5.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          9.75,
+          17.5
+        ],
+        [
+          24,
+          8
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndMXtrd",
+      "args": [],
+      "bind": "mx",
+      "name": "mxtrd-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "mxtrd-a",
+      "bind": "mx",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "mxtrd-a",
+      "quantity": "bounds3",
+      "api": "vs.Get3DInfo",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "mxtrd-a",
+      "quantity": "volume",
+      "api": "vs.ObjVolume",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": []
+}

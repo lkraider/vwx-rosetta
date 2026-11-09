@@ -1,0 +1,5 @@
+step	driver	format	profile	cases	options	expect	ext
+probe-general	ui	dxf	dxf.all-content	ix.mech.hybrid-2d-3d-class-override	--probe --pane 'General' --settings '<Default>' --only ix.mech.hybrid-2d-3d-class-override	record	dxf
+probe-objects	ui	dxf	dxf.all-content	ix.mech.hybrid-2d-3d-class-override	--probe --pane 'Objects' --settings '<Default>' --only ix.mech.hybrid-2d-3d-class-override	record	dxf
+probe-export-location	ui	dxf	dxf.all-content	ix.mech.hybrid-2d-3d-class-override	--probe --pane 'Export Location' --settings '<Default>' --only ix.mech.hybrid-2d-3d-class-override	record	dxf
+probe-classes-layers	ui	dxf	dxf.all-content	ix.mech.hybrid-2d-3d-class-override	--probe --pane 'Classes/Layers' --settings '<Default>' --only ix.mech.hybrid-2d-3d-class-override	record	dxf

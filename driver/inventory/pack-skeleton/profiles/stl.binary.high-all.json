@@ -1,0 +1,29 @@
+{
+  "profile_id": "stl.binary.high-all",
+  "profile_revision": "1",
+  "format": "stl",
+  "format_revision": "unverified",
+  "scope": "mesh",
+  "options": {
+    "binary": true,
+    "percent_tess": 100,
+    "objects": 2
+  },
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "solid",
+      "nurbs",
+      "mesh"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "vs.ExportSTL(filePath, exportBinary=True, percentTess=100, exportObjectsOptions=2). The written tessellation is unverified.",
+  "option_sources": {
+    "binary": "SDK2026 vs.py:9353 exportBinary BOOLEAN: binary or ASCII output.",
+    "percent_tess": "SDK2026 vs.py:9353 percentTess REAL: tessellation resolution from 0 to 100, 0 low, 100 high. 100 is the highest documented resolution.",
+    "objects": "SDK2026 vs.py:9353 exportObjectsOptions INTEGER: 0 visible selected objects, 1 visible objects in the active layer, 2 visible objects in all layers. 2 is independent of the selection and of the active layer."
+  },
+  "supersedes": "stl.binary"
+}

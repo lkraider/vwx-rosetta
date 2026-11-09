@@ -1,0 +1,212 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.viewport.elevation",
+  "family_id": "annotation.viewport",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Sheet viewport with the Front view of a stepped extrude",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Model",
+        1
+      ],
+      "bind": "dl",
+      "name": "Rosetta-Model",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Model"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        1200
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          1000
+        ],
+        [
+          3000,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndXtrd",
+      "args": [],
+      "bind": "ex",
+      "name": "model-box"
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        1200,
+        2000
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          1000
+        ],
+        [
+          1000,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndXtrd",
+      "args": [],
+      "bind": "st",
+      "name": "model-step"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Sheet",
+        2
+      ],
+      "bind": "sl",
+      "name": "Rosetta-Sheet",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateVP",
+      "args": [
+        "$sl"
+      ],
+      "bind": "vp",
+      "name": "viewport-front",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPLayerVisibility",
+      "args": [
+        "$vp",
+        "$dl",
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableInt",
+      "args": [
+        "$vp",
+        1007,
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPClassVisibility",
+      "args": [
+        "$vp",
+        "None",
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableReal",
+      "args": [
+        "$vp",
+        1003,
+        50
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ResetObject",
+      "args": [
+        "$vp"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.UpdateVP",
+      "args": [
+        "$vp"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "viewport-front",
+      "bind": "vp",
+      "role": "primary"
+    },
+    {
+      "object_id": "model-box",
+      "bind": "ex",
+      "role": "context"
+    },
+    {
+      "object_id": "model-step",
+      "bind": "st",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "viewport-front",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "viewport_shows",
+      "object_id": "viewport-front",
+      "layer": "Rosetta-Model",
+      "sheet": "Rosetta-Sheet"
+    }
+  ],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.CreateVP makes a viewport that hides class None, and its box is a 13.34 mm placeholder square at the sheet origin. vs.SetVPClassVisibility(vp, 'None', 0) and then vs.ResetObject(vp) make it frame the model. Object variable 1003 is the scale, here 1:50.",
+    "Object variable 1007 of a viewport is its view. 3 gives the Front view, with vs.GetViewMatrix rotation -90, 0, 0. 7 gives Top/Plan."
+  ]
+}

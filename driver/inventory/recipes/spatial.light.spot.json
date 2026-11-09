@@ -1,0 +1,153 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "spatial.light.spot",
+  "family_id": "spatial.light",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Lights of type 0, 1 and 2, aimed by pan and tilt",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateLight",
+      "args": [
+        4.5,
+        -12.25,
+        41,
+        0,
+        true,
+        false
+      ],
+      "bind": "l0",
+      "name": "light-type-0",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLightDirection",
+      "args": [
+        "$l0",
+        35,
+        -50
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateLight",
+      "args": [
+        24.75,
+        -9.5,
+        33.5,
+        1,
+        true,
+        false
+      ],
+      "bind": "l1",
+      "name": "light-type-1",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLightDirection",
+      "args": [
+        "$l1",
+        35,
+        -50
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateLight",
+      "args": [
+        47.25,
+        -15.75,
+        29,
+        2,
+        true,
+        true
+      ],
+      "bind": "l2",
+      "name": "light-type-2",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLightDirection",
+      "args": [
+        "$l2",
+        120,
+        -65
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLightFalloff",
+      "args": [
+        "$l2",
+        1,
+        2
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "light-type-0",
+      "bind": "l0",
+      "role": "primary"
+    },
+    {
+      "object_id": "light-type-1",
+      "bind": "l1",
+      "role": "primary"
+    },
+    {
+      "object_id": "light-type-2",
+      "bind": "l2",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "light-type-0",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "light-type-1",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "light-type-2",
+      "quantity": "point3",
+      "api": "vs.Get3DCntr",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.py gives no light type codes. GAPS.tsv names 0 directional and 2 spot. spatial.light.point assumes 2 is a point light. This case creates types 0, 1 and 2. The source census reads the stored kind of each kLightNode (td81), so the live run settles the codes for both cases.",
+    "Each light has a pan and tilt, so a directional or spot light stores a direction.",
+    "In the probe of 2026-10-19, vs.SetSpreadAngle changed only the light of kind 2, so kind 2 is the spot light. Kinds 0, 1 and 3 kept spread angle 0. spatial.light.point passes kind 2, so its stored light is a spot light.",
+    "The FBX export of the source of 2026-10-19 names each light. Kind 0 exports as Infinite_Light with LightType 1, directional. Kind 1 exports as Omni_Light with no LightType, which is 0, point. Kind 2 exports as Spot_Light with LightType 2, spot, OuterAngle 60 and InnerAngle 30. FBX also adds Ambient_Omni_Light for the document ambient light, which has no source object. The glTF export wrote no file for this document, which holds only lights."
+  ]
+}

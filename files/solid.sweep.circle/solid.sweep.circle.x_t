@@ -1,0 +1,39 @@
+**ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz**************************
+**PARASOLID !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~0123456789**************************
+**PART1;
+MC=unknown;
+MC_MODEL=unknown;
+MC_ID=unknown;
+OS=unknown;
+OS_RELEASE=unknown;
+FRU=Nemetschek North America;
+APPL=Vectorworks 2027 Update 1 (Build 885363);
+SITE=unknown;
+USER=unknown;
+FORMAT=text;
+GUISE=transmit;
+KEY=/Volumes/volxxxx/Caches/tmp/rosetta-export-panel/solid.sweep.circle;
+FILE=/Volumes/volxxxx/Caches/tmp/rosetta-export-panel/solid.sweep.circle.X_T;
+DATE=unknown;
+**PART2;
+SCH=SCH_3801180_38101;
+USFLD_SIZE=0;
+**PART3;
+**END_OF_HEADER*****************************************************************
+T51 : TRANSMIT FILE created by modeller version 380118023 SCH_3801180_38101_1300
+6249 0 12 36 CCCI7 lattice222 0 CCCI4 mesh1006 0 I8 polyline1008 0 CCCCCCCDI5 ow
+ner1040 0 CCCI16 boundary_lattice222 0 CCCI13 boundary_mesh1006 0 I17 boundary_p
+olyline1008 0 CCCA16 index_map_offset0 0 1 dA9 index_map82 0 A17 node_id_index_m
+ap82 0 A20 schema_embedding_map82 0 A5 child12 0 A14 lowest_node_id0 0 1 dA16 me
+sh_offset_data206 0 Z1 38 0 2 0 0 0 0 0 0 0 1e3 1e-8 0 3 0 1 0 1 1 4 0 5 6 0 0 0
+ 7 0 0 0 0 0 0 0 0 0 70 11 CI9 list_type0 0 1 uI10 notransmit0 0 1 lCCCDCCDI12 f
+inger_index0 0 1 dI12 finger_block1012 0 CZ2 0 4 T1 0 0 1 20 1 8 8 13 255 4 3 0
+ 1 0 9 0 0 10 0 68 255 5 37 0 9 0 0 0 +6 .014 .00225 0 0 -1 0 .014 .00225 0 .014
+ .00225 0 -4.71238898038469 1.570796326794895 612323399573677e-31 0 1 ?32 255 6
+ 29 0 1 0 0 11 +.014 .00225 .00425 -1 0 612323399573677e-31 0 1 0 .00425 .00425
+ 19 9 CCCCCCI5 frame230 0 CA5 owner12 0 Z7 36 0 1 10 0 12 0 V0 19 10 5 0 1 0 7 4
+ 0 S0 13 12 35 0 0 0 0 0 0 7 9 14 255 9 34 13 ?0 0 0 4 5 +0 0 0 0 12 81 255 1 13
+ 38 14 9 0 0 0 0 15 80 7 CCCCCDI12 legal_owners0 17 1 lCZ1 14 0 16 8001 0 0 0 0
+ 3 5 0 0 0 FFFFTFTFFFFFFFFFF2 83 255 3 15 1 1 1 79 255 15 16 SDL/TYSA_COLOUR141
+ 255 11 5 11 11 6 74 4 CI16 index_map_offset0 0 1 dCCZ20 8 1 0 0 13 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 

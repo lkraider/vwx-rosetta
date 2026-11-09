@@ -1,0 +1,129 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "resource.folder.symbol",
+  "family_id": "resource.folder",
+  "recipe_revision": "4",
+  "supersedes": {
+    "recipe_revision": "3",
+    "recipe_sha256": "4cd903f79de01df375f914a432161abe375462ef99e49b964209b826cdb99a00"
+  },
+  "universe": "controlled",
+  "title": "Resource folder holding one symbol definition",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "nominal_bounds": [
+      [
+        0,
+        0
+      ],
+      [
+        17.25,
+        9.5
+      ]
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.NameObject",
+      "args": [
+        "Rosetta-Folder"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginFolder",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Rosetta-Sym-A"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          9.5
+        ],
+        [
+          17.25,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Locus",
+      "args": [
+        [
+          3.5,
+          2.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.EndFolder",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.GetObject",
+      "args": [
+        "Rosetta-Folder"
+      ],
+      "result": "return",
+      "bind": "folder",
+      "name": "Rosetta-Folder"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "Rosetta-Folder",
+      "bind": "folder",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "Rosetta-Folder",
+      "quantity": "count",
+      "api": "vs.FInGroup",
+      "frame": "document_world",
+      "component": "members"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "folder_contains",
+      "folder": "Rosetta-Folder",
+      "member": "Rosetta-Sym-A"
+    }
+  ],
+  "exclude_profiles": []
+}

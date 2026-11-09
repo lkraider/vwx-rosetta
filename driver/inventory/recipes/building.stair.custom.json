@@ -1,0 +1,79 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "building.stair.custom",
+  "family_id": "building.stair",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Stair plug-in object placed at (0, 0)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.stair",
+      "kind": "plugin_object",
+      "acquisition_state": "pending",
+      "reason": "The plug-in probe did not try `Stair`, because no installed .vso file has that name."
+    }
+  ],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObject",
+      "args": [
+        "Stair",
+        [
+          0,
+          0
+        ],
+        0
+      ],
+      "bind": "st",
+      "name": "stair-a",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.ResetObject",
+      "args": [
+        "$st"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "stair-a",
+      "bind": "st",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "stair-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Stage 2.5 source for the row building.stair.custom of driver/export-inventory-input/gaps.tsv.",
+    "The object takes the default configuration of a new document. vs.StairSetConfigType sets a configuration with landings, and its integer codes are undocumented in driver/sdk/vs.py.",
+    "The plug-in probe created Custom Stair, a different plug-in, with vs.CreateCustomObjectN."
+  ]
+}

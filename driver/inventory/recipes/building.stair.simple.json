@@ -1,0 +1,70 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "building.stair.simple",
+  "family_id": "building.stair",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Simple Stair plug-in object placed at (0, 0)",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObject",
+      "args": [
+        "Simple Stair",
+        [
+          0,
+          0
+        ],
+        0
+      ],
+      "bind": "st",
+      "name": "stair-a",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.ResetObject",
+      "args": [
+        "$st"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "stair-a",
+      "bind": "st",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "stair-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "vs.CreateCustomObject opens the Simple Stair preferences, and make-sources.py accepts them with OK. The object takes the default style and parameters of a new Vectorworks Architect 2027 document. vs.ResetObject regenerates it before the save.",
+    "Vectorworks 2027 regenerates the stair after the script ends, and the regeneration replaces the name stair-a with a GUID. The source holds the stair under that GUID."
+  ]
+}

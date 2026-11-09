@@ -1,0 +1,295 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "annotation.viewport.hidden_line",
+  "family_id": "annotation.viewport",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Front viewports of a stepped box with render modes 5 and 6",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Model",
+        1
+      ],
+      "bind": "dl",
+      "name": "Rosetta-Model",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Model"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        1200
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          1000
+        ],
+        [
+          3000,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndXtrd",
+      "args": [],
+      "bind": "ex",
+      "name": "model-box"
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        1200,
+        2000
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          1000
+        ],
+        [
+          1000,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.EndXtrd",
+      "args": [],
+      "bind": "st",
+      "name": "model-step"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Sheet",
+        2
+      ],
+      "bind": "sl",
+      "name": "Rosetta-Sheet",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateVP",
+      "args": [
+        "$sl"
+      ],
+      "bind": "v5",
+      "name": "viewport-render-5",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPLayerVisibility",
+      "args": [
+        "$v5",
+        "$dl",
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableInt",
+      "args": [
+        "$v5",
+        1007,
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPClassVisibility",
+      "args": [
+        "$v5",
+        "None",
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableReal",
+      "args": [
+        "$v5",
+        1003,
+        50
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableInt",
+      "args": [
+        "$v5",
+        1001,
+        5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ResetObject",
+      "args": [
+        "$v5"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.UpdateVP",
+      "args": [
+        "$v5"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateVP",
+      "args": [
+        "$sl"
+      ],
+      "bind": "v6",
+      "name": "viewport-render-6",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPLayerVisibility",
+      "args": [
+        "$v6",
+        "$dl",
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableInt",
+      "args": [
+        "$v6",
+        1007,
+        3
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetVPClassVisibility",
+      "args": [
+        "$v6",
+        "None",
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableReal",
+      "args": [
+        "$v6",
+        1003,
+        50
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableInt",
+      "args": [
+        "$v6",
+        1001,
+        6
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ResetObject",
+      "args": [
+        "$v6"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.UpdateVP",
+      "args": [
+        "$v6"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "model-box",
+      "bind": "ex",
+      "role": "context"
+    },
+    {
+      "object_id": "model-step",
+      "bind": "st",
+      "role": "context"
+    },
+    {
+      "object_id": "viewport-render-5",
+      "bind": "v5",
+      "role": "primary"
+    },
+    {
+      "object_id": "viewport-render-6",
+      "bind": "v6",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "viewport-render-5",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "viewport-render-6",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "The model and the view follow annotation.viewport.elevation: object variable 1007 value 3 is the Front view and 1003 is the scale.",
+    "GAPS.tsv names object variable 1001 as the render mode. vs.py gives no render mode codes. 5 and 6 are taken as Hidden Line and Dashed Hidden Line. The source census of the viewport records the stored mode. Revision 2 keeps the viewport whose mode is Hidden Line.",
+    "In the read run of 2026-10-19, vs.GetObjectVariableInt 1001 returned 5 and 6 after reopen. The read names no mode, so the two viewports stay."
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "option.markers",
+  "family_id": "option.markers",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Start and end markers on a line and an arc",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.MoveTo",
+      "args": [
+        [
+          4.5,
+          6.25
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LineTo",
+      "args": [
+        [
+          52.75,
+          23.5
+        ]
+      ],
+      "bind": "ln",
+      "name": "line-markers"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjBeginningMarker",
+      "args": [
+        "$ln",
+        1,
+        15,
+        0.125,
+        0.0625,
+        0,
+        0.05,
+        true
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjEndMarker",
+      "args": [
+        "$ln",
+        2,
+        30,
+        0.1875,
+        0.125,
+        0,
+        0.05,
+        true
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.ArcByCenter",
+      "args": [
+        33.5,
+        41.25,
+        11.75,
+        17.5,
+        143.25
+      ],
+      "bind": "ar",
+      "name": "arc-markers"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjBeginningMarker",
+      "args": [
+        "$ar",
+        1,
+        15,
+        0.125,
+        0.0625,
+        0,
+        0.05,
+        true
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjEndMarker",
+      "args": [
+        "$ar",
+        1,
+        15,
+        0.125,
+        0.0625,
+        0,
+        0.05,
+        true
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "line-markers",
+      "bind": "ln",
+      "role": "primary"
+    },
+    {
+      "object_id": "arc-markers",
+      "bind": "ar",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "line-markers",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "arc-markers",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Marker size and width are page inches. Styles 1 and 2 are the first marker styles in the list. The documentation of the style numbers is not in vs.py. Both calls return True when the marker is set. The line ends differ, so a reader can tell the start from the end."
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "container.layer.design_elevated",
+  "family_id": "container.layer",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Design layer with elevation 1250.5 and thickness 310.25",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "nominal_bounds": [
+      [
+        6.5,
+        3.75
+      ],
+      [
+        38.25,
+        21
+      ]
+    ]
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames",
+    "native_document"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Layer-Elev",
+        1
+      ],
+      "bind": "ly",
+      "name": "Rosetta-Layer-Elev",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLayerElevation",
+      "args": [
+        "$ly",
+        1250.5,
+        310.25
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Layer-Elev"
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          6.5,
+          21
+        ],
+        [
+          38.25,
+          3.75
+        ]
+      ],
+      "bind": "r",
+      "name": "rect-on-layer"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "Rosetta-Layer-Elev",
+      "bind": "ly",
+      "role": "primary"
+    },
+    {
+      "object_id": "rect-on-layer",
+      "bind": "r",
+      "role": "context"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "Rosetta-Layer-Elev",
+      "quantity": "length",
+      "api": "vs.GetLayerElevation",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "rect-on-layer",
+      "quantity": "layer_name",
+      "api": "vs.GetLName",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "rect-on-layer",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "layer_membership",
+      "object_id": "rect-on-layer",
+      "layer": "Rosetta-Layer-Elev"
+    }
+  ],
+  "exclude_profiles": [],
+  "notes": [
+    "CreateLayer layerType 1 is a design layer and 2 is a sheet layer, from the CreateLayer docs examples."
+  ]
+}

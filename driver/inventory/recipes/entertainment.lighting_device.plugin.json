@@ -1,0 +1,72 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "entertainment.lighting_device.plugin",
+  "family_id": "entertainment.lighting_device",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Lighting Device plug-in object placed at (0, 0) with no preferences dialog",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [
+    {
+      "dependency_id": "plugin.lighting-device",
+      "kind": "plugin_object",
+      "acquisition_state": "pending",
+      "reason": "The plug-in probe did not try `Lighting Device`, because no installed .vso file has that name."
+    }
+  ],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateCustomObjectN",
+      "args": [
+        "Lighting Device",
+        [
+          0,
+          0
+        ],
+        0,
+        false
+      ],
+      "bind": "ld",
+      "name": "lighting_device-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "lighting_device-a",
+      "bind": "ld",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "lighting_device-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Stage 2.5 source for the row entertainment.lighting_device.plugin of driver/export-inventory-input/gaps.tsv.",
+    "In the scratch rerun b2-rerun-20261018T193144Z, vs.CreateCustomObject(\"Lighting Device\") in entertainment.lighting_device.single returned no handle. No vs call is known to make this object."
+  ]
+}

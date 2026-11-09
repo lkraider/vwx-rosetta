@@ -1,0 +1,239 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "container.layer.sheet_hidden_class",
+  "family_id": "container.layer",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Sheet layer holding a polygon in a hidden class and a rectangle in a visible class",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {
+    "question": "M7"
+  },
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateLayer",
+      "args": [
+        "Rosetta-Sheet-F",
+        2
+      ],
+      "bind": "fsheet",
+      "result": "return",
+      "name": null
+    },
+    {
+      "op": "call",
+      "api": "vs.Layer",
+      "args": [
+        "Rosetta-Sheet-F"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetUnits",
+      "args": [
+        4096,
+        64,
+        3,
+        1.0,
+        "\"",
+        "sq ft"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          3.5,
+          -2.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          41,
+          5.75
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          29.5,
+          27
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          8.25,
+          19.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          -6,
+          11.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.ClosePoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.EndPoly",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "poly",
+      "name": "poly-a",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-F-Hidden"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$poly",
+        "Rosetta-F-Hidden"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.HideClass",
+      "args": [
+        "Rosetta-F-Hidden"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetLW",
+      "args": [
+        "$poly",
+        14
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetFPat",
+      "args": [
+        "$poly",
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Visible-V"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          50,
+          40
+        ],
+        [
+          70,
+          30
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "rv",
+      "name": "rect-visible",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$rv",
+        "Rosetta-Visible-V"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "poly-a",
+      "bind": "poly",
+      "role": "primary"
+    },
+    {
+      "object_id": "rect-visible",
+      "bind": "rv",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "poly-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "rect-visible",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "The operations up to the rectangle are those of ix.planar.b592862becd2, whose only object, poly-a, is in the hidden class Rosetta-F-Hidden. rect-visible adds an object in a visible class on the same sheet layer.",
+    "The units are inches, from the base case."
+  ]
+}

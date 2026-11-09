@@ -1,0 +1,123 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "spatial.extrude_along_path.single",
+  "family_id": "spatial.extrude_along_path",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Extrude Along Path of a 100 mm circle along a 3-point NURBS curve",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateNurbsCurve",
+      "args": [
+        [
+          0,
+          0,
+          0
+        ],
+        true,
+        2
+      ],
+      "bind": "pa",
+      "name": "path-a",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$pa",
+        [
+          2000,
+          1000,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddVertex3D",
+      "args": [
+        "$pa",
+        [
+          4000,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Oval",
+      "args": [
+        [
+          -50,
+          50
+        ],
+        [
+          50,
+          -50
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "pr",
+      "name": "profile-a",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.CreateExtrudeAlongPath",
+      "args": [
+        "$pa",
+        "$pr"
+      ],
+      "bind": "ep",
+      "name": "extrude-path-a",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "extrude-path-a",
+      "bind": "ep",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "extrude-path-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Stage 2.5 source for the row spatial.extrude_along_path.single of driver/export-inventory-input/gaps.tsv.",
+    "vs.CreateExtrudeAlongPath needs a NURBS curve path (type 111).",
+    "gaps.tsv names a plug-in object (td86). If the census shows a plain solid, the live census decides whether the case stays."
+  ]
+}

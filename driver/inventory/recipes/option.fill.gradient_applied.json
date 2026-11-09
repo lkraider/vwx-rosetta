@@ -1,0 +1,111 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "option.fill.gradient_applied",
+  "family_id": "option.fill",
+  "recipe_revision": "2",
+  "universe": "controlled",
+  "title": "Three-stop gradient applied as the fill of a rectangle through object variable 695",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateGradient",
+      "args": [
+        "Rosetta-Gradient"
+      ],
+      "bind": "gd",
+      "name": "Rosetta-Gradient",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.InsertGradientSegment",
+      "args": [
+        "$gd",
+        0.3125,
+        0.5,
+        65535,
+        12000,
+        0
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.Name2Index",
+      "args": [
+        "Rosetta-Gradient"
+      ],
+      "bind": "gi",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.Rect",
+      "args": [
+        [
+          2.5,
+          21.25
+        ],
+        [
+          33.75,
+          4.5
+        ]
+      ],
+      "bind": "ra",
+      "name": "rect-gradient-ov"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetObjectVariableLongInt",
+      "args": [
+        "$ra",
+        695,
+        "-$gi"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "Rosetta-Gradient",
+      "bind": "gd",
+      "role": "context"
+    },
+    {
+      "object_id": "rect-gradient-ov",
+      "bind": "ra",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-gradient-ov",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "The gradient is the one of resource.gradient.three_stop.",
+    "rect-gradient-ov sets object variable 695 to the negative gradient index. rect-gradient-vf calls vs.SetVectorFill with the gradient name. STATUS.md records that neither call applied an image fill. The live run records which rectangle draws the gradient. Keep that one and drop the other in revision 2.",
+    "Revision 2 drops rect-gradient-vf. In the read run of 2026-10-19, vs.GetVectorFill of rect-gradient-ov returned the gradient name and vs.GetFPat returned the negative index. rect-gradient-vf returned no fill name and vs.GetFPat 1, a solid fill."
+  ]
+}

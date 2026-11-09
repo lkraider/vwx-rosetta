@@ -1,0 +1,115 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "container.symbol.def_instance",
+  "family_id": "container.symbol",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Symbol definition and one rotated instance",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginSym",
+      "args": [
+        "Rosetta-Sym-A"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        0,
+        9.5,
+        17.25,
+        0
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Locus",
+      "args": [
+        [
+          3.5,
+          2.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSym",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.Symbol",
+      "args": [
+        "Rosetta-Sym-A",
+        [
+          42.5,
+          13.75
+        ],
+        23.5
+      ],
+      "bind": "si",
+      "name": "sym-inst-a"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "sym-inst-a",
+      "bind": "si",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "sym-inst-a",
+      "quantity": "point3",
+      "api": "vs.GetSymLoc3D",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "sym-inst-a",
+      "quantity": "angle",
+      "api": "vs.GetSymRot",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "sym-inst-a",
+      "quantity": "name",
+      "api": "vs.GetSymName",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "sym-inst-a",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [
+    {
+      "kind": "instance_of",
+      "object_id": "sym-inst-a",
+      "definition": "Rosetta-Sym-A"
+    }
+  ],
+  "exclude_profiles": []
+}

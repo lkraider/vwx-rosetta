@@ -1,0 +1,16 @@
+vwx-rosetta
+Copyright 2026 The vwx-rosetta authors
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Vectorworks 2027 and its exporters generated the documents and exports in Rosetta. Besides the objects each case
+creates, they contain content that the applications write into every file:
+- in each .vwx: Vectorworks' default resources, such as licensing text for its RAL colour tables, IFC and COBie
+  record definitions, and Apple ICC colour profiles;
+- in each DXF and DWG: Autodesk's default dictionaries and the Express Tools registration, which names an Autodesk
+  address;
+- in 50 DWG files: a font dependency list naming stock macOS font files, such as
+  /System/Library/Fonts/Supplemental/Arial.ttf. They are system paths, without a user or machine name.
+That content belongs to its owners (Vectorworks, Inc.; Autodesk, Inc.; Apple Inc.; RAL gGmbH). It is here because
+the applications write it into every file. Vectorworks is a trademark of Vectorworks, Inc.;
+AutoCAD, DWG and DXF are trademarks of Autodesk, Inc.

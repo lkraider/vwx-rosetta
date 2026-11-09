@@ -1,0 +1,19 @@
+{
+  "profile_id": "svg.vector",
+  "profile_revision": "1",
+  "format": "svg",
+  "format_revision": "unverified",
+  "scope": "drawing",
+  "options": {},
+  "state_overrides": {},
+  "applicability": {
+    "requires_any": [
+      "2d",
+      "annotation",
+      "text"
+    ],
+    "excludes": []
+  },
+  "verification": "unverified",
+  "purpose": "SVG vector export."
+}

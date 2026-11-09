@@ -1,0 +1,117 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "spatial.sweep.pitch",
+  "family_id": "spatial.sweep",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Sweep of an open profile through 270 degrees with a pitch of 12",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "call",
+      "api": "vs.BeginSweep",
+      "args": [
+        0,
+        270,
+        5,
+        12
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          18,
+          2.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          26.75,
+          2.5
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.AddPoint",
+      "args": [
+        [
+          24,
+          13.25
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.OpenPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.EndPoly",
+      "args": []
+    },
+    {
+      "op": "call",
+      "api": "vs.EndSweep",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "sw",
+      "name": "sweep-pitch",
+      "result": "return"
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "sweep-pitch",
+      "bind": "sw",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "sweep-pitch",
+      "quantity": "bounds3",
+      "api": "vs.Get3DInfo",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Stage 2.5 source for the row spatial.sweep.pitch of driver/export-inventory-input/gaps.tsv.",
+    "The values follow the recipe_hint of gaps.tsv. The profile is open."
+  ]
+}

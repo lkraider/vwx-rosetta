@@ -1,0 +1,234 @@
+{
+  "schema": "vwx-rosetta-recipe/1",
+  "case_id": "option.class.fill_texture",
+  "family_id": "option.class",
+  "recipe_revision": "1",
+  "universe": "controlled",
+  "title": "Rect with fill by class and extrude with texture by class",
+  "mechanism": null,
+  "blank_control": "control.blank.mm",
+  "parameters": {},
+  "native_verification": "unexecuted",
+  "required_channels": [
+    "recipe",
+    "source_original",
+    "source_reopened",
+    "native_state",
+    "native_objects",
+    "native_measurements",
+    "native_frames"
+  ],
+  "extra_tags": [],
+  "dependencies": [],
+  "operations": [
+    {
+      "op": "create",
+      "api": "vs.CreateTexture",
+      "args": [],
+      "bind": "tx",
+      "name": "Rosetta-Texture",
+      "result": "return"
+    },
+    {
+      "op": "create",
+      "api": "vs.Name2Index",
+      "args": [
+        "Rosetta-Texture"
+      ],
+      "bind": "ti",
+      "name": null,
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Fill"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClFillFore",
+      "args": [
+        "Rosetta-Fill",
+        [
+          0,
+          32768,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClFillBack",
+      "args": [
+        "Rosetta-Fill",
+        [
+          0,
+          32768,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClFPat",
+      "args": [
+        "Rosetta-Fill",
+        1
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClTextureG",
+      "args": [
+        "Rosetta-Fill",
+        "$ti"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClUseTexture",
+      "args": [
+        "Rosetta-Fill",
+        true
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "None"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          0,
+          20
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "rf",
+      "name": "rect-class-fill",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.SetClass",
+      "args": [
+        "$rf",
+        "Rosetta-Fill"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetFillColorByClass",
+      "args": [
+        "$rf"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.SetFPatByClass",
+      "args": [
+        "$rf"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "Rosetta-Fill"
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.BeginXtrd",
+      "args": [
+        0,
+        12.5
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.Rect",
+      "args": [
+        [
+          40,
+          20
+        ],
+        [
+          70,
+          0
+        ]
+      ]
+    },
+    {
+      "op": "call",
+      "api": "vs.EndXtrd",
+      "args": []
+    },
+    {
+      "op": "create",
+      "api": "vs.LNewObj",
+      "args": [],
+      "bind": "ex",
+      "name": "extrude-class-texture",
+      "result": "return"
+    },
+    {
+      "op": "call",
+      "api": "vs.NameClass",
+      "args": [
+        "None"
+      ]
+    },
+    {
+      "op": "save_reopen"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "rect-class-fill",
+      "bind": "rf",
+      "role": "primary"
+    },
+    {
+      "object_id": "extrude-class-texture",
+      "bind": "ex",
+      "role": "primary"
+    }
+  ],
+  "queries": [
+    {
+      "object_id": "rect-class-fill",
+      "quantity": "bounds3",
+      "api": "vs.GetBBox",
+      "frame": "document_world"
+    },
+    {
+      "object_id": "extrude-class-texture",
+      "quantity": "bounds3",
+      "api": "vs.Get3DInfo",
+      "frame": "document_world"
+    }
+  ],
+  "expected_relationships": [],
+  "exclude_profiles": [],
+  "notes": [
+    "Stage 2.5 source for the row option.class.fill_texture of driver/export-inventory-input/gaps.tsv.",
+    "The extrude is made while Rosetta-Fill is the active class. vs.SetClUseTexture makes new objects of that class take the class texture.",
+    "The census shows whether the texture reference of the extrude is the class texture or a copy of it."
+  ]
+}
